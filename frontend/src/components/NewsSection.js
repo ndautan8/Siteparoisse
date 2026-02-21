@@ -16,13 +16,13 @@ export const NewsSection = () => {
     fetchNews();
   }, []);
 
-  // Auto-rotate carousel
+  // Auto-rotate carousel every 4 seconds
   useEffect(() => {
-    if (news.length <= 1 || isHovered) return;
+    if (news.length <= 3 || isHovered) return;
     
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % news.length);
-    }, 5000);
+      setCurrentIndex((prev) => (prev + 1) % (news.length - 2));
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [news.length, isHovered]);
@@ -30,7 +30,7 @@ export const NewsSection = () => {
   const fetchNews = async () => {
     try {
       const response = await axios.get(`${BACKEND_URL}/api/news?published_only=true`);
-      setNews(response.data.slice(0, 6));
+      setNews(response.data.slice(0, 9));
     } catch (error) {
       console.error('Error fetching news:', error);
     } finally {
@@ -40,27 +40,25 @@ export const NewsSection = () => {
 
   const formatDate = (dateString) => {
     try {
-      return format(new Date(dateString), 'dd MMMM yyyy', { locale: fr });
+      return format(new Date(dateString), 'dd MMM yyyy', { locale: fr });
     } catch {
       return dateString;
     }
   };
 
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % news.length);
+    if (news.length <= 3) return;
+    setCurrentIndex((prev) => (prev + 1) % (news.length - 2));
   }, [news.length]);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + news.length) % news.length);
+    if (news.length <= 3) return;
+    setCurrentIndex((prev) => (prev - 1 + (news.length - 2)) % (news.length - 2));
   }, [news.length]);
-
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
 
   if (loading) {
     return (
-      <section className="py-24 bg-gradient-to-b from-white to-slate-50" data-testid="news-section">
+      <section className="py-20 bg-gradient-to-b from-white to-slate-50" data-testid="news-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center h-64">
             <div className="animate-pulse flex space-x-4">
@@ -73,17 +71,17 @@ export const NewsSection = () => {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden" data-testid="news-section">
+    <section className="py-20 bg-gradient-to-b from-white via-white to-slate-50/50 overflow-hidden" data-testid="news-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-gold font-medium text-sm tracking-widest uppercase mb-4">
+        <div className="text-center mb-14">
+          <span className="inline-block text-gold font-medium text-sm tracking-widest uppercase mb-3">
             Notre communauté
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-normal tracking-tight text-slate-deep mb-4" data-testid="news-title">
             Actualités
           </h2>
-          <div className="w-24 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+          <div className="w-20 h-1 bg-gold mx-auto rounded-full mb-5"></div>
           <p className="text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
             Découvrez les dernières nouvelles de notre communauté paroissiale
           </p>
@@ -98,126 +96,118 @@ export const NewsSection = () => {
             onMouseLeave={() => setIsHovered(false)}
           >
             {/* Carousel Container */}
-            <div className="overflow-hidden rounded-2xl">
+            <div className="overflow-hidden px-2">
               <div 
-                className="flex transition-transform duration-700 ease-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                className="flex transition-transform duration-700 ease-out gap-6"
+                style={{ transform: `translateX(-${currentIndex * (100 / 3 + 2)}%)` }}
               >
-                {news.map((item, index) => (
-                  <div 
-                    key={item.id} 
-                    className="w-full flex-shrink-0 px-2"
+                {news.map((item) => (
+                  <article
+                    key={item.id}
+                    className="w-full md:w-[calc(33.333%-16px)] flex-shrink-0 group"
+                    data-testid={`news-card-${item.id}`}
                   >
-                    <article
-                      className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
-                      data-testid={`news-card-${item.id}`}
-                    >
-                      <div className="grid md:grid-cols-2 gap-0">
-                        {/* Image Side */}
-                        <div className="relative aspect-[4/3] md:aspect-auto md:h-[450px] overflow-hidden">
-                          {item.image_url ? (
-                            <img
-                              src={item.image_url}
-                              alt={item.title}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            />
-                          ) : (
-                            <div className="w-full h-full bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center">
-                              <span className="font-serif text-6xl text-gold/30">N</span>
-                            </div>
-                          )}
-                          {/* Overlay gradient */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-white/20"></div>
-                          
-                          {/* Category Badge */}
-                          {item.category && (
-                            <div className="absolute top-4 left-4">
-                              <span className="inline-block bg-gold text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg">
-                                {item.category}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Content Side */}
-                        <div className="p-8 md:p-12 flex flex-col justify-center">
-                          {/* Date */}
-                          <div className="flex items-center space-x-2 text-sm text-slate-500 mb-4">
-                            <Calendar className="w-4 h-4 text-gold" />
-                            <span>{formatDate(item.created_at)}</span>
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full flex flex-col border border-slate-100/80">
+                      {/* Image */}
+                      <div className="relative aspect-[16/10] overflow-hidden">
+                        {item.image_url ? (
+                          <img
+                            src={item.image_url}
+                            alt={item.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center">
+                            <span className="font-serif text-5xl text-gold/30">N</span>
                           </div>
-
-                          {/* Title */}
-                          <h3 className="font-serif text-2xl md:text-3xl text-slate-deep mb-4 group-hover:text-gold transition-colors duration-300 line-clamp-2">
-                            {item.title}
-                          </h3>
-
-                          {/* Content Preview */}
-                          <p className="text-slate-600 leading-relaxed mb-6 line-clamp-4">
-                            {item.content}
-                          </p>
-
-                          {/* CTA Button */}
-                          <button className="inline-flex items-center space-x-2 text-gold hover:text-gold-dark font-medium transition-all duration-300 group/btn">
-                            <span>Lire la suite</span>
-                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                          </button>
-                        </div>
+                        )}
+                        {/* Overlay gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        {/* Category Badge */}
+                        {item.category && (
+                          <div className="absolute top-3 left-3">
+                            <span className="inline-block bg-gold/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+                              {item.category}
+                            </span>
+                          </div>
+                        )}
                       </div>
-                    </article>
-                  </div>
+
+                      {/* Content */}
+                      <div className="p-5 flex flex-col flex-grow">
+                        {/* Date */}
+                        <div className="flex items-center space-x-2 text-xs text-slate-500 mb-3">
+                          <Calendar className="w-3.5 h-3.5 text-gold" />
+                          <span>{formatDate(item.created_at)}</span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="font-serif text-xl text-slate-deep mb-2 group-hover:text-gold transition-colors duration-300 line-clamp-2">
+                          {item.title}
+                        </h3>
+
+                        {/* Content Preview */}
+                        <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
+                          {item.content}
+                        </p>
+
+                        {/* CTA Button */}
+                        <button className="inline-flex items-center space-x-2 text-gold hover:text-gold-dark text-sm font-medium transition-all duration-300 group/btn mt-auto">
+                          <span>Lire la suite</span>
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </button>
+                      </div>
+                    </div>
+                  </article>
                 ))}
               </div>
             </div>
 
             {/* Navigation Arrows */}
-            {news.length > 1 && (
+            {news.length > 3 && (
               <>
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-600 hover:text-gold hover:shadow-xl transition-all duration-300 z-10"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-600 hover:text-gold hover:shadow-xl transition-all duration-300 z-10 border border-slate-100"
                   aria-label="Actualité précédente"
                 >
-                  <ChevronLeft className="w-6 h-6" />
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-600 hover:text-gold hover:shadow-xl transition-all duration-300 z-10"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-4 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-600 hover:text-gold hover:shadow-xl transition-all duration-300 z-10 border border-slate-100"
                   aria-label="Actualité suivante"
                 >
-                  <ChevronRight className="w-6 h-6" />
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </>
             )}
 
             {/* Dots Indicator */}
-            {news.length > 1 && (
-              <div className="flex justify-center items-center space-x-3 mt-8">
-                {news.map((_, index) => (
+            {news.length > 3 && (
+              <div className="flex justify-center items-center space-x-2 mt-8">
+                {Array.from({ length: Math.max(1, news.length - 2) }).map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => goToSlide(index)}
+                    onClick={() => setCurrentIndex(index)}
                     className={`transition-all duration-300 rounded-full ${
                       index === currentIndex
                         ? 'w-8 h-2 bg-gold'
                         : 'w-2 h-2 bg-slate-300 hover:bg-gold/50'
                     }`}
-                    aria-label={`Aller à l'actualité ${index + 1}`}
+                    aria-label={`Aller au groupe ${index + 1}`}
                   />
                 ))}
               </div>
             )}
 
-            {/* Progress Bar */}
-            {news.length > 1 && !isHovered && (
-              <div className="mt-6 max-w-xs mx-auto">
-                <div className="h-0.5 bg-slate-200 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gold transition-all duration-300"
-                    style={{
-                      width: `${((currentIndex + 1) / news.length) * 100}%`,
-                    }}
-                  />
+            {/* Auto-play indicator */}
+            {news.length > 3 && !isHovered && (
+              <div className="flex justify-center mt-4">
+                <div className="flex items-center space-x-2 text-xs text-slate-400">
+                  <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></div>
+                  <span>Défilement automatique</span>
                 </div>
               </div>
             )}
