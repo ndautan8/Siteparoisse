@@ -51,8 +51,7 @@ const sacrements = [
     image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/5tik9jhg_Mariage.png',
     path: '/sacrements/mariage',
     color: 'from-pink-400 to-rose-500',
-    imageStyle: { objectPosition: 'left bottom' },
-    iconPosition: 'top-right'
+    imageStyle: { objectPosition: 'left bottom' }
   },
   {
     id: 'sacrement-malades',
