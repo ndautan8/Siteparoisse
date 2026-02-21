@@ -99,6 +99,51 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1" data-testid="desktop-nav">
+            {/* Je veux... Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => {
+                if (closeTimeout) clearTimeout(closeTimeout);
+                setShowJeVeuxMenu(true);
+              }}
+              onMouseLeave={() => {
+                const timeout = setTimeout(() => setShowJeVeuxMenu(false), 150);
+                setCloseTimeout(timeout);
+              }}
+            >
+              <button
+                className="px-4 py-2 text-gold hover:text-gold-dark font-medium transition-colors flex items-center space-x-2"
+                data-testid="menu-je-veux"
+              >
+                <span>Je veux...</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${showJeVeuxMenu ? 'rotate-180' : ''}`} />
+              </button>
+
+              {showJeVeuxMenu && (
+                <div 
+                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-slate-100 py-2 z-50"
+                  onMouseEnter={() => {
+                    if (closeTimeout) clearTimeout(closeTimeout);
+                  }}
+                  onMouseLeave={() => {
+                    const timeout = setTimeout(() => setShowJeVeuxMenu(false), 150);
+                    setCloseTimeout(timeout);
+                  }}
+                >
+                  {jeVeuxOptions.map((option) => (
+                    <Link
+                      key={option.path + option.label}
+                      to={option.path}
+                      className="block px-4 py-2 text-slate-600 hover:bg-slate-50 hover:text-gold transition-colors"
+                      onClick={() => setShowJeVeuxMenu(false)}
+                    >
+                      {option.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {menuItems.map((item) => (
               <div
                 key={item.title}
