@@ -107,7 +107,7 @@ const DemanderSacrementPage = () => {
                       style={sacrement.imageStyle || {}}
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t ${sacrement.color} opacity-60`}></div>
-                    <div className={`absolute inset-0 flex ${sacrement.iconPosition === 'top-right' ? 'items-start justify-end p-4' : 'items-center justify-center'}`}>
+                    <div className={`absolute inset-0 flex items-start justify-end p-4`}>
                       <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                         <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
                       </div>
