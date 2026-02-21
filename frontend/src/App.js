@@ -32,6 +32,13 @@ function App() {
                       <Route path="/horaires-messes" element={<HorairesMesses />} />
                       <Route path="/secretariat" element={<Secretariat />} />
                       
+                      {/* Pillar landing pages */}
+                      <Route path="/notre-dame-autan" element={<PillarPage pillarKey="notre-dame-autan" />} />
+                      <Route path="/familles-jeunesse" element={<PillarPage pillarKey="familles-jeunesse" />} />
+                      <Route path="/vie-spirituelle" element={<PillarPage pillarKey="vie-spirituelle" />} />
+                      <Route path="/grandir-foi" element={<PillarPage pillarKey="grandir-foi" />} />
+                      <Route path="/solidarite" element={<PillarPage pillarKey="solidarite" />} />
+                      
                       {/* Pillar 1: Notre Dame d'Autan */}
                       <Route path="/equipe-pastorale" element={<ContentPage section="equipe" />} />
                       <Route path="/vie-economique" element={<ContentPage section="economique" />} />
