@@ -30,12 +30,12 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         {/* Quick Actions - En haut */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 flex-wrap mb-10">
-          {/* Je veux - Dropdown */}
+        <div className="flex items-center justify-between w-full max-w-4xl mx-auto mb-10">
+          {/* Je veux - Dropdown - Gauche */}
           <div className="relative">
             <button
               onClick={() => setShowJeVeuxMenu(!showJeVeuxMenu)}
-              className="bg-white/95 backdrop-blur-sm border-2 border-white text-slate-700 hover:bg-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg"
+              className="bg-gold backdrop-blur-sm border-2 border-gold text-white hover:bg-gold-dark hover:border-gold-dark rounded-full px-6 py-2.5 font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg"
               data-testid="je-veux-button"
             >
               <span>Je veux...</span>
@@ -43,7 +43,7 @@ export const Hero = () => {
             </button>
 
             {showJeVeuxMenu && (
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64 bg-white rounded-lg shadow-xl border border-slate-100 py-2 z-50">
+              <div className="absolute top-full mt-2 left-0 w-64 bg-white rounded-lg shadow-xl border border-slate-100 py-2 z-50">
                 {jeVeuxOptions.map((option) => (
                   <Link
                     key={option.path + option.label}
@@ -59,7 +59,7 @@ export const Hero = () => {
             )}
           </div>
 
-          {/* Je suis nouveau */}
+          {/* Je suis nouveau - Centre */}
           <Link
             to="/equipe-pastorale"
             className="bg-white/95 backdrop-blur-sm border-2 border-white text-slate-700 hover:bg-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 shadow-lg"
@@ -68,7 +68,7 @@ export const Hero = () => {
             Je suis nouveau
           </Link>
 
-          {/* Don */}
+          {/* Don - Droite */}
           <Link
             to="/vie-economique"
             className="bg-gold backdrop-blur-sm border-2 border-gold text-white hover:bg-gold-dark hover:border-gold-dark rounded-full px-6 py-2.5 font-medium transition-all duration-300 shadow-lg"
