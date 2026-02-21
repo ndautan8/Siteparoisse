@@ -18,6 +18,8 @@ export const Header = () => {
         { label: 'Vie Économique', path: '/vie-economique' },
         { label: 'Nos Clochers', path: '/nos-clochers' },
         { label: 'Services Transverses', path: '/services-transverses' },
+        { label: 'Service Liturgie et Musique', path: '/liturgie-musique' },
+        { label: 'Service Funérailles', path: '/funerailles' },
       ],
     },
     {
@@ -39,8 +41,6 @@ export const Header = () => {
       items: [
         { label: 'Demander un sacrement', path: '/demander-sacrement' },
         { label: 'Le Mariage', path: '/mariage' },
-        { label: 'Liturgie & Musique', path: '/liturgie-musique' },
-        { label: 'Funérailles', path: '/funerailles' },
       ],
     },
     {
