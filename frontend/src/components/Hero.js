@@ -35,11 +35,11 @@ export const Hero = () => {
             Nous contacter
           </Link>
           <Link
-            to="/horaires-messes"
+            to="/demander-sacrement"
             className="bg-gold hover:bg-gold-dark text-white rounded-full px-8 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
-            data-testid="hero-mass-times-button"
+            data-testid="hero-sacrement-button"
           >
-            Voir les horaires
+            Demander un sacrement
           </Link>
         </div>
       </div>
