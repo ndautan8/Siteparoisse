@@ -63,7 +63,7 @@ export const Hero = () => {
           <div className="relative">
             <button
               onClick={() => setShowJeVeuxMenu(!showJeVeuxMenu)}
-              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 rounded-full px-6 py-2.5 font-medium transition-all duration-300 flex items-center space-x-2"
+              className="bg-white/90 backdrop-blur-sm border-2 border-white text-slate-700 hover:bg-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg"
               data-testid="je-veux-button"
             >
               <span>Je veux...</span>
@@ -90,7 +90,7 @@ export const Hero = () => {
           {/* Je suis nouveau */}
           <Link
             to="/equipe-pastorale"
-            className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 rounded-full px-6 py-2.5 font-medium transition-all duration-300"
+            className="bg-white/90 backdrop-blur-sm border-2 border-white text-slate-700 hover:bg-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 shadow-lg"
             data-testid="nouveau-button"
           >
             Je suis nouveau
@@ -99,7 +99,7 @@ export const Hero = () => {
           {/* Don */}
           <Link
             to="/vie-economique"
-            className="bg-gold/90 backdrop-blur-sm border border-gold text-white hover:bg-gold rounded-full px-6 py-2.5 font-medium transition-all duration-300"
+            className="bg-gold/90 backdrop-blur-sm border-2 border-gold text-white hover:bg-gold rounded-full px-6 py-2.5 font-medium transition-all duration-300 shadow-lg"
             data-testid="don-button"
           >
             Faire un don
