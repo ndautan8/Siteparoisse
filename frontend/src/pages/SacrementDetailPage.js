@@ -118,7 +118,7 @@ const sacrementsData = {
     title: 'Le Mariage',
     subtitle: 'S\'unir dans l\'amour du Christ',
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200',
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/5tik9jhg_Mariage.png',
     intro: 'Le mariage chrétien est un sacrement par lequel un homme et une femme s\'engagent l\'un envers l\'autre pour toute leur vie, avec la grâce de Dieu.',
     sections: [
       {
