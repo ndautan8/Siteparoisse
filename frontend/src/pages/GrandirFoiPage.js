@@ -60,8 +60,8 @@ const GrandirFoiPage = () => {
           </p>
         </div>
 
-        {/* Sections Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Sections Grid - 4 colonnes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {sections.map((section) => {
             const IconComponent = section.icon;
             return (
@@ -71,40 +71,26 @@ const GrandirFoiPage = () => {
                 className="group"
                 data-testid={`section-card-${section.id}`}
               >
-                <article className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col">
-                  {/* Image */}
-                  <div className="relative aspect-[16/9] overflow-hidden">
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                      <div className="w-14 h-14 rounded-full bg-gold flex items-center justify-center shadow-lg">
-                        <IconComponent className="w-7 h-7 text-white" strokeWidth={1.5} />
-                      </div>
-                      <span className="bg-white/90 backdrop-blur-sm text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full">
-                        {section.subtitle}
-                      </span>
-                    </div>
+                <article className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col hover:-translate-y-1">
+                  {/* Icon */}
+                  <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+                    <IconComponent className="w-7 h-7 text-gold" strokeWidth={1.5} />
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="font-serif text-2xl text-slate-deep mb-3 group-hover:text-gold transition-colors">
-                      {section.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed flex-grow">
-                      {section.description}
-                    </p>
-                    
-                    <div className="mt-4 flex items-center text-gold text-sm font-medium group-hover:text-gold-dark transition-colors">
-                      <span>En savoir plus</span>
-                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                  <span className="text-gold text-sm font-medium mb-1">{section.subtitle}</span>
+                  <h3 className="font-serif text-xl text-slate-deep mb-3 group-hover:text-gold transition-colors">
+                    {section.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed flex-grow">
+                    {section.description}
+                  </p>
+                  
+                  <div className="mt-4 flex items-center text-gold text-sm font-medium group-hover:text-gold-dark transition-colors">
+                    <span>En savoir plus</span>
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </article>
               </Link>

@@ -132,22 +132,22 @@ const JeSuisNouveauPage = () => {
                 className="group"
                 data-testid={`section-card-${section.id}`}
               >
-                <article className={`bg-gradient-to-br ${section.color} rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border border-white/20 flex flex-col text-white hover:-translate-y-1`}>
+                <article className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col hover:-translate-y-1">
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
-                    <IconComponent className="w-7 h-7 text-white" strokeWidth={1.5} />
+                  <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+                    <IconComponent className="w-7 h-7 text-gold" strokeWidth={1.5} />
                   </div>
 
                   {/* Content */}
-                  <span className="text-white/80 text-sm font-medium mb-1">{section.subtitle}</span>
-                  <h3 className="font-serif text-xl text-white mb-3">
+                  <span className="text-gold text-sm font-medium mb-1">{section.subtitle}</span>
+                  <h3 className="font-serif text-xl text-slate-deep mb-3 group-hover:text-gold transition-colors">
                     {section.title}
                   </h3>
-                  <p className="text-white/90 text-sm leading-relaxed flex-grow">
+                  <p className="text-slate-600 text-sm leading-relaxed flex-grow">
                     {section.description}
                   </p>
                   
-                  <div className="mt-4 flex items-center text-white text-sm font-medium">
+                  <div className="mt-4 flex items-center text-gold text-sm font-medium group-hover:text-gold-dark transition-colors">
                     <span>Découvrir</span>
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
