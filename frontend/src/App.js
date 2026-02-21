@@ -1,53 +1,76 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'sonner';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import HomePage from '@/pages/HomePage';
+import HorairesMesses from '@/pages/HorairesMesses';
+import Secretariat from '@/pages/Secretariat';
+import AdminLogin from '@/pages/AdminLogin';
+import AdminDashboard from '@/pages/AdminDashboard';
+import ContentPage from '@/pages/ContentPage';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <div className="flex flex-col min-h-screen">
+          <Routes>
+            {/* Admin routes without header/footer */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
+            {/* Public routes with header/footer */}
+            <Route
+              path="/*"
+              element={
+                <>
+                  <Header />
+                  <main className="flex-grow">
+                    <Routes>
+                      <Route path="/" element={<HomePage />} />
+                      <Route path="/horaires-messes" element={<HorairesMesses />} />
+                      <Route path="/secretariat" element={<Secretariat />} />
+                      
+                      {/* Pillar 1: Notre Dame d'Autan */}
+                      <Route path="/equipe-pastorale" element={<ContentPage section="equipe" />} />
+                      <Route path="/vie-economique" element={<ContentPage section="economique" />} />
+                      <Route path="/nos-clochers" element={<ContentPage section="clochers" />} />
+                      <Route path="/services-transverses" element={<ContentPage section="services" />} />
+                      
+                      {/* Pillar 2: Familles & Jeunesse */}
+                      <Route path="/eveil-foi" element={<ContentPage section="eveil" />} />
+                      <Route path="/catechisme" element={<ContentPage section="catechisme" />} />
+                      <Route path="/aumonerie" element={<ContentPage section="aumonerie" />} />
+                      <Route path="/mouvements" element={<ContentPage section="mouvements" />} />
+                      <Route path="/servants-vocations" element={<ContentPage section="servants" />} />
+                      
+                      {/* Pillar 3: Vie Spirituelle */}
+                      <Route path="/demander-sacrement" element={<ContentPage section="sacrement" />} />
+                      <Route path="/mariage" element={<ContentPage section="mariage" />} />
+                      <Route path="/liturgie-musique" element={<ContentPage section="liturgie" />} />
+                      <Route path="/funerailles" element={<ContentPage section="funerailles" />} />
+                      
+                      {/* Pillar 4: Grandir dans la Foi */}
+                      <Route path="/alpha-catechumenat" element={<ContentPage section="alpha" />} />
+                      <Route path="/groupes-partage" element={<ContentPage section="groupes" />} />
+                      <Route path="/meditation" element={<ContentPage section="meditation" />} />
+                      <Route path="/ressources" element={<ContentPage section="ressources" />} />
+                      
+                      {/* Pillar 5: Solidarité */}
+                      <Route path="/service-ecoute" element={<ContentPage section="ecoute" />} />
+                      <Route path="/visite-malades" element={<ContentPage section="malades" />} />
+                      <Route path="/entraide" element={<ContentPage section="entraide" />} />
+                    </Routes>
+                  </main>
+                  <Footer />
+                </>
+              }
+            />
+          </Routes>
+        </div>
       </BrowserRouter>
-    </div>
+      <Toaster richColors position="top-right" />
+    </>
   );
 }
 
