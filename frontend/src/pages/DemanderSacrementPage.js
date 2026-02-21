@@ -18,7 +18,7 @@ const sacrements = [
     subtitle: 'Recevoir le Corps du Christ',
     description: 'Recevoir pour la première fois l\'Eucharistie, source et sommet de la vie chrétienne.',
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1445367585008-b8a4c4640c5f?w=600',
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qqm1rjkh_Premiere-communion.png',
     path: '/sacrements/premiere-communion',
     color: 'from-gold to-amber-600'
   },
@@ -28,7 +28,7 @@ const sacrements = [
     subtitle: 'Recevoir l\'Esprit Saint',
     description: 'Sacrement de la maturité chrétienne qui achève l\'initiation commencée au baptême.',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=600',
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/e13l6wpl_Confirmation.png',
     path: '/sacrements/confirmation',
     color: 'from-red-400 to-orange-500'
   },
@@ -38,7 +38,7 @@ const sacrements = [
     subtitle: 'Le pardon de Dieu',
     description: 'Sacrement de la miséricorde pour recevoir le pardon de Dieu et se réconcilier avec l\'Église.',
     icon: HandHeart,
-    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?w=600',
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qhnerpwc_Reconciliation-confession.png',
     path: '/sacrements/reconciliation',
     color: 'from-purple-400 to-purple-600'
   },
@@ -48,7 +48,7 @@ const sacrements = [
     subtitle: 'S\'unir dans l\'amour du Christ',
     description: 'S\'engager dans l\'amour et la fidélité, soutenu par la grâce de Dieu.',
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600',
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/5tik9jhg_Mariage.png',
     path: '/sacrements/mariage',
     color: 'from-pink-400 to-rose-500'
   },
