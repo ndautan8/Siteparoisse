@@ -40,7 +40,12 @@ export const Header = () => {
       path: '/vie-spirituelle',
       items: [
         { label: 'Demander un sacrement', path: '/demander-sacrement' },
-        { label: 'Le Mariage', path: '/mariage' },
+        { label: 'Baptême', path: '/sacrements/bapteme' },
+        { label: 'Première Communion', path: '/sacrements/premiere-communion' },
+        { label: 'Confirmation', path: '/sacrements/confirmation' },
+        { label: 'Réconciliation', path: '/sacrements/reconciliation' },
+        { label: 'Mariage', path: '/sacrements/mariage' },
+        { label: 'Sacrement des Malades', path: '/sacrements/malades' },
       ],
     },
     {
