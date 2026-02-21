@@ -5,6 +5,7 @@ import { Menu, X, Church, Heart, Users, BookOpen, HandHeart } from 'lucide-react
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [closeTimeout, setCloseTimeout] = useState(null);
 
   const menuItems = [
     {
