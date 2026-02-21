@@ -15,6 +15,11 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* Hide Emergent badge */
+#emergent-badge {
+    display: none !important;
+}
+
 @layer base {
     :root {
         --background: 30 20% 99%;
