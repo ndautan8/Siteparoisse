@@ -1,0 +1,234 @@
+import { Link } from 'react-router-dom';
+import { Heart, Users, HandHeart, Sparkles, Church, Calendar } from 'lucide-react';
+
+const sections = [
+  {
+    id: 'alpha',
+    title: 'Parcours Alpha',
+    subtitle: 'Découvrir la foi chrétienne',
+    description: 'Un parcours convivial pour explorer les grandes questions de la vie et de la foi, autour d\'un repas et d\'échanges.',
+    icon: Sparkles,
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600',
+    path: '/alpha-catechumenat',
+    color: 'from-amber-400 to-orange-500'
+  },
+  {
+    id: 'catechumenat',
+    title: 'Catéchuménat',
+    subtitle: 'Devenir chrétien',
+    description: 'Un chemin de préparation au baptême pour les adultes qui souhaitent devenir chrétiens.',
+    icon: Heart,
+    image: 'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?w=600',
+    path: '/alpha-catechumenat',
+    color: 'from-blue-400 to-blue-600'
+  },
+  {
+    id: 'groupes',
+    title: 'Groupes de Partage',
+    subtitle: 'Grandir ensemble dans la foi',
+    description: 'Rejoignez un petit groupe pour partager, prier et approfondir votre foi dans un cadre fraternel.',
+    icon: Users,
+    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600',
+    path: '/groupes-partage',
+    color: 'from-green-400 to-emerald-600'
+  },
+  {
+    id: 'entraide',
+    title: 'Entraide',
+    subtitle: 'Solidarité & service',
+    description: 'Découvrez comment donner de votre temps ou recevoir de l\'aide au sein de notre communauté.',
+    icon: HandHeart,
+    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600',
+    path: '/entraide',
+    color: 'from-rose-400 to-pink-500'
+  }
+];
+
+const JeSuisNouveauPage = () => {
+  return (
+    <div className="min-h-screen bg-paper" data-testid="je-suis-nouveau-page">
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-br from-gold/20 via-gold/10 to-paper py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center shadow-lg">
+                <Church className="w-10 h-10 text-white" strokeWidth={1.5} />
+              </div>
+            </div>
+            <h1 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-slate-deep mb-4">
+              Bienvenue parmi nous !
+            </h1>
+            <p className="text-gold font-medium mb-6 text-lg">Vous êtes nouveau ? Vous êtes chez vous.</p>
+            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Quelle que soit votre histoire, votre parcours ou vos questions, notre communauté vous accueille 
+              à bras ouverts. Ici, chacun trouve sa place et peut cheminer à son rythme.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Welcome Message */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="font-serif text-3xl text-slate-deep mb-4">Une communauté qui vous attend</h2>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Notre Dame d'Autan est une paroisse vivante et chaleureuse. Que vous souhaitiez simplement 
+                assister à une messe, poser des questions sur la foi, ou vous engager dans la vie paroissiale, 
+                vous trouverez ici des personnes prêtes à vous accompagner.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                N'hésitez pas à venir nous rencontrer, à participer à nos événements ou à contacter 
+                le secrétariat pour tout renseignement. La porte est toujours ouverte !
+              </p>
+            </div>
+            <div className="flex flex-col gap-4">
+              <Link
+                to="/horaires-messes"
+                className="flex items-center bg-gold/10 hover:bg-gold/20 rounded-xl p-4 transition-colors group"
+              >
+                <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center mr-4">
+                  <Calendar className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-slate-deep group-hover:text-gold transition-colors">Horaires des messes</h3>
+                  <p className="text-sm text-slate-500">Venez nous rejoindre pour une célébration</p>
+                </div>
+              </Link>
+              <Link
+                to="/secretariat"
+                className="flex items-center bg-gold/10 hover:bg-gold/20 rounded-xl p-4 transition-colors group"
+              >
+                <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center mr-4">
+                  <Heart className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-slate-deep group-hover:text-gold transition-colors">Nous contacter</h3>
+                  <p className="text-sm text-slate-500">Notre équipe est là pour vous accueillir</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Section Title */}
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-3xl text-slate-deep mb-4">Pour faire vos premiers pas</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            Voici quelques propositions pour découvrir notre communauté et cheminer dans la foi
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {sections.map((section) => {
+            const IconComponent = section.icon;
+            return (
+              <Link
+                key={section.id}
+                to={section.path}
+                className="group"
+                data-testid={`section-card-${section.id}`}
+              >
+                <article className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col">
+                  {/* Image */}
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${section.color} opacity-60`}></div>
+                    <div className="absolute inset-0 flex items-start justify-end p-4">
+                      <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <IconComponent className="w-7 h-7 text-white" strokeWidth={1.5} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <span className="text-gold text-sm font-medium mb-1">{section.subtitle}</span>
+                    <h3 className="font-serif text-2xl text-slate-deep mb-3 group-hover:text-gold transition-colors">
+                      {section.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed flex-grow">
+                      {section.description}
+                    </p>
+                    
+                    <div className="mt-4 flex items-center text-gold text-sm font-medium group-hover:text-gold-dark transition-colors">
+                      <span>Découvrir</span>
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-16 bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20">
+          <h2 className="font-serif text-2xl text-slate-deep mb-6 text-center">Questions fréquentes</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-xl p-6">
+              <h3 className="font-medium text-slate-deep mb-2">Dois-je être baptisé pour venir à la messe ?</h3>
+              <p className="text-slate-600 text-sm">
+                Non, tout le monde est le bienvenu à la messe ! Vous pouvez venir observer, prier et participer 
+                à votre rythme. Seule la communion est réservée aux baptisés.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-6">
+              <h3 className="font-medium text-slate-deep mb-2">Je ne connais personne, comment m'intégrer ?</h3>
+              <p className="text-slate-600 text-sm">
+                Venez vous présenter au secrétariat ou restez après la messe pour un café ! 
+                Le parcours Alpha est aussi une excellente façon de rencontrer d'autres personnes.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-6">
+              <h3 className="font-medium text-slate-deep mb-2">Comment puis-je me faire baptiser adulte ?</h3>
+              <p className="text-slate-600 text-sm">
+                Le catéchuménat accompagne les adultes vers le baptême. Contactez-nous pour en savoir plus 
+                sur ce beau chemin qui dure généralement deux ans.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-6">
+              <h3 className="font-medium text-slate-deep mb-2">Y a-t-il des activités pour les jeunes ?</h3>
+              <p className="text-slate-600 text-sm">
+                Oui ! Aumônerie pour les collégiens et lycéens, groupes scouts, MEJ, patronage... 
+                Consultez la section "Familles & Jeunesse" pour découvrir toutes nos propositions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <p className="text-slate-600 mb-6 text-lg">
+            Vous avez d'autres questions ? N'hésitez pas à nous contacter !
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/secretariat"
+              className="inline-flex items-center justify-center bg-gold hover:bg-gold-dark text-white px-8 py-3 rounded-full font-medium transition-colors"
+            >
+              Contacter le secrétariat
+            </Link>
+            <Link
+              to="/equipe-pastorale"
+              className="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-700 px-8 py-3 rounded-full font-medium transition-colors border border-slate-200"
+            >
+              Rencontrer l'équipe pastorale
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default JeSuisNouveauPage;
