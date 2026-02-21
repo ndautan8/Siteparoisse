@@ -34,7 +34,7 @@ const sacrementsData = {
     title: 'La Première Communion',
     subtitle: 'Recevoir le Corps du Christ',
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1445367585008-b8a4c4640c5f?w=1200',
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qqm1rjkh_Premiere-communion.png',
     intro: 'La première communion est le moment où l\'enfant reçoit pour la première fois le Corps du Christ dans l\'Eucharistie.',
     sections: [
       {
