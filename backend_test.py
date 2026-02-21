@@ -4,7 +4,7 @@ from datetime import datetime
 import json
 
 class ParishAPITester:
-    def __init__(self, base_url="https://eglise-accueil.preview.emergentagent.com"):
+    def __init__(self, base_url="https://eglise-spirituel.preview.emergentagent.com"):
         self.base_url = base_url
         self.token = None
         self.tests_run = 0
