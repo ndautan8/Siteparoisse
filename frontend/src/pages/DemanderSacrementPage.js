@@ -102,7 +102,7 @@ const DemanderSacrementPage = () => {
                     <img
                       src={sacrement.image}
                       alt={sacrement.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ${sacrement.imagePosition || ''}`}
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t ${sacrement.color} opacity-60`}></div>
                     <div className="absolute inset-0 flex items-center justify-center">
