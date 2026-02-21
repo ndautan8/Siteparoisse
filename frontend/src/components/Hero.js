@@ -1,19 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
 
 export const Hero = () => {
-  const [showJeVeuxMenu, setShowJeVeuxMenu] = useState(false);
-
-  const jeVeuxOptions = [
-    { label: 'Aller à la messe', path: '/horaires-messes' },
-    { label: 'Demander le baptême', path: '/demander-sacrement' },
-    { label: 'Recevoir la confirmation', path: '/demander-sacrement' },
-    { label: 'Faire ma première communion', path: '/demander-sacrement' },
-    { label: 'Rejoindre Alpha', path: '/alpha-catechumenat' },
-    { label: 'Rejoindre un petit groupe', path: '/groupes-partage' },
-    { label: 'Servir dans la paroisse', path: '/servants-vocations' },
-  ];
 
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center" data-testid="hero-section">
