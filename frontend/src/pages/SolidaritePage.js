@@ -147,7 +147,7 @@ const SolidaritePage = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-12 bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+        <div className="mt-12 bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center mb-16">
           <h2 className="font-serif text-2xl text-slate-deep mb-4">Rejoindre une équipe</h2>
           <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
             Vous souhaitez vous engager au service des autres ? Rejoignez une de nos équipes de bénévoles.
@@ -158,6 +158,14 @@ const SolidaritePage = () => {
           >
             Nous contacter
           </Link>
+        </div>
+
+        {/* Citation */}
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+          <blockquote className="font-serif text-2xl text-slate-deep italic mb-4">
+            "Tout ce que vous avez fait à l'un de ces plus petits, c'est à moi que vous l'avez fait."
+          </blockquote>
+          <p className="text-gold font-medium">Matthieu 25, 40</p>
         </div>
       </div>
     </div>
