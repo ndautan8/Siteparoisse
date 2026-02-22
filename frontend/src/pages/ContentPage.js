@@ -10,10 +10,11 @@ import {
 
 // Citations bibliques pour chaque section
 const biblicalQuotes = {
+  services: { quote: "Il y a diversité de services, mais c'est le même Seigneur.", reference: "1 Corinthiens 12, 5" },
   eveil: { quote: "Laissez les enfants venir à moi.", reference: "Marc 10, 14" },
   catechisme: { quote: "Je t'ai gravé sur les paumes de mes mains.", reference: "Isaïe 49, 16" },
   aumonerie: { quote: "Que personne ne méprise ta jeunesse, mais sois un modèle pour les fidèles.", reference: "1 Timothée 4, 12" },
-  mouvements: { quote: "Chantez au Seigneur un chant nouveau, car il a fait des merveilles.", reference: "Psaume 97, 1" },
+  mouvements: { quote: "Soyez toujours prêts à répondre à quiconque vous demande raison de l'espérance qui est en vous.", reference: "1 Pierre 3, 15" },
   servants: { quote: "Moi et ma maison, nous servirons le Seigneur.", reference: "Josué 24, 15" },
   liturgie: { quote: "Chantez au Seigneur un chant nouveau, car il a fait des merveilles.", reference: "Psaume 97, 1" },
   funerailles: { quote: "Je suis la résurrection et la vie. Celui qui croit en moi vivra.", reference: "Jean 11, 25" },
