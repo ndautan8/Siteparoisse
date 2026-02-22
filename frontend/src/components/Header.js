@@ -282,8 +282,17 @@ export const Header = () => {
               Horaires des messes
             </Link>
 
-            {/* Mobile: Phone + Donate + Horaires buttons */}
+            {/* Mobile: Search + Phone + Donate + Horaires buttons */}
             <div className="flex items-center gap-2 lg:hidden">
+              {/* Search button - mobile only */}
+              <button
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="p-2 bg-gold/10 hover:bg-gold/20 rounded-full transition-colors"
+                title="Rechercher"
+              >
+                <Search className="w-5 h-5 text-gold" />
+              </button>
+
               {/* Phone button - mobile only */}
               <Link
                 to="/secretariat"
