@@ -252,10 +252,10 @@ export const Header = () => {
               {/* Horaires button - mobile */}
               <Link
                 to="/horaires-messes"
-                className="bg-gold hover:bg-gold-dark text-white font-serif text-xs px-3 py-2 rounded-md shadow-md transition-colors whitespace-nowrap"
+                className="px-3 py-2 bg-gold hover:bg-gold-dark text-white rounded-full text-sm font-medium transition-colors whitespace-nowrap"
                 data-testid="mass-times-button-mobile"
               >
-                HORAIRES
+                Horaires
               </Link>
             </div>
 
