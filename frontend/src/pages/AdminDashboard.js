@@ -143,6 +143,47 @@ const AdminDashboard = () => {
     }
   };
 
+  // FUNERALS CRUD
+  const handleSubmitFuneral = async (e) => {
+    e.preventDefault();
+    try {
+      if (editingFuneral) {
+        await axios.put(`${BACKEND_URL}/api/funerals/${editingFuneral.id}`, funeralForm, { headers: getAuthHeaders() });
+        toast.success('Funérailles modifiées');
+        setEditingFuneral(null);
+      } else {
+        await axios.post(`${BACKEND_URL}/api/funerals`, funeralForm, { headers: getAuthHeaders() });
+        toast.success('Funérailles ajoutées');
+      }
+      setFuneralForm({ deceased_name: '', funeral_date: '', funeral_time: '', location: '', ceremony_type: 'Messe de funérailles' });
+      fetchData();
+    } catch (error) {
+      toast.error('Erreur lors de l\'enregistrement');
+    }
+  };
+
+  const handleEditFuneral = (funeral) => {
+    setEditingFuneral(funeral);
+    setFuneralForm({
+      deceased_name: funeral.deceased_name,
+      funeral_date: funeral.funeral_date,
+      funeral_time: funeral.funeral_time,
+      location: funeral.location,
+      ceremony_type: funeral.ceremony_type
+    });
+  };
+
+  const handleDeleteFuneral = async (id) => {
+    if (!window.confirm('Supprimer cette cérémonie ?')) return;
+    try {
+      await axios.delete(`${BACKEND_URL}/api/funerals/${id}`, { headers: getAuthHeaders() });
+      toast.success('Funérailles supprimées');
+      fetchData();
+    } catch (error) {
+      toast.error('Erreur lors de la suppression');
+    }
+  };
+
   const formatDate = (dateString) => {
     try {
       return format(new Date(dateString), 'dd/MM/yyyy à HH:mm', { locale: fr });
