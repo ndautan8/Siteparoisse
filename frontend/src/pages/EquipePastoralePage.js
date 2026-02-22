@@ -132,6 +132,16 @@ const EquipePastoralePage = () => {
           </Link>
         </div>
       </div>
+
+      {/* Citation biblique */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+          <blockquote className="font-serif text-2xl text-slate-deep italic mb-4">
+            "Comme le Père m'a envoyé, moi aussi, je vous envoie."
+          </blockquote>
+          <p className="text-gold font-medium">Jean 20, 21</p>
+        </div>
+      </div>
     </div>
   );
 };
