@@ -225,6 +225,16 @@ const JeSuisNouveauPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Citation biblique */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+          <blockquote className="font-serif text-2xl text-slate-deep italic mb-4">
+            "N'oubliez pas l'hospitalité : elle a permis à certains, sans le savoir, de recevoir chez eux des anges."
+          </blockquote>
+          <p className="text-gold font-medium">Hébreux 13, 2</p>
+        </div>
+      </div>
     </div>
   );
 };
