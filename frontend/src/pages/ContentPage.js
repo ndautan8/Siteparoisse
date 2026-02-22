@@ -338,6 +338,26 @@ const ContentPage = ({ section }) => {
         </section>
       )}
 
+      {/* Scroll to Agenda Button - Only for funerailles */}
+      {section === 'funerailles' && (
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8 relative z-20">
+          <div className="flex justify-center">
+            <button
+              onClick={() => {
+                const agendaSection = document.getElementById('funerals-agenda');
+                if (agendaSection) {
+                  agendaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <CalendarHeart className="w-5 h-5 mr-2" />
+              Voir l'agenda des cérémonies
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header - only if no hero image */}
         {!config.heroImage && (
