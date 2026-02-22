@@ -290,7 +290,7 @@ export const Header = () => {
             </div>
           </div>
         )}
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
