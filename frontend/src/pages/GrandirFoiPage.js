@@ -76,8 +76,9 @@ const GrandirFoiPage = () => {
 
         {/* Sections Grid - 4 colonnes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {sections.map((section) => {
+          {sections.map((section, index) => {
             const IconComponent = section.icon;
+            const isEven = index % 2 === 0;
             return (
               <Link
                 key={section.id}
@@ -85,7 +86,7 @@ const GrandirFoiPage = () => {
                 className="group"
                 data-testid={`section-card-${section.id}`}
               >
-                <article className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col hover:-translate-y-1">
+                <article className={`${isEven ? 'bg-white' : 'bg-gold/5'} rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border ${isEven ? 'border-slate-100' : 'border-gold/20'} flex flex-col hover:-translate-y-1`}>
                   {/* Icon */}
                   <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-4">
                     <IconComponent className="w-7 h-7 text-gold" strokeWidth={1.5} />
