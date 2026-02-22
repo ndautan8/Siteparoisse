@@ -201,6 +201,16 @@ const NosClochersPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Citation biblique */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+          <blockquote className="font-serif text-2xl text-slate-deep italic mb-4">
+            "Vous êtes le corps du Christ, et vous êtes ses membres, chacun pour sa part."
+          </blockquote>
+          <p className="text-gold font-medium">1 Corinthiens 12, 27</p>
+        </div>
+      </div>
     </div>
   );
 };
