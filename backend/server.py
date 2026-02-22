@@ -79,6 +79,30 @@ class MassTime(BaseModel):
     location: str
     mass_type: str
 
+class FuneralCreate(BaseModel):
+    deceased_name: str
+    funeral_date: str  # Format: "YYYY-MM-DD"
+    funeral_time: str  # Format: "HH:MM"
+    location: str
+    ceremony_type: Optional[str] = "Messe de funérailles"
+
+class FuneralUpdate(BaseModel):
+    deceased_name: Optional[str] = None
+    funeral_date: Optional[str] = None
+    funeral_time: Optional[str] = None
+    location: Optional[str] = None
+    ceremony_type: Optional[str] = None
+
+class Funeral(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str
+    deceased_name: str
+    funeral_date: str
+    funeral_time: str
+    location: str
+    ceremony_type: str
+    created_at: str
+
 # ============ AUTH HELPERS ============
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
