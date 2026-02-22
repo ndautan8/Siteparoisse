@@ -113,7 +113,7 @@ const NotreDameAutanPage = () => {
                 className="group"
                 data-testid={`section-card-${section.id}`}
               >
-                <article className={`${isEven ? 'bg-white' : 'bg-gold/5'} rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border ${isEven ? 'border-slate-100' : 'border-gold/20'} flex flex-col hover:-translate-y-1`}>
+                <article className={`${isEven ? 'bg-white' : 'bg-gold/5'} rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border ${isEven ? 'border-slate-100' : 'border-gold/20'} flex flex-col hover:-translate-y-1 ${index === 4 ? 'lg:col-start-2' : ''}`}>
                   {/* Icon */}
                   <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-4">
                     <IconComponent className="w-7 h-7 text-gold" strokeWidth={1.5} />
