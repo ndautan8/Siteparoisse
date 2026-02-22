@@ -274,7 +274,7 @@ const ContentPage = ({ section }) => {
     <div className="min-h-screen bg-paper" data-testid={`content-page-${section}`}>
       {/* Hero Section - if heroImage exists */}
       {config.heroImage && (
-        <section className="relative h-[50vh] flex items-center justify-center">
+        <section className="relative h-[55vh] flex items-center justify-center">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
