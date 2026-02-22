@@ -232,6 +232,16 @@ const AdminDashboard = () => {
             <Clock className="w-5 h-5" />
             <span>Horaires des messes</span>
           </button>
+          <button
+            onClick={() => setActiveTab('funerals')}
+            className={`pb-4 px-4 font-medium transition-colors flex items-center space-x-2 ${
+              activeTab === 'funerals' ? 'text-gold border-b-2 border-gold' : 'text-slate-600 hover:text-slate-900'
+            }`}
+            data-testid="tab-funerals"
+          >
+            <Cross className="w-5 h-5" />
+            <span>Funérailles</span>
+          </button>
         </div>
 
         {/* NEWS TAB */}
