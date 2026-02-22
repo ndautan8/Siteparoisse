@@ -26,7 +26,7 @@ const HorairesMesses = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="mass-times-page">
       {/* Hero Section with Image */}
-      <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+      <div className="relative h-[55vh] overflow-hidden flex items-center justify-center">
         {/* Background Image */}
         <img
           src="https://customer-assets.emergentagent.com/job_5166d458-aa97-495f-97c0-2fdcfaf2d885/artifacts/dzqa5mxr_Horaires-messes.png"
