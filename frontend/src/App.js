@@ -59,7 +59,7 @@ function App() {
                       {/* Pillar 1: Notre Dame d'Autan - Sub-pages */}
                       <Route path="/equipe-pastorale" element={<EquipePastoralePage />} />
                       <Route path="/equipe-pastorale/:memberId" element={<ContentPage section="equipe-detail" />} />
-                      <Route path="/vie-economique" element={<ContentPage section="economique" />} />
+                      <Route path="/vie-economique" element={<VieEconomiquePage />} />
                       <Route path="/nos-clochers" element={<NosClochersPage />} />
                       <Route path="/nos-clochers/:clocherId" element={<ContentPage section="clocher-detail" />} />
                       <Route path="/services-transverses" element={<ContentPage section="services" />} />
