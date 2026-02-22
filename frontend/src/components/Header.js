@@ -219,24 +219,38 @@ export const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button + Mobile Menu */}
+          {/* CTA Button Desktop + Mobile action buttons */}
           <div className="flex items-center space-x-2 sm:space-x-4">
+            {/* Desktop: HORAIRES DES MESSES button */}
             <Link
               to="/horaires-messes"
-              className="hidden sm:block bg-gold hover:bg-gold-dark text-white font-serif tracking-wide px-6 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              className="hidden lg:block bg-gold hover:bg-gold-dark text-white font-serif tracking-wide px-6 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               data-testid="mass-times-button"
             >
               HORAIRES DES MESSES
             </Link>
 
-            {/* Mobile CTA - Shorter text */}
-            <Link
-              to="/horaires-messes"
-              className="sm:hidden bg-gold hover:bg-gold-dark text-white font-serif text-sm px-4 py-2 rounded-md shadow-md"
-              data-testid="mass-times-button-mobile"
-            >
-              HORAIRES
-            </Link>
+            {/* Mobile: Phone + Donate buttons */}
+            <div className="flex items-center gap-2 lg:hidden">
+              {/* Phone button - mobile only */}
+              <Link
+                to="/secretariat"
+                className="p-2 bg-gold/10 hover:bg-gold/20 rounded-full transition-colors"
+                title="Nous contacter"
+              >
+                <Phone className="w-5 h-5 text-gold" />
+              </Link>
+              
+              {/* Donate button - mobile only */}
+              <Link
+                to="/vie-economique"
+                className="px-3 py-2 bg-gold hover:bg-gold-dark text-white rounded-full text-sm font-medium transition-colors"
+              >
+                Faire un don
+              </Link>
+            </div>
+
+            {/* Mobile Menu Toggle */}
 
             <button
               className="lg:hidden text-slate-700 hover:text-gold p-2"
