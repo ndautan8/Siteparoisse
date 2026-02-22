@@ -40,8 +40,7 @@ function App() {
               element={
                 <>
                   <Header />
-                  <FloatingDonateButton />
-                  <FloatingContactButton />
+                  <FloatingButtons />
                   <main className="flex-grow">
                     <Routes>
                       <Route path="/" element={<HomePage />} />
