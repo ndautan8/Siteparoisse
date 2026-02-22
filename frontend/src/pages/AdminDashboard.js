@@ -44,12 +44,14 @@ const AdminDashboard = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const [newsRes, massRes] = await Promise.all([
+      const [newsRes, massRes, funeralsRes] = await Promise.all([
         axios.get(`${BACKEND_URL}/api/news`),
         axios.get(`${BACKEND_URL}/api/mass-times`),
+        axios.get(`${BACKEND_URL}/api/funerals`),
       ]);
       setNews(newsRes.data);
       setMassTimes(massRes.data);
+      setFunerals(funeralsRes.data);
     } catch (error) {
       toast.error('Erreur lors du chargement des données');
     } finally {
