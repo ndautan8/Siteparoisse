@@ -240,7 +240,8 @@ export const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div 
-            className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-white border-t border-slate-100 overflow-y-auto z-50" 
+            className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-white border-t border-slate-100 overflow-y-auto" 
+            style={{ zIndex: 9999 }}
             data-testid="mobile-menu"
           >
             <div className="py-4 px-4">
