@@ -358,7 +358,7 @@ const ContentPage = ({ section }) => {
         </div>
       )}
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ${section === 'funerailles' ? 'py-8' : 'py-16'}`}>
         {/* Header - only if no hero image */}
         {!config.heroImage && (
           <div className="text-center mb-14">
