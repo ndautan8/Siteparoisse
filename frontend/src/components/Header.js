@@ -243,7 +243,7 @@ export const Header = () => {
             className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-white border-t border-slate-100 overflow-y-auto z-50" 
             data-testid="mobile-menu"
           >
-            <div className="py-4 px-4"
+            <div className="py-4 px-4">
             {/* Je veux... menu on mobile */}
             <div className="mb-4">
               <div className="font-medium text-gold mb-2">Je veux...</div>
