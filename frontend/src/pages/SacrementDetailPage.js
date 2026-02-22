@@ -265,7 +265,7 @@ const SacrementDetailPage = () => {
         </div>
 
         {/* Contact */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center">
+        <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center mb-16">
           <h2 className="font-serif text-2xl text-slate-deep mb-4">Faire une demande</h2>
           <p className="text-slate-600 mb-6">
             Pour toute demande concernant ce sacrement, contactez le secrétariat paroissial.
@@ -280,6 +280,16 @@ const SacrementDetailPage = () => {
             </Link>
           </div>
         </div>
+
+        {/* Citation biblique */}
+        {biblicalQuotes[sacrementId] && (
+          <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+            <blockquote className="font-serif text-2xl text-slate-deep italic mb-4">
+              "{biblicalQuotes[sacrementId].quote}"
+            </blockquote>
+            <p className="text-gold font-medium">{biblicalQuotes[sacrementId].reference}</p>
+          </div>
+        )}
       </div>
     </div>
   );
