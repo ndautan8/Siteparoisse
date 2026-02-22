@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center" data-testid="hero-section">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0">
         <img
           src="https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg"
           alt="Église Notre Dame d'Autan"
