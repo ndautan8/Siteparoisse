@@ -230,7 +230,7 @@ export const Header = () => {
               HORAIRES DES MESSES
             </Link>
 
-            {/* Mobile: Phone + Donate buttons */}
+            {/* Mobile: Phone + Donate + Horaires buttons */}
             <div className="flex items-center gap-2 lg:hidden">
               {/* Phone button - mobile only */}
               <Link
@@ -247,6 +247,15 @@ export const Header = () => {
                 className="px-3 py-2 bg-gold hover:bg-gold-dark text-white rounded-full text-sm font-medium transition-colors"
               >
                 Faire un don
+              </Link>
+
+              {/* Horaires button - mobile */}
+              <Link
+                to="/horaires-messes"
+                className="bg-gold hover:bg-gold-dark text-white font-serif text-xs px-3 py-2 rounded-md shadow-md transition-colors whitespace-nowrap"
+                data-testid="mass-times-button-mobile"
+              >
+                HORAIRES
               </Link>
             </div>
 
