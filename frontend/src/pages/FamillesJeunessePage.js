@@ -123,7 +123,7 @@ const FamillesJeunessePage = () => {
         </div>
 
         {/* Contact */}
-        <div className="mt-16 bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+        <div className="mt-16 bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center mb-16">
           <h2 className="font-serif text-2xl text-slate-deep mb-4">Inscriptions</h2>
           <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
             Les inscriptions au catéchisme et à l'aumônerie ont lieu en septembre. 
@@ -135,6 +135,14 @@ const FamillesJeunessePage = () => {
           >
             Contacter le secrétariat
           </Link>
+        </div>
+
+        {/* Citation */}
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+          <blockquote className="font-serif text-2xl text-slate-deep italic mb-4">
+            "Laissez les enfants venir à moi, ne les empêchez pas."
+          </blockquote>
+          <p className="text-gold font-medium">Marc 10, 14</p>
         </div>
       </div>
     </div>
