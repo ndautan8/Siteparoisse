@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Edit2, Trash2, LogOut, Newspaper, Clock } from 'lucide-react';
+import { Plus, Edit2, Trash2, LogOut, Newspaper, Clock, Cross } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
 import { format } from 'date-fns';
@@ -12,6 +12,7 @@ const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('news');
   const [news, setNews] = useState([]);
   const [massTimes, setMassTimes] = useState([]);
+  const [funerals, setFunerals] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -22,6 +23,10 @@ const AdminDashboard = () => {
   // Mass Times Form State
   const [massForm, setMassForm] = useState({ day: '', time: '', location: '', mass_type: 'Messe' });
   const [editingMass, setEditingMass] = useState(null);
+
+  // Funerals Form State
+  const [funeralForm, setFuneralForm] = useState({ deceased_name: '', funeral_date: '', funeral_time: '', location: '', ceremony_type: 'Messe de funérailles' });
+  const [editingFuneral, setEditingFuneral] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem('admin_token');
