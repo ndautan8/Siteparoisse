@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { 
   Users, Heart, BookOpen, Church, GraduationCap, Baby, Cross, MessagesSquare, 
   Flower2, HandHeart, Stethoscope, Building2, Sparkles, Music, Coffee, 
@@ -9,6 +10,7 @@ import {
 } from 'lucide-react';
 import FuneralsAgenda from '@/components/FuneralsAgenda';
 import { SocialIcons } from '@/components/SocialIcons';
+import ResourceModal from '@/components/ResourceModal';
 
 // Citations bibliques pour chaque section
 const biblicalQuotes = {
