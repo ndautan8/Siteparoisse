@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Heart, Users, HandHeart, Sparkles, Church, Calendar } from 'lucide-react';
+import { SocialIcons } from '@/components/SocialIcons';
 
 const sections = [
   {
