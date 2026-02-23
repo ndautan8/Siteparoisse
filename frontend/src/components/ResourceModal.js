@@ -170,6 +170,18 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
                 <p className="text-slate-600 leading-relaxed">{groupeContent.spiritualite}</p>
               )}
 
+              {/* Points (liste à puces) */}
+              {groupeContent.points && groupeContent.points.length > 0 && (
+                <ul className="space-y-2 pl-2">
+                  {groupeContent.points.map((point, idx) => (
+                    <li key={idx} className="text-slate-600 flex items-start">
+                      <span className="text-gold mr-2 mt-1 flex-shrink-0">✦</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
               {/* Principe */}
               {groupeContent.principe && (
                 <p className="text-slate-600 leading-relaxed">{groupeContent.principe}</p>
@@ -182,12 +194,46 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
                 </div>
               )}
 
-              {/* Citation */}
+              {/* Paragraphes supplémentaires */}
+              {groupeContent.paragraphes && groupeContent.paragraphes.map((para, idx) => (
+                <p key={idx} className="text-slate-600 leading-relaxed">{para}</p>
+              ))}
+
+              {/* Invitation */}
+              {groupeContent.invitation && (
+                <div className="bg-slate-50 rounded-xl p-5 border-l-4 border-gold">
+                  <p className="text-slate-600 italic">{groupeContent.invitation}</p>
+                </div>
+              )}
+
+              {/* Contact email */}
+              {groupeContent.contact && (
+                <div className="bg-slate-50 rounded-xl p-4 flex items-center space-x-3">
+                  <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-4 h-4 text-gold" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-slate-deep mb-0.5">Contact</p>
+                    <a href={`mailto:${groupeContent.contact}`} className="text-gold hover:text-gold-dark font-medium transition-colors">
+                      {groupeContent.contact}
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Citation unique */}
               {groupeContent.citation && (
                 <blockquote className="border-l-4 border-gold pl-4 py-2 italic text-slate-600 bg-gold/5 rounded-r-lg">
                   {groupeContent.citation}
                 </blockquote>
               )}
+
+              {/* Citations multiples */}
+              {groupeContent.citations && groupeContent.citations.map((cit, idx) => (
+                <blockquote key={idx} className="border-l-4 border-gold pl-4 py-2 italic text-slate-600 bg-gold/5 rounded-r-lg">
+                  {cit}
+                </blockquote>
+              ))}
 
               {/* Explication */}
               {groupeContent.explication && (
