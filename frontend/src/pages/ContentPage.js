@@ -190,9 +190,42 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
     icon: MessagesSquare,
     heroImage: 'https://customer-assets.emergentagent.com/job_5e9a982a-920d-4533-b39d-5b30481bb0da/artifacts/epf9qipp_Alpha-catechumenat.png',
     items: [
-      { title: 'Parcours Alpha', description: 'Repas, vidéo, échanges conviviaux', icon: MessageCircle },
-      { title: 'Catéchuménat', description: 'Pour adultes souhaitant le baptême', icon: Cross },
-      { title: 'Recommençants', description: 'Renouer avec la foi', icon: Heart },
+      { 
+        title: 'Parcours Alpha', 
+        description: 'Repas, vidéo, échanges conviviaux', 
+        icon: MessageCircle,
+        modalTitle: 'Le Parcours Alpha',
+        modalDescription: 'Le Parcours Alpha est une série de rencontres conviviales pour explorer les bases de la foi chrétienne. Chaque soirée commence par un repas partagé, suivi d\'une courte vidéo abordant une question fondamentale : Qui est Jésus ? Pourquoi prier ? Comment lire la Bible ?',
+        alphaContent: {
+          format: 'Après la vidéo, place aux échanges en petits groupes dans un climat de confiance et de respect. Aucune question n\'est taboue, aucune réponse n\'est imposée. C\'est un espace libre pour chercher, douter, questionner.',
+          pour_qui: 'Alpha s\'adresse à tous : curieux, en recherche spirituelle, ou simplement désireux de rencontrer d\'autres personnes. Un week-end permet d\'approfondir la découverte de l\'Esprit Saint.',
+          contact: 'Les prochaines sessions démarrent en janvier et septembre. Contactez le secrétariat pour vous inscrire.'
+        }
+      },
+      { 
+        title: 'Catéchuménat', 
+        description: 'Pour adultes souhaitant le baptême', 
+        icon: Cross,
+        modalTitle: 'Le Catéchuménat des Adultes',
+        modalDescription: 'Le catéchuménat accompagne les adultes qui désirent recevoir le baptême, la confirmation ou l\'eucharistie. C\'est un cheminement personnel et communautaire qui s\'étend généralement sur deux années, au rythme de chacun.',
+        alphaContent: {
+          format: 'Le parcours comprend des temps de formation sur la foi chrétienne, des rencontres régulières avec un accompagnateur, et une participation progressive à la vie de la communauté paroissiale. Les grandes étapes sont célébrées lors des messes dominicales.',
+          pour_qui: 'Vous n\'avez jamais été baptisé ? Vous souhaitez confirmer votre foi d\'adulte ? Le catéchuménat vous accueille avec joie, quels que soient votre âge et votre histoire. Les sacrements sont généralement célébrés lors de la Vigile Pascale.',
+          contact: 'Prenez contact avec le secrétariat ou le Père curé pour un premier entretien sans engagement.'
+        }
+      },
+      { 
+        title: 'Recommençants', 
+        description: 'Renouer avec la foi', 
+        icon: Heart,
+        modalTitle: 'Les Recommençants',
+        modalDescription: 'Vous avez été baptisé enfant mais vous vous êtes éloigné de l\'Église ? La vie vous a conduit sur d\'autres chemins et aujourd\'hui vous ressentez l\'appel de revenir ? Le groupe des Recommençants est fait pour vous.',
+        alphaContent: {
+          format: 'Dans un climat fraternel et sans jugement, nous proposons des rencontres régulières pour redécouvrir les fondements de la foi, échanger sur vos questions et vos doutes, et retrouver le chemin de la prière et des sacrements.',
+          pour_qui: 'Ce parcours s\'adresse aux adultes baptisés qui souhaitent renouer avec leur foi, qu\'ils aient reçu ou non leur première communion et leur confirmation. C\'est aussi l\'occasion de préparer ces sacrements si vous ne les avez pas encore reçus.',
+          contact: 'Chaque parcours est personnalisé selon votre histoire. N\'hésitez pas à contacter le secrétariat pour en parler.'
+        }
+      },
     ]
   },
   groupes: {
