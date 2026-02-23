@@ -491,185 +491,255 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
           {/* Entraide Content (for solidarity items) */}
           {entraideContent && (
             <div className="space-y-6">
-              {/* Intro text */}
+
+              {/* Intro text — callout stylisé */}
               {entraideContent.intro && (
-                <p className="text-slate-600 leading-relaxed">{entraideContent.intro}</p>
+                <div className="relative pl-5 border-l-[3px] border-gold/60">
+                  <p className="text-slate-600 leading-relaxed text-[15px]">{entraideContent.intro}</p>
+                </div>
               )}
 
-              {/* Mission */}
+              {/* Mission — encadré chaleureux */}
               {entraideContent.mission && (
-                <p className="text-slate-600 leading-relaxed">{entraideContent.mission}</p>
-              )}
-
-              {/* Temoignage simple */}
-              {entraideContent.temoignage && !entraideContent.projet && (
-                <blockquote className="border-l-4 border-gold pl-4 py-2 italic text-slate-600 bg-gold/5 rounded-r-lg">
-                  {entraideContent.temoignage}
-                </blockquote>
+                <div className="rounded-2xl bg-gradient-to-br from-[#fdf6f5] to-[#f9f1ef] border border-gold/25 p-5 flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center mt-0.5">
+                    <HandHeart className="w-5 h-5 text-gold" />
+                  </div>
+                  <p className="text-slate-700 leading-relaxed font-medium">{entraideContent.mission}</p>
+                </div>
               )}
 
               {/* Actions */}
               {entraideContent.actions && (
-                <p className="text-slate-600 leading-relaxed">{entraideContent.actions}</p>
+                <div className="rounded-2xl bg-slate-50 border border-slate-100 p-5">
+                  <div className="flex items-center space-x-2 mb-3">
+                    <Star className="w-4 h-4 text-gold" />
+                    <h4 className="font-semibold text-slate-deep text-sm uppercase tracking-wide">Nos actions</h4>
+                  </div>
+                  <p className="text-slate-600 leading-relaxed text-[15px]">{entraideContent.actions}</p>
+                </div>
               )}
 
-              {/* Aide */}
+              {/* Aide matérielle */}
               {entraideContent.aide && (
-                <div className="bg-slate-50 rounded-xl p-4">
-                  <div className="flex items-start space-x-3">
-                    <Heart className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-slate-600">{entraideContent.aide}</p>
+                <div className="rounded-2xl bg-gradient-to-br from-[#fdf6f5] to-[#f9f1ef] border border-gold/25 p-5">
+                  <div className="flex items-center space-x-2 mb-3">
+                    <Heart className="w-4 h-4 text-gold" />
+                    <h4 className="font-semibold text-slate-deep text-sm uppercase tracking-wide">Aide matérielle</h4>
                   </div>
+                  <p className="text-slate-600 leading-relaxed text-[15px]">{entraideContent.aide}</p>
                 </div>
               )}
 
               {/* Revue */}
               {entraideContent.revue && (
-                <p className="text-sm text-slate-600">{entraideContent.revue}</p>
+                <div className="flex items-start space-x-3 bg-slate-50 rounded-xl p-4">
+                  <BookOpen className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
+                  <p className="text-slate-500 text-sm italic leading-relaxed">{entraideContent.revue}</p>
+                </div>
+              )}
+
+              {/* Témoignage simple (sans projet) */}
+              {entraideContent.temoignage && !entraideContent.projet && (
+                <div className="relative rounded-2xl bg-gradient-to-br from-[#fdf6f5] to-[#f9f1ef] border border-gold/20 p-6 overflow-hidden">
+                  <div className="absolute top-3 left-4 text-gold/20 font-serif text-7xl leading-none select-none">"</div>
+                  <p className="relative z-10 text-slate-700 italic leading-relaxed text-[15px] pl-4">{entraideContent.temoignage}</p>
+                </div>
               )}
 
               {/* Teams (Secours Catholique) */}
               {entraideContent.teams && entraideContent.teams.length > 0 && (
                 <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-4 h-4 text-gold" />
+                    <h4 className="font-semibold text-slate-deep text-sm uppercase tracking-wide">Nos équipes locales</h4>
+                  </div>
                   {entraideContent.teams.map((team, index) => (
-                    <div key={index} className="bg-slate-50 rounded-xl p-4">
-                      <h4 className="font-semibold text-slate-deep mb-2 flex items-center">
-                        <Users className="w-4 h-4 mr-2 text-gold" />
-                        {team.name}
-                      </h4>
-                      <p className="text-sm text-slate-600 mb-3">{team.description}</p>
-                      {team.phone && (
-                        <p className="text-sm text-slate-600 flex items-center">
-                          <Phone className="w-4 h-4 mr-2 text-gold" />
-                          {team.phone}
-                        </p>
-                      )}
-                      {team.responsables && (
-                        <p className="text-sm text-slate-500 mt-1">Responsables : {team.responsables}</p>
-                      )}
+                    <div key={index} className="rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+                      {/* En-tête de l'équipe */}
+                      <div className="bg-gradient-to-r from-slate-700 to-slate-600 px-5 py-3 flex items-center space-x-3">
+                        <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center">
+                          <Users className="w-4 h-4 text-white" />
+                        </div>
+                        <h5 className="font-semibold text-white text-sm">{team.name}</h5>
+                      </div>
+                      {/* Corps de la carte */}
+                      <div className="bg-white p-5 space-y-3">
+                        <p className="text-slate-600 text-sm leading-relaxed">{team.description}</p>
+                        <div className="flex flex-wrap gap-3 pt-1">
+                          {team.phone && (
+                            <a href={`tel:${team.phone}`} className="inline-flex items-center space-x-1.5 bg-gold/10 hover:bg-gold/20 text-gold font-medium text-sm px-3 py-1.5 rounded-full transition-colors">
+                              <Phone className="w-3.5 h-3.5" />
+                              <span>{team.phone}</span>
+                            </a>
+                          )}
+                          {team.responsables && (
+                            <span className="inline-flex items-center space-x-1.5 bg-slate-100 text-slate-500 text-xs px-3 py-1.5 rounded-full">
+                              <span>✦ {team.responsables}</span>
+                            </span>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
               )}
 
-              {/* Delegation */}
+              {/* Délégation */}
               {entraideContent.delegation && (
-                <div className="bg-gold/5 rounded-xl p-4 border border-gold/20">
-                  <h4 className="font-semibold text-slate-deep mb-2">{entraideContent.delegation.name}</h4>
-                  <p className="text-sm text-slate-600 flex items-center mb-1">
-                    <MapPin className="w-4 h-4 mr-2 text-gold" />
-                    {entraideContent.delegation.address}
-                  </p>
-                  <p className="text-sm text-slate-600 flex items-center">
-                    <Phone className="w-4 h-4 mr-2 text-gold" />
-                    {entraideContent.delegation.phone}
-                  </p>
+                <div className="rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 p-5 text-white">
+                  <div className="flex items-center space-x-2 mb-4">
+                    <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center">
+                      <Info className="w-4 h-4 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-white text-sm">{entraideContent.delegation.name}</h4>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start space-x-2 text-slate-300">
+                      <MapPin className="w-4 h-4 text-gold/80 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">{entraideContent.delegation.address}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Phone className="w-4 h-4 text-gold/80 flex-shrink-0" />
+                      <a href={`tel:${entraideContent.delegation.phone}`} className="text-sm text-white/90 hover:text-white font-medium transition-colors">
+                        {entraideContent.delegation.phone}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               )}
 
-              {/* Lieu et Permanences (Café Amitié) */}
-              {entraideContent.lieu && (
-                <div className="bg-slate-50 rounded-xl p-4">
-                  <h4 className="font-semibold text-slate-deep mb-2 flex items-center">
-                    <MapPin className="w-4 h-4 mr-2 text-gold" />
-                    Lieu
-                  </h4>
-                  <p className="text-sm text-slate-600">{entraideContent.lieu}</p>
-                </div>
-              )}
-
-              {entraideContent.permanences && (
-                <div className="bg-slate-50 rounded-xl p-4">
-                  <h4 className="font-semibold text-slate-deep mb-2 flex items-center">
-                    <Calendar className="w-4 h-4 mr-2 text-gold" />
-                    Permanences
-                  </h4>
-                  <ul className="text-sm text-slate-600 space-y-1">
-                    {entraideContent.permanences.map((perm, idx) => (
-                      <li key={idx}>• {perm}</li>
-                    ))}
-                  </ul>
+              {/* Lieu + Permanences (Café Amitié) — carte combinée */}
+              {(entraideContent.lieu || entraideContent.permanences) && (
+                <div className="rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+                  {entraideContent.lieu && (
+                    <div className="bg-gradient-to-r from-slate-700 to-slate-600 px-5 py-3">
+                      <div className="flex items-center space-x-2">
+                        <MapPin className="w-4 h-4 text-gold/80" />
+                        <span className="text-white font-medium text-sm">{entraideContent.lieu}</span>
+                      </div>
+                    </div>
+                  )}
+                  {entraideContent.permanences && (
+                    <div className="bg-white px-5 py-4">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <Calendar className="w-4 h-4 text-gold" />
+                        <h4 className="font-semibold text-slate-deep text-sm uppercase tracking-wide">Permanences</h4>
+                      </div>
+                      <ul className="space-y-2">
+                        {entraideContent.permanences.map((perm, idx) => (
+                          <li key={idx} className="flex items-center space-x-2 text-slate-600 text-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
+                            <span>{perm}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               )}
 
               {/* Projet (Bartimée) */}
               {entraideContent.projet && (
                 <div className="space-y-4">
-                  <h3 className="font-serif text-lg text-slate-deep">{entraideContent.projet.title}</h3>
-                  <p className="text-slate-600">{entraideContent.projet.description}</p>
+                  <div className="rounded-2xl bg-gradient-to-br from-[#fdf6f5] to-[#f9f1ef] border border-gold/25 p-5">
+                    <h3 className="font-serif text-lg text-slate-deep mb-2">{entraideContent.projet.title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-[15px]">{entraideContent.projet.description}</p>
+                  </div>
                   {entraideContent.projet.objectifs && (
-                    <ul className="space-y-2">
+                    <div className="grid grid-cols-1 gap-2">
                       {entraideContent.projet.objectifs.map((obj, idx) => (
-                        <li key={idx} className="flex items-start text-sm text-slate-600">
-                          <span className="text-gold mr-2">•</span>
-                          {obj}
-                        </li>
+                        <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-3 border border-slate-100 shadow-sm">
+                          <CheckCircle2 className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
+                          <span className="text-slate-600 text-sm leading-relaxed">{obj}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   )}
                 </div>
               )}
 
               {/* Témoignage avec projet */}
               {entraideContent.temoignage && entraideContent.projet && (
-                <blockquote className="border-l-4 border-gold pl-4 py-2 italic text-slate-600 bg-gold/5 rounded-r-lg">
-                  {entraideContent.temoignage}
-                </blockquote>
+                <div className="relative rounded-2xl bg-gradient-to-br from-[#fdf6f5] to-[#f9f1ef] border border-gold/20 p-6 overflow-hidden">
+                  <div className="absolute top-3 left-4 text-gold/20 font-serif text-7xl leading-none select-none">"</div>
+                  <p className="relative z-10 text-slate-700 italic leading-relaxed text-[15px] pl-4">{entraideContent.temoignage}</p>
+                </div>
               )}
 
               {/* Comment (Bartimée) */}
               {entraideContent.comment && (
-                <div className="space-y-4">
-                  <h3 className="font-serif text-lg text-slate-deep">{entraideContent.comment.title}</h3>
-                  <div className="space-y-3">
-                    {entraideContent.comment.activites.map((act, idx) => (
-                      <div key={idx} className="bg-slate-50 rounded-xl p-4">
-                        <h4 className="font-semibold text-slate-deep mb-1">{act.nom}</h4>
-                        <p className="text-sm text-slate-600">{act.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Contacts (multiple) */}
-              {entraideContent.contacts && entraideContent.contacts.length > 0 && (
                 <div className="space-y-3">
-                  <h3 className="font-serif text-lg text-slate-deep">Contacts</h3>
-                  {entraideContent.contacts.map((contact, idx) => (
-                    <div key={idx} className="bg-slate-50 rounded-xl p-4 flex items-start space-x-3">
-                      <Phone className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="font-semibold text-slate-deep">{contact.nom} : {contact.phone}</p>
-                        <p className="text-sm text-slate-600">{contact.description}</p>
+                  <div className="flex items-center space-x-2">
+                    <Star className="w-4 h-4 text-gold" />
+                    <h3 className="font-semibold text-slate-deep text-sm uppercase tracking-wide">{entraideContent.comment.title}</h3>
+                  </div>
+                  {entraideContent.comment.activites.map((act, idx) => (
+                    <div key={idx} className="rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+                      <div className="bg-gradient-to-r from-gold/20 to-gold/10 px-5 py-2.5">
+                        <h4 className="font-semibold text-slate-deep text-sm">{act.nom}</h4>
+                      </div>
+                      <div className="bg-white px-5 py-3">
+                        <p className="text-slate-600 text-sm leading-relaxed">{act.description}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               )}
 
-              {/* Single contact */}
-              {entraideContent.contact && !entraideContent.contacts && (
-                <div className="bg-slate-50 rounded-xl p-4 flex items-start space-x-3">
-                  <Phone className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
-                  <p className="text-slate-600">{entraideContent.contact}</p>
+              {/* Contacts multiples */}
+              {entraideContent.contacts && entraideContent.contacts.length > 0 && (
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <Phone className="w-4 h-4 text-gold" />
+                    <h3 className="font-semibold text-slate-deep text-sm uppercase tracking-wide">Contacts</h3>
+                  </div>
+                  <div className="grid grid-cols-1 gap-3">
+                    {entraideContent.contacts.map((contact, idx) => (
+                      <div key={idx} className="rounded-2xl bg-white border border-slate-100 shadow-sm p-4 flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center font-bold text-gold text-sm">
+                          {contact.nom.charAt(0)}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-semibold text-slate-deep text-sm">{contact.nom}</p>
+                          <a href={`tel:${contact.phone}`} className="text-gold hover:text-gold-dark font-medium text-sm transition-colors">{contact.phone}</a>
+                          <p className="text-slate-500 text-xs mt-1 leading-relaxed">{contact.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
 
-              {/* Citation évêque */}
-              {entraideContent.citationEveque && (
-                <blockquote className="border-l-4 border-gold pl-4 py-3 text-sm italic text-slate-600 bg-gold/5 rounded-r-lg">
-                  {entraideContent.citationEveque}
-                </blockquote>
+              {/* Contact simple */}
+              {entraideContent.contact && !entraideContent.contacts && (
+                <div className="rounded-2xl bg-white border border-slate-100 shadow-sm p-4 flex items-center space-x-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-gold" />
+                  </div>
+                  <p className="text-slate-700 text-sm font-medium leading-relaxed">{entraideContent.contact}</p>
+                </div>
               )}
 
-              {/* URL */}
+              {/* Citation évêque — bloc distinctif */}
+              {entraideContent.citationEveque && (
+                <div className="rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 p-6 text-white relative overflow-hidden">
+                  <div className="absolute top-4 right-5 text-white/10 font-serif text-8xl leading-none select-none">"</div>
+                  <div className="flex items-start space-x-3 mb-4">
+                    <Church className="w-5 h-5 text-gold/80 flex-shrink-0 mt-0.5" />
+                    <span className="text-gold/80 text-xs uppercase tracking-widest font-semibold">Parole de l'Archevêque</span>
+                  </div>
+                  <p className="text-slate-200 text-sm italic leading-relaxed relative z-10">{entraideContent.citationEveque}</p>
+                </div>
+              )}
+
+              {/* Bouton URL */}
               {entraideContent.url && (
                 <a
                   href={entraideContent.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-6 py-3 rounded-full font-medium transition-colors shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center bg-gradient-to-r from-gold to-gold/80 hover:from-gold/90 hover:to-gold/70 text-white px-6 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
                   <ExternalLink className="w-5 h-5 mr-2" />
                   En savoir plus
