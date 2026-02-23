@@ -325,14 +325,17 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
         title: 'Podcasts', 
         description: 'Émissions spirituelles', 
         icon: Radio,
+        modalTitle: 'Podcasts Spirituels',
         modalDescription: 'Écoutez des podcasts spirituels pour nourrir votre foi au quotidien.',
-        items: [
+        podcasts: [
           {
-            name: 'Podcast spirituel 1',
+            name: 'La Bible en un an',
+            description: 'Le Frère Paul Adrien vous fait découvrir la Bible chaque jour.',
             url: 'https://open.spotify.com/show/0y98FVWtmiUFDw5eOMw5hI?si=fff43db9eff94ab4'
           },
           {
-            name: 'Podcast spirituel 2',
+            name: 'PadreBlog',
+            description: '3 prêtres pour vous aider à trouver la vraie vie.',
             url: 'https://open.spotify.com/show/5HOEUv0F3rc4ONsOsQ0N51?si=87c3a253304a4ef1'
           }
         ]
