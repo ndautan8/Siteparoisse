@@ -239,8 +239,7 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
         title: 'Fraternités', 
         description: 'Partage de la Parole et de la vie', 
         icon: Users,
-        linkTo: '/entraide',
-        scrollToContent: true
+        linkTo: '/entraide#content'
       },
       { 
         title: 'Prière des Mères', 
