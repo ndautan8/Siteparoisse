@@ -1,4 +1,4 @@
-import { X, ExternalLink, Clock, Tv, Film, Award, Headphones } from 'lucide-react';
+import { X, ExternalLink, Clock, Tv, Film, Award, Headphones, Phone, MapPin, Users, Calendar, Heart } from 'lucide-react';
 import { useEffect } from 'react';
 
 const ResourceModal = ({ isOpen, onClose, resource }) => {
@@ -24,6 +24,9 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
       default: return Film;
     }
   };
+
+  // Check if this is an entraide content
+  const entraideContent = resource.entraideContent;
 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/30" onClick={onClose}>
