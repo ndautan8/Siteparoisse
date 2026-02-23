@@ -153,6 +153,124 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
             </div>
           )}
 
+          {/* Groupe Content (for groupes de partage/prière) */}
+          {groupeContent && (
+            <div className="space-y-5">
+              {/* Description */}
+              {groupeContent.description && (
+                <p className="text-slate-600 leading-relaxed">{groupeContent.description}</p>
+              )}
+
+              {/* Spiritualité */}
+              {groupeContent.spiritualite && (
+                <p className="text-slate-600 leading-relaxed">{groupeContent.spiritualite}</p>
+              )}
+
+              {/* Principe */}
+              {groupeContent.principe && (
+                <p className="text-slate-600 leading-relaxed">{groupeContent.principe}</p>
+              )}
+
+              {/* Mission */}
+              {groupeContent.mission && (
+                <div className="bg-gold/5 rounded-xl p-5 border border-gold/20">
+                  <p className="text-slate-deep font-medium">{groupeContent.mission}</p>
+                </div>
+              )}
+
+              {/* Citation */}
+              {groupeContent.citation && (
+                <blockquote className="border-l-4 border-gold pl-4 py-2 italic text-slate-600 bg-gold/5 rounded-r-lg">
+                  {groupeContent.citation}
+                </blockquote>
+              )}
+
+              {/* Explication */}
+              {groupeContent.explication && (
+                <p className="text-slate-600 leading-relaxed">{groupeContent.explication}</p>
+              )}
+
+              {/* Mystères du Rosaire */}
+              {groupeContent.mysteres && groupeContent.mysteres.length > 0 && (
+                <div className="space-y-3">
+                  {groupeContent.mysteres.map((mystere, idx) => (
+                    <div key={idx} className="bg-slate-50 rounded-xl p-4">
+                      <h4 className="font-semibold text-slate-deep mb-1">{mystere.titre}</h4>
+                      <p className="text-sm text-slate-600">{mystere.contenu}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Temps de prière (Équipes du Rosaire) */}
+              {groupeContent.temps_priere && groupeContent.temps_priere.length > 0 && (
+                <div className="space-y-3">
+                  <h4 className="font-serif text-lg text-slate-deep">Les temps de prière :</h4>
+                  {groupeContent.temps_priere.map((temps, idx) => (
+                    <div key={idx} className="bg-slate-50 rounded-xl p-4">
+                      <h5 className="font-semibold text-gold mb-1">{temps.titre}</h5>
+                      <p className="text-sm text-slate-600">{temps.contenu}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Horaires */}
+              {groupeContent.horaires && groupeContent.horaires.length > 0 && (
+                <div className="bg-slate-50 rounded-xl p-5">
+                  <h4 className="font-semibold text-slate-deep mb-3 flex items-center">
+                    <Calendar className="w-4 h-4 mr-2 text-gold" />
+                    Vous pouvez nous rejoindre :
+                  </h4>
+                  <ul className="space-y-2">
+                    {groupeContent.horaires.map((horaire, idx) => (
+                      <li key={idx} className="text-slate-600 flex items-start">
+                        <span className="text-gold mr-2">•</span>
+                        {horaire}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Rejoindre */}
+              {groupeContent.rejoindre && (
+                <p className="text-slate-600 font-medium">{groupeContent.rejoindre}</p>
+              )}
+
+              {/* Antennes */}
+              {groupeContent.antennes && groupeContent.antennes.length > 0 && (
+                <div className="bg-slate-50 rounded-xl p-5">
+                  <h4 className="font-semibold text-slate-deep mb-3 flex items-center">
+                    <MapPin className="w-4 h-4 mr-2 text-gold" />
+                    Contacts locaux :
+                  </h4>
+                  <ul className="space-y-2">
+                    {groupeContent.antennes.map((antenne, idx) => (
+                      <li key={idx} className="text-slate-600 flex items-start">
+                        <span className="text-gold mr-2">•</span>
+                        {antenne}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* URL */}
+              {groupeContent.url && (
+                <a
+                  href={groupeContent.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-6 py-3 rounded-full font-medium transition-colors shadow-lg hover:shadow-xl"
+                >
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  En savoir plus
+                </a>
+              )}
+            </div>
+          )}
+
           {/* Podcasts list */}
           {resource.podcasts && resource.podcasts.length > 0 && (
             <div className="space-y-4">
