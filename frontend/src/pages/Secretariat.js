@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Clock, Home } from 'lucide-react';
+import { SocialIcons } from '@/components/SocialIcons';
 
 const Secretariat = () => {
   return (
