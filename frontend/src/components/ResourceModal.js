@@ -22,7 +22,7 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-r from-gold/10 to-gold/5 border-b border-gold/20 p-6 flex items-center justify-between">
+        <div className="sticky top-0 z-10 bg-white border-b border-gold/20 p-6 flex items-center justify-between shadow-sm">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
               {resource.icon && <resource.icon className="w-6 h-6 text-gold" />}
