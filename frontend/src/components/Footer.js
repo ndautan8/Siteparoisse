@@ -23,7 +23,7 @@ export const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://www.instagram.com/paroisses.saint.orens.castanet"
+                href="https://www.instagram.com/paroisses.saint.orens.castanet?igsh=OTYycjhmZ2UzbWVt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold transition-colors"
