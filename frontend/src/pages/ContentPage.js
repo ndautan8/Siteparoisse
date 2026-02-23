@@ -375,11 +375,117 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
     heroImage: 'https://customer-assets.emergentagent.com/job_5e9a982a-920d-4533-b39d-5b30481bb0da/artifacts/qcuurzop_Entraide.png',
     heroPosition: 'object-top',
     items: [
-      { title: 'Secours Catholique', description: 'Aide matérielle et accompagnement', icon: HandHeart },
-      { title: 'Café Amitié', description: 'Lieu de rencontre convivial', icon: Coffee },
-      { title: 'Hospitalité de Lourdes', description: 'Pèlerinages pour personnes malades', icon: Palmtree },
-      { title: 'Famille Bartimée', description: 'Accompagnement des personnes handicapées', icon: HeartHandshake },
-      { title: 'Lourdes Cancer Espérance', description: 'Soutien aux malades du cancer', icon: Heart },
+      { 
+        title: 'Secours Catholique', 
+        description: 'Aide matérielle et accompagnement', 
+        icon: HandHeart,
+        modalTitle: 'Secours Catholique',
+        modalDescription: 'Le Secours Catholique, service d\'Eglise, a pour mission d\'accueillir, d\'écouter et de soutenir les personnes en fragilité et de proposer à tous une relation fraternelle.',
+        entraideContent: {
+          intro: 'Deux équipes sont présentes sur notre secteur paroissial. Elles travaillent en étroite collaboration avec les services sociaux pour des aides d\'urgence et répondent aux diverses demandes d\'écoute et d\'accompagnement sur rendez-vous.',
+          teams: [
+            {
+              name: 'Équipe de Castanet',
+              description: 'Anime le vendredi après-midi, de 14h à 17h30 à la Maison de la Fraternité, un temps d\'accueil, d\'échange, de partage, autour de diverses activités : jeux de société, tricot, chant, bavardage… pour tous ceux qui veulent vivre un moment convivial et rompre leur solitude.',
+              phone: '06 70 45 31 25',
+              responsables: 'Agnès DESPLAS, Danièle AGUILAR'
+            },
+            {
+              name: 'Équipe de Saint-Orens',
+              description: 'Propose un accueil social sur rendez-vous, puis, au cas par cas, des aides aux familles, du soutien scolaire pour les enfants et adolescents, de l\'apprentissage du français pour adultes, ouvrant sur des ateliers d\'échanges culturels (visites, cuisine du monde, coutumes, rites…). L\'équipe propose aussi des temps conviviaux et des temps forts avec la paroisse.',
+              phone: '06 78 69 92 42'
+            }
+          ],
+          delegation: {
+            name: 'Délégation Ariège-Garonne du Secours Catholique',
+            address: '56 rue de Périole 31500 Toulouse',
+            phone: '05 34 25 67 40'
+          }
+        }
+      },
+      { 
+        title: 'Café Amitié', 
+        description: 'Lieu de rencontre convivial', 
+        icon: Coffee,
+        modalTitle: 'Café Amitié',
+        modalDescription: 'Ouvert à tous sans distinction aucune, le Café Amitié est un lieu d\'accueil, de dialogue et d\'écoute gratuite et désintéressée. Au-delà d\'une boisson offerte, chacun peut y être écouté et partager un moment d\'amitié. Une quinzaine d\'accueillant(e)s se relaie en binôme pour assurer les permanences.',
+        quote: 'Au Café Amitié, tout ce qui s\'y passe nous dépasse. Au-delà des efforts et de la bonne volonté, c\'est vraiment l\'amitié au sens évangélique qui circule et qui produit du fruit jour après jour.',
+        entraideContent: {
+          lieu: 'Maison de la Fraternité, 10 avenue de Toulouse à Castanet-Tolosan',
+          permanences: [
+            'Mardi de 9h45 à 11h30',
+            'Jeudi de 9h45 à 11h30'
+          ],
+          contact: 'Mireille Pellerin & Hélène Echavidre'
+        }
+      },
+      { 
+        title: 'Hospitalité de Lourdes', 
+        description: 'Pèlerinages pour personnes malades', 
+        icon: Palmtree,
+        modalTitle: 'L\'Hospitalité de Lourdes',
+        modalDescription: 'L\'Hospitalité diocésaine de Toulouse est un groupement de bénévoles chrétiens engagés dans l\'accueil et l\'accompagnement à Lourdes, de pèlerins âgés ou souffrant de handicap.',
+        entraideContent: {
+          mission: 'Ces personnes, appelées "hospitaliers" se veulent accueillantes, tout simplement, afin de permettre aux pèlerins du sanctuaire de vivre dans les meilleures conditions leur pèlerinage à la rencontre de Marie, dans les pas de Bernadette.',
+          temoignage: 'Chaque année, tous reviennent heureux et enrichis de ces contacts : « On a beaucoup à apprendre de chaque personne que l\'on rencontre », rapporte une hospitalière. Alors pourquoi pas vous ?',
+          contact: 'Si vous souhaitez les rejoindre contactez Bénédicte Picauron ou Brigitte Collet de l\'antenne de Castanet-Tolosan.',
+          url: 'https://hospidetoulouse.wixsite.com/tlse'
+        }
+      },
+      { 
+        title: 'Famille Bartimée', 
+        description: 'Fraternité avec les personnes en précarité', 
+        icon: HeartHandshake,
+        modalTitle: '"Bartimée" : Un nouveau chemin de fraternité',
+        modalDescription: 'La Famille Bartimée est un service de l\'ensemble paroissial Notre Dame d\'Autan. Tirant son nom de la rencontre du Christ avec l\'aveugle Bartimée (St Marc 10,48), il rassemble des personnes seules ou en familles, qui ont connu ou qui connaissent encore exclusion, précarité, solitude.',
+        entraideContent: {
+          intro: 'Ouvert à tous, il accueille croyants et non croyants. D\'autres personnes cheminent à leurs côtés appelés « compagnons ». Il s\'inspire de la pensée du P. Wresinski, fondateur du mouvement ATD Quart Monde.',
+          projet: {
+            title: 'Notre projet ?',
+            description: 'Vivre la fraternité : au cœur de la communauté paroissiale, avec elle, en lien avec le Café Amitié, le Secours Catholique et les services paroissiaux.',
+            objectifs: [
+              'Rompre avec la solitude et la « culture du rejet »',
+              'Nous Rassembler, sortir de la honte, vivre l\'amitié, le respect, la tolérance',
+              'Être attentif et soucieux du plus blessé par la vie, être à sa recherche',
+              'Retrouver sa place et sa dignité à travers le partage',
+              'Réaliser des projets avec et à partir des plus fragilisés, apprendre d\'eux',
+              'Nous laisser transformer et grandir ensemble dans la foi',
+              'Être un espace de vie fraternelle pour ceux et celles en demande de sacrements',
+              'Entendre leur parole et agir pour qu\'elle soit prise en compte dans l\'Église et dans la société',
+              'Participer à la vie de notre paroisse, de l\'Église, de nos villes'
+            ]
+          },
+          temoignage: '« Quand je vais au dimanche de Bartimée, je me ressource, je me sens bien, je vois d\'autres gens, ils m\'apaisent, ça m\'a enlevé une partie de ma timidité, ça m\'a ouvert aux autres, et ça me donne de la confiance envers les autres. » EB',
+          comment: {
+            title: 'Comment ?',
+            activites: [
+              { nom: 'Le Dimanche de Bartimée', description: '1 fois/mois : Messe dominicale, repas partagé, échanges autour de textes, ou de la Parole de Dieu, ateliers' },
+              { nom: 'Groupe « J\'ai pas compris »', description: 'De 17h à 19h en semaine, avec un partage autour d\'une phrase de la Bible proposée par Bartimée ouvert à tous' },
+              { nom: 'Se ressourcer et être en fête', description: 'Sorties culturelles, marche, journées de détente, séjour l\'été. Rencontres d\'autres groupes en France, pèlerinages avec le Réseau St Laurent' }
+            ]
+          },
+          contacts: [
+            { nom: 'Martine', phone: '06 89 15 42 03', description: 'Pour vous informer, connaître la Famille Bartimée, participer' },
+            { nom: 'Hélène', phone: '06 81 43 70 56', description: 'Pour soutenir financièrement (association "Les Amis de Bartimée")' }
+          ],
+          url: 'https://www.helloasso.com/associations/les-amis-de-bartimee',
+          citationEveque: '« Les plus petits, les plus pauvres, les plus handicapés, sont rarement mis en avant. Il me semble important qu\'ils acquièrent une visibilité, qu\'ils aient une vraie place dans la communauté. J\'encourage toutes les paroisses et autres communautés chrétiennes à faire de la place aux plus petits, aux marginaux, aux « sans-voix ». Les pauvres ou les étrangers nous dérangent, mais c\'est un heureux dérangement évangélique. » - Mgr Guy de Kerimel, archevêque de Toulouse, 2023'
+        }
+      },
+      { 
+        title: 'Lourdes Cancer Espérance', 
+        description: 'Soutien aux malades du cancer', 
+        icon: Heart,
+        modalTitle: 'Lourdes Cancer Espérance',
+        modalDescription: 'Lourdes Cancer Espérance s\'adresse aux personnes concernées par la maladie, à travers leur histoire personnelle ou celle d\'un proche. Les délégués œuvrent pour rompre l\'isolement des malades et de leurs familles. Le temps fort de l\'association est le rassemblement annuel de septembre à Lourdes.',
+        entraideContent: {
+          actions: 'Les journées d\'amitié, les contacts téléphoniques, les visites en milieu hospitalier et à domicile, les courriers… sont autant de gestes qui permettent de construire cette « grande famille » de LCE. Tout au long de l\'année, la fraternité et la foi aident à cultiver l\'espérance.',
+          aide: 'Tout au long de l\'année, l\'association apporte une aide matérielle spécifique aux personnes en difficulté. De la même manière, tout est mis en œuvre pour répondre aux demandes des pèlerins, et les frais de transport et d\'hébergement peuvent être pris en charge par l\'association afin d\'aider les personnes dans le besoin.',
+          revue: 'Une revue trimestrielle permet de rendre compte de la vie de l\'association, et plusieurs délégations ont leur propre bulletin de liaison.',
+          temoignage: '« LCE est un soleil dans la vie des malades. »',
+          contact: 'Responsable pour l\'ensemble paroissial Saint-Orens : Geneviève Gamel'
+        }
+      },
     ]
   },
   'equipe-detail': {
