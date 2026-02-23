@@ -725,7 +725,7 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
 
               {/* Citation évêque — bloc distinctif */}
               {entraideContent.citationEveque && (
-                <div className="rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 p-6 text-white relative overflow-hidden">
+                <div className="rounded-2xl bg-gradient-to-br from-[#93B5B7] to-[#7da4a6] p-6 text-white relative overflow-hidden">
                   <div className="absolute top-4 right-5 text-white/10 font-serif text-8xl leading-none select-none">"</div>
                   <div className="flex items-start space-x-3 mb-4">
                     <Church className="w-5 h-5 text-gold/80 flex-shrink-0 mt-0.5" />
