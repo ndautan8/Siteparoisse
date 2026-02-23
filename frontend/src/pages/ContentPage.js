@@ -614,9 +614,13 @@ const ContentPage = ({ section }) => {
                   {config.items.slice(0, 3).map((item, index) => {
                     const ItemIcon = item.icon;
                     return (
-                      <div
+                      <button
                         key={index}
-                        className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300"
+                        onClick={() => {
+                          setSelectedResource(item);
+                          setIsModalOpen(true);
+                        }}
+                        className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left cursor-pointer"
                         data-testid={`item-card-${index}`}
                       >
                         <div className="flex items-start space-x-4">
@@ -632,7 +636,7 @@ const ContentPage = ({ section }) => {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     );
                   })}
                 </div>
@@ -643,9 +647,13 @@ const ContentPage = ({ section }) => {
                     const index = idx + 3;
                     const ItemIcon = item.icon;
                     return (
-                      <div
+                      <button
                         key={index}
-                        className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300"
+                        onClick={() => {
+                          setSelectedResource(item);
+                          setIsModalOpen(true);
+                        }}
+                        className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left cursor-pointer"
                         data-testid={`item-card-${index}`}
                       >
                         <div className="flex items-start space-x-4">
@@ -661,7 +669,7 @@ const ContentPage = ({ section }) => {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     );
                   })}
                 </div>
