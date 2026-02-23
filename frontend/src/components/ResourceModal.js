@@ -764,8 +764,8 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
           )}
         </div>
 
-        {/* Footer */}
-        <div className="sticky bottom-0 bg-slate-50 border-t border-slate-200 p-4 flex justify-end">
+        {/* Footer — fixe, hors scroll */}
+        <div className="flex-shrink-0 rounded-b-2xl bg-slate-50 border-t border-slate-200 p-4 flex justify-end">
           <button
             onClick={onClose}
             className="px-6 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full font-medium transition-colors"
