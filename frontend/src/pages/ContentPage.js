@@ -257,6 +257,33 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
         }
       },
       { 
+        title: 'Veillées de Louange', 
+        description: 'À la Miséricorde Divine', 
+        icon: Music,
+        modalTitle: 'Veillées de Louange à la Miséricorde Divine',
+        modalDescription: '« Je bénirai le Seigneur en tout temps, sa louange sans cesse à mes lèvres »',
+        groupeContent: {
+          description: 'Un groupe de paroissiens organise depuis 2022 des veillées de prière et de louange sur notre paroisse, quelques samedis soir par an, à 20h30 à l\'église de Labège.',
+          spiritualite: 'Toujours en lien avec la Miséricorde divine et le message du Christ délivré à Ste Faustine (1905-1938), ces veillées sont pour tous l\'occasion :',
+          points: [
+            'De faire l\'expérience de la rencontre personnelle avec le Christ',
+            'De prier',
+            'De manifester notre foi dans la joie, à travers la louange, les chants et la musique, l\'écoute de la Parole sous l\'inspiration de l\'Esprit Saint !'
+          ],
+          mission: 'Ouvertes à tous sans limite d\'âge, venez, voyez … et repartez vivifiés !',
+          paragraphes: [
+            'Des intentions de prières peuvent être déposées à chaque veillée en toute confidentialité. Elles sont ensuite confiées aux sœurs Clarisses de Toulouse qui les portent dans leurs prières les jours suivants.',
+            'Un prêtre est également présent pour proposer le sacrement de réconciliation (qui permet d\'expérimenter pleinement la Miséricorde du Seigneur), ou simplement pour un temps d\'échange personnalisé.'
+          ],
+          invitation: 'Si par ailleurs vous souhaitez vous joindre à nous pour animer ces veillées, pour un soir ou davantage, vous êtes les bienvenus !! (musiciens, chanteurs, techniciens sons et lumière …) Nous vous accueillerons avec joie, dans la simplicité et la fraternité, le tout sans engagement !',
+          contact: 'louange.notredamedautan@gmail.com',
+          citations: [
+            '« Je ne suis qu\'Amour et Miséricorde (…) L\'âme qui fait confiance à ma Miséricorde est la plus heureuse car je prends Moi-même soin d\'elle. »',
+            '« Qu\'aucune âme n\'ait peur de s\'approcher de Moi, même si ses péchés sont comme l\'écarlate » — Petit Journal, Message de Jésus à Ste Faustine'
+          ]
+        }
+      },
+      { 
         title: 'Prière des Mères', 
         description: 'Prier ensemble pour nos enfants', 
         icon: Heart,
