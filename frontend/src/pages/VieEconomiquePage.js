@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Building2, Heart, FileText, Users, Wrench } from 'lucide-react';
+import { SocialIcons } from '@/components/SocialIcons';
 
 const VieEconomiquePage = () => {
   return (
