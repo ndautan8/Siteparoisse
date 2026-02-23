@@ -357,6 +357,9 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
 };
 
 const ContentPage = ({ section }) => {
+  const [selectedResource, setSelectedResource] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const config = contentConfig[section];
 
   if (!config) {
