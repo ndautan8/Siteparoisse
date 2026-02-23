@@ -975,7 +975,7 @@ const ContentPage = ({ section }) => {
             ) : (
               /* Standard layout for other sections */
               <div className={`grid grid-cols-2 ${
-                ['liturgie', 'eveil', 'catechisme', 'aumonerie', 'groupes', 'ressources', 'malades'].includes(section) 
+                ['liturgie', 'eveil', 'catechisme', 'aumonerie', 'ressources', 'malades'].includes(section) 
                   ? 'sm:grid-cols-2 lg:grid-cols-4' 
                   : 'sm:grid-cols-2 lg:grid-cols-3'
               } gap-6 mb-12`}>
