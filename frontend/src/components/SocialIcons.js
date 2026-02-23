@@ -12,7 +12,7 @@ export const SocialIcons = () => (
       <Facebook className="w-5 h-5 text-white" />
     </a>
     <a
-      href="https://www.instagram.com/p/DUyH13NkaXt/"
+      href="https://www.instagram.com/paroisses.saint.orens.castanet?igsh=OTYycjhmZ2UzbWVt"
       target="_blank"
       rel="noopener noreferrer"
       className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
