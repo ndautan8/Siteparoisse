@@ -41,6 +41,9 @@ Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une appro
 - [x] Icônes réseaux sociaux (Facebook, Instagram) sur toutes les sections Hero
 - [x] Modales de ressources sur la page "Ressources"
 - [x] **Fix z-index**: La modale s'affiche correctement au-dessus du bouton de recherche global
+- [x] **Configuration Railway** : Fichiers de déploiement créés (railway.toml, Procfile, .env.example)
+- [x] **Page Éveil à la Foi** : Contenu détaillé avec horaires des 3 lieux (Castanet, Saint-Orens, Escalquens) et dates 2025-2026
+- [x] **Page MEJ** : Modale avec description du mouvement, tranches d'âge (JT, TA, ES) et lien vers mej.fr
 
 ---
 
