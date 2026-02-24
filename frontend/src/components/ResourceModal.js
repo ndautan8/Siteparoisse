@@ -483,10 +483,10 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
                     <Users className="w-5 h-5 text-[#93B5B7]" />
                     <h4 className="font-serif text-lg text-slate-deep">{mejContent.tranches.titre}</h4>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     {mejContent.tranches.groupes.map((groupe, idx) => (
                       <div key={idx} className="rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
-                        <div className="bg-gradient-to-r from-[#93B5B7]/20 to-[#93B5B7]/10 px-6 py-4 flex items-center justify-between">
+                        <div className="bg-gradient-to-r from-[#93B5B7]/20 to-[#93B5B7]/10 px-6 py-5 flex items-center justify-between">
                           <span className="font-semibold text-slate-deep">{groupe.nom}</span>
                           <span className="text-[#7da4a6] font-medium bg-white px-3 py-1 rounded-full text-sm">{groupe.age}</span>
                         </div>
