@@ -409,6 +409,109 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
           )}
 
           {/* ══════════════════════════════════════
+              ÉVEIL À LA FOI CONTENT
+          ══════════════════════════════════════ */}
+          {eveilContent && (
+            <div className="space-y-5">
+
+              {/* Paragraphes */}
+              {eveilContent.paragraphes && eveilContent.paragraphes.map((para, idx) => (
+                <div key={idx} className="relative pl-4 border-l-[3px] border-[#93B5B7]/50">
+                  <p className="text-slate-600 leading-relaxed text-[15px]">{para}</p>
+                </div>
+              ))}
+
+              {/* Contact */}
+              {eveilContent.contact && (
+                <div className="rounded-xl bg-gradient-to-br from-[#fdf6f5] to-[#f9f1ef] border border-[#93B5B7]/20 p-4 flex items-start space-x-3">
+                  <Phone className="w-5 h-5 text-[#7da4a6] mt-0.5 flex-shrink-0" />
+                  <p className="text-slate-700 font-medium">{eveilContent.contact}</p>
+                </div>
+              )}
+
+              {/* Lieux et horaires */}
+              {eveilContent.lieux && eveilContent.lieux.length > 0 && (
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="w-4 h-4 text-[#93B5B7]" />
+                    <h4 className="font-semibold text-slate-deep text-sm uppercase tracking-wide">Rencontres 2025-2026</h4>
+                  </div>
+                  {eveilContent.lieux.map((lieu, idx) => (
+                    <div key={idx} className="rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+                      <div className="bg-gradient-to-r from-[#93B5B7] to-[#7da4a6] px-5 py-2.5 flex items-center space-x-2">
+                        <MapPin className="w-4 h-4 text-white" />
+                        <span className="text-white font-semibold text-sm">À {lieu.ville}</span>
+                      </div>
+                      <div className="bg-white px-5 py-4 space-y-2">
+                        <div className="flex items-start space-x-2">
+                          <Clock className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
+                          <p className="text-slate-600 text-sm">{lieu.horaire}</p>
+                        </div>
+                        <div className="flex items-start space-x-2">
+                          <MapPin className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
+                          <p className="text-slate-600 text-sm">{lieu.adresse}</p>
+                        </div>
+                        <div className="mt-2 pt-2 border-t border-slate-100">
+                          <p className="text-slate-500 text-xs font-medium uppercase tracking-wide mb-1">Dates</p>
+                          <p className="text-slate-700 text-sm font-medium">{lieu.dates}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ══════════════════════════════════════
+              MEJ CONTENT
+          ══════════════════════════════════════ */}
+          {mejContent && (
+            <div className="space-y-5">
+
+              {/* Paragraphes */}
+              {mejContent.paragraphes && mejContent.paragraphes.map((para, idx) => (
+                <div key={idx} className="relative pl-4 border-l-[3px] border-[#93B5B7]/50">
+                  <p className="text-slate-600 leading-relaxed text-[15px]">{para}</p>
+                </div>
+              ))}
+
+              {/* Tranches d'âge */}
+              {mejContent.tranches && (
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-4 h-4 text-[#93B5B7]" />
+                    <h4 className="font-serif text-base text-slate-deep">{mejContent.tranches.titre}</h4>
+                  </div>
+                  <div className="space-y-2">
+                    {mejContent.tranches.groupes.map((groupe, idx) => (
+                      <div key={idx} className="rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+                        <div className="bg-gradient-to-r from-[#93B5B7]/20 to-[#93B5B7]/10 px-5 py-3 flex items-center justify-between">
+                          <span className="font-semibold text-slate-deep text-sm">{groupe.nom}</span>
+                          <span className="text-[#7da4a6] text-sm font-medium">{groupe.age}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Lien externe */}
+              {mejContent.lienExterne && (
+                <a 
+                  href={mejContent.lienExterne.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-gradient-to-r from-[#93B5B7] to-[#7da4a6] hover:opacity-90 text-white px-6 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                >
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  {mejContent.lienExterne.texte}
+                </a>
+              )}
+            </div>
+          )}
+
+          {/* ══════════════════════════════════════
               RESSOURCES — Sections (Médiathèque)
           ══════════════════════════════════════ */}
           {resource.sections && resource.sections.length > 0 && (
