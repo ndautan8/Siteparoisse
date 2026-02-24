@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Phone } from 'lucide-react';
 import { SocialIcons } from '@/components/SocialIcons';
