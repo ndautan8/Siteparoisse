@@ -167,7 +167,33 @@ const EquipePastoralePage = () => {
                 data-testid={`team-card-${member.id}`}
               >
                 <article className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col hover:-translate-y-1">
-                  {member.images ? (
+                  {member.id === 'pretres' ? (
+                    // Carousel for priests
+                    <div className="aspect-square overflow-hidden relative">
+                      {priestImages.map((img, idx) => (
+                        <img 
+                          key={idx}
+                          src={img} 
+                          alt={`Prêtre ${idx + 1}`}
+                          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:scale-105 ${
+                            idx === currentPriestIndex ? 'opacity-100' : 'opacity-0'
+                          }`}
+                        />
+                      ))}
+                      {/* Dots indicator */}
+                      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1.5">
+                        {priestImages.map((_, idx) => (
+                          <div 
+                            key={idx} 
+                            className={`w-1.5 h-1.5 rounded-full transition-all ${
+                              idx === currentPriestIndex ? 'bg-white w-3' : 'bg-white/50'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ) : member.images ? (
+                    // Multiple photos grid (fallback)
                     <div className="grid grid-cols-3 gap-0.5 bg-slate-100">
                       {member.images.map((img, idx) => (
                         <div key={idx} className="aspect-square overflow-hidden">
@@ -180,6 +206,7 @@ const EquipePastoralePage = () => {
                       ))}
                     </div>
                   ) : (
+                    // Single photo
                     <div className="aspect-square overflow-hidden">
                       <img 
                         src={member.image} 
