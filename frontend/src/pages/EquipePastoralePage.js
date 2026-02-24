@@ -221,15 +221,23 @@ const EquipePastoralePage = () => {
 
       {/* Modal Curé */}
       <Dialog open={modalOpen && modalType === 'cure'} onOpenChange={setModalOpen}>
-        <DialogContent className="max-w-2xl p-0 overflow-hidden">
-          <DialogHeader className="bg-gradient-to-r from-[#93B5B7] to-[#7da4a6] px-6 py-4">
+        <DialogContent className="max-w-2xl p-0 overflow-hidden [&>button]:hidden">
+          <DialogHeader className="bg-gradient-to-r from-[#93B5B7] to-[#7da4a6] px-6 py-4 flex flex-row items-center justify-between">
             <DialogTitle className="font-serif text-xl text-white">Le Curé</DialogTitle>
+            <button 
+              onClick={() => setModalOpen(false)}
+              className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+            >
+              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </DialogHeader>
           
           <div className="max-h-[70vh] overflow-y-auto px-6 py-6">
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-                <div className="w-32 h-32 flex-shrink-0">
+                <div className="w-40 h-40 flex-shrink-0">
                   <img 
                     src={cureData.image} 
                     alt={cureData.name}
@@ -273,9 +281,17 @@ const EquipePastoralePage = () => {
 
       {/* Modal Prêtres */}
       <Dialog open={modalOpen && modalType === 'pretres'} onOpenChange={setModalOpen}>
-        <DialogContent className="max-w-2xl p-0 overflow-hidden">
-          <DialogHeader className="bg-gradient-to-r from-[#93B5B7] to-[#7da4a6] px-6 py-4">
+        <DialogContent className="max-w-2xl p-0 overflow-hidden [&>button]:hidden">
+          <DialogHeader className="bg-gradient-to-r from-[#93B5B7] to-[#7da4a6] px-6 py-4 flex flex-row items-center justify-between">
             <DialogTitle className="font-serif text-xl text-white">Les Prêtres</DialogTitle>
+            <button 
+              onClick={() => setModalOpen(false)}
+              className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+            >
+              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </DialogHeader>
           
           <div className="max-h-[70vh] overflow-y-auto px-6 py-6">
@@ -286,8 +302,8 @@ const EquipePastoralePage = () => {
 
               <div className="space-y-5">
                 {pretresData.priests.map((priest, idx) => (
-                  <div key={idx} className="flex gap-4 p-4 bg-slate-50 rounded-xl items-center">
-                    <div className="w-20 h-20 flex-shrink-0">
+                  <div key={idx} className="flex gap-5 p-4 bg-slate-50 rounded-xl items-center">
+                    <div className="w-24 h-24 flex-shrink-0">
                       <img 
                         src={priest.image} 
                         alt={priest.name}
