@@ -118,7 +118,7 @@ const PriestDetailPage = ({ type }) => {
   }
   
   // Page des prêtres
-  if (memberId === 'pretres') {
+  if (type === 'pretres') {
     return (
       <div className="min-h-screen bg-paper" data-testid="pretres-detail-page">
         {/* Hero Section */}
