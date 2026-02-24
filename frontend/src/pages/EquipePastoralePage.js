@@ -98,6 +98,21 @@ const teamMembers = [
 const EquipePastoralePage = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState(null);
+  const [currentPriestIndex, setCurrentPriestIndex] = useState(0);
+
+  // Carousel for priests photos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPriestIndex((prev) => (prev + 1) % 3);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const priestImages = [
+    'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/bwicpjkm_pere-donald.webp',
+    'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/mrvxn6kf_pere-anthony.webp',
+    'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/parx1ojm_pere-arnaud.webp'
+  ];
 
   const openModal = (type) => {
     setModalType(type);
