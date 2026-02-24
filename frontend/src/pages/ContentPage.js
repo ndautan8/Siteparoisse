@@ -1239,7 +1239,7 @@ const ContentPage = ({ section }) => {
         {/* Funerals Agenda - Only for funerailles section */}
         {section === 'funerailles' && (
           <div className="mb-16">
-            <h2 id="funerals-agenda" className="font-serif text-3xl text-slate-deep mb-6 text-center">Agenda des célébrations</h2>
+            <h2 id="funerals-agenda" className="font-serif text-3xl text-slate-deep mb-6 text-center scroll-mt-32">Agenda des célébrations</h2>
             <FuneralsAgenda />
           </div>
         )}
