@@ -1187,6 +1187,52 @@ const ContentPage = ({ section }) => {
                 </div>
               </div>
             )}
+
+            {/* Paragraphes descriptifs - pour Éveil à la Foi */}
+            {config.detailedContent.paragraphes && (
+              <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100 space-y-4">
+                {config.detailedContent.paragraphes.map((para, idx) => (
+                  <p key={idx} className="text-slate-600 leading-relaxed">
+                    {para}
+                  </p>
+                ))}
+              </div>
+            )}
+
+            {/* Lieux et horaires - pour Éveil à la Foi */}
+            {config.detailedContent.lieux && (
+              <div className="space-y-6">
+                <h3 className="font-serif text-2xl text-slate-deep text-center">
+                  Rencontres 2025-2026
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {config.detailedContent.lieux.map((lieu, idx) => (
+                    <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                      <div className="bg-gradient-to-r from-[#93B5B7] to-[#7da4a6] px-6 py-4">
+                        <h4 className="font-serif text-lg text-white flex items-center">
+                          <MapPin className="w-5 h-5 mr-2" />
+                          À {lieu.ville}
+                        </h4>
+                      </div>
+                      <div className="p-6 space-y-4">
+                        <div className="flex items-start space-x-3">
+                          <Clock className="w-5 h-5 text-[#93B5B7] mt-0.5 flex-shrink-0" />
+                          <p className="text-slate-600 text-sm">{lieu.horaire}</p>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <MapPin className="w-5 h-5 text-[#93B5B7] mt-0.5 flex-shrink-0" />
+                          <p className="text-slate-600 text-sm">{lieu.adresse}</p>
+                        </div>
+                        <div className="pt-4 border-t border-slate-100">
+                          <p className="text-slate-500 text-xs font-medium uppercase tracking-wide mb-2">Dates</p>
+                          <p className="text-slate-700 text-sm font-medium">{lieu.dates}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
 
