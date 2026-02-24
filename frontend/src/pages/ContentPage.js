@@ -1034,7 +1034,7 @@ const ContentPage = ({ section }) => {
               } gap-6 mb-12`}>
             {config.items.map((item, index) => {
               const ItemIcon = item.icon;
-              const isClickable = section === 'ressources' || section === 'alpha' || section === 'groupes' || section === 'meditation';
+              const isClickable = section === 'ressources' || section === 'alpha' || section === 'groupes' || section === 'meditation' || section === 'eveil' || section === 'mouvements' || item.eveilContent || item.mejContent;
               const hasLink = item.linkTo;
               
               const cardContent = (
