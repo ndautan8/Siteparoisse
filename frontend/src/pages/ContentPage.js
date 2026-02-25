@@ -886,7 +886,7 @@ const ContentPage = ({ section }) => {
 
         {/* SEM Content - Only for malades page */}
         {section === 'malades' && config.semContent && (
-          <div className="mb-12 space-y-8">
+          <div className="mb-12 flex flex-col" style={{ gap: '3rem' }}>
             {/* Introduction */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
               <p className="text-slate-600 leading-relaxed text-lg">
