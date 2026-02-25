@@ -464,34 +464,23 @@ const EquipePastoralePage = () => {
 
         {/* Mot de bienvenue du Père Daniel */}
         <div className="mt-12 mb-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-          <div className="flex flex-col md:flex-row">
-            {/* Photo */}
-            <div className="md:w-56 flex-shrink-0 relative">
-              <img
-                src="https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/izar22oi_pere-daniel.webp"
-                alt="Père Daniel Brouard-Derval"
-                className="w-full h-64 md:h-full object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-white/20"></div>
-            </div>
-            {/* Texte */}
-            <div className="flex-1 px-8 py-8 md:py-10 flex flex-col justify-center">
+          <div className="px-8 py-10 md:px-12 md:py-12">
               {/* En-tête */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-12 bg-gradient-to-b from-[#93B5B7] to-[#d0ada6] rounded-full"></div>
+                <div className="w-1 h-12 bg-gradient-to-b from-[#d0ada6] to-[#c49a93] rounded-full"></div>
                 <div>
-                  <p className="text-[#93B5B7] text-xs font-semibold uppercase tracking-widest mb-0.5">Mot du curé</p>
+                  <p className="text-[#d0ada6] text-xs font-semibold uppercase tracking-widest mb-0.5">Mot du curé</p>
                   <h2 className="font-serif text-2xl text-slate-deep leading-tight">Bienvenue dans notre ensemble paroissial</h2>
                 </div>
               </div>
 
               {/* Citation d'ouverture */}
-              <blockquote className="font-serif text-lg text-[#93B5B7] italic mb-5 leading-relaxed">
+              <blockquote className="font-serif text-lg text-[#d0ada6] italic mb-5 leading-relaxed">
                 « Venez et vous verrez ! »
                 <span className="font-sans text-sm not-italic text-slate-400 ml-2">(Jn 1, 39)</span>
               </blockquote>
 
-              <div className="space-y-4 text-slate-600 text-sm leading-[1.8]">
+              <div className="space-y-4 text-slate-600 text-sm leading-[1.8] max-w-3xl">
                 <p>
                   Telle est l'invitation que Jésus lance aux premiers « curieux » qui s'intéressent à Lui. En quête de sens et de vérité, croyants en chemin, ils deviendront ses premiers disciples.
                 </p>
@@ -512,7 +501,7 @@ const EquipePastoralePage = () => {
 
               {/* Signature */}
               <div className="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#93B5B7]/30">
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#d0ada6]/30">
                   <img
                     src="https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/izar22oi_pere-daniel.webp"
                     alt="Père Daniel"
@@ -521,10 +510,9 @@ const EquipePastoralePage = () => {
                 </div>
                 <div>
                   <p className="font-medium text-slate-deep text-sm">Père Daniel Brouard-Derval</p>
-                  <p className="text-[#93B5B7] text-xs">Curé de Notre Dame d'Autan</p>
+                  <p className="text-[#d0ada6] text-xs">Curé de Notre Dame d'Autan</p>
                 </div>
               </div>
-            </div>
           </div>
         </div>
 
