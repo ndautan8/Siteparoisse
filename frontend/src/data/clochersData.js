@@ -259,14 +259,30 @@ L'inscription se termine par ces mots : « Afin que, unis dans la tombe comme da
   'odars': {
     id: 'odars',
     name: 'Odars',
-    churchName: 'Église Saint-Martin',
-    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg',
-    description: `L'église Saint-Martin d'Odars domine le village depuis sa position en hauteur, offrant un panorama sur la campagne environnante.
+    churchName: 'Église Saint-Étienne',
+    image: 'https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/arlpp6f8_Eglise-Odars.jpg',
+    description: `**Saint Papoul et Notre-Dame**
+Après le cruel supplice de saint Saturnin (saint Sernin) vers l'an 280, son premier disciple, saint Papoul, entrepris d'évangéliser le comté de Lauragais. Ce dernier reçu la couronne du martyr dans la ville même qui a retenu son nom et qui conserve une grande partie de ses reliques. Odars ayant été l'une des peuplades évangélisée par ce saint, elle le choisit comme patron.
 
-Cette église pittoresque est un témoignage de l'histoire religieuse de la commune.
+Dans le répertoire des actes de l'église Saint-Étienne, on lit : « Le 3 juin 1520, messire de Noguières, chanoine et syndic de l'église de Saint-Étienne, prend au nom du chapitre possession des églises de Saint-Papoul, et de Notre-Dame d'Odars. » Ce qui prouve l'ancienneté de ces deux sanctuaires construits entre le XIe et le XIVe siècle. Notre-Dame d'Odars qui était la chapelle du château a été dédiée à la Sainte Vierge par amour de la population pour la Reine du Ciel.
 
-*Informations détaillées à venir via le CMS.*`,
-    address: 'Place de l\'Église, 31450 Odars',
+L'église paroissiale de Saint-Papoul fut vendue à la révolution de 1789 et en septembre 1794 et démolie par l'acquéreur, le vicomte de Juillac, car elle était située au milieu de son domaine.
+
+**Histoire de la statue de la Vierge**
+L'église de Saint-Papoul possédait une statue de Marie portant dans ses bras son divin enfant. Quand les pieuses femmes apprirent la vente de l'église et sa démolition, la crainte que leur sainte protectrice soit profanée leur donna le courage de l'enlever et de l'enfouir dans la terre.
+
+L'église Notre-Dame fut livrée aux petits bien-tenants, qui la transformèrent en grange commune. La statue de la vierge fut respectueusement conservée par les habitants. En 1795, date de la proclamation de la liberté des cultes, l'église de Notre-Dame devint l'église paroissiale et la statue de la Vierge prit possession de sa niche creusée dans le mur en face de la chaire.
+
+**Transformation de l'église**
+Quarante années plus tard l'église fut entièrement transformée par la construction d'une majestueuse voûte formant quatre travées et éclairée par quatre verrières. Une seconde chapelle, construite à gauche donna à ce monument la forme d'une croix latine. Elle fut dédiée à saint Papoul.
+
+L'édifice est remanié en 1845 par l'architecte Monsieur Touvier. Le clocher-mur est reconstruit. Abritée sous un porche fermé, l'entrée est surmontée d'un arc de plein cintre de tradition encore romane.
+
+**Cloche et reliquaires**
+La cloche du XVe siècle, en bronze, est la plus ancienne du canton. Elle provient probablement de l'ancienne église Saint-Papoul. De peur qu'elle soit fondue pour faire des canons, la moyenne cloche a été classée monument historique le 30 octobre 1914. La paroisse a utilisé les services d'un carillonneur jusqu'en 1980.
+
+C'est en 1853 que l'abbé Adolphe de Juillac (1799–1862) est chargé de ramener de Rome un certain nombre de reliques. Il est autorisé à prélever un fragment de chacune d'elles pour l'église de Notre-Dame d'Odars. Elle est le sanctuaire le plus riche du département avec 212 reliques après l'abbatiale Saint-Sernin et la cathédrale Saint-Étienne.`,
+    address: 'Église Saint-Étienne, 31450 Odars',
     coordinates: { lat: 43.5083, lng: 1.5750 },
     massSchedule: [],
     openingHours: null
