@@ -77,10 +77,22 @@ Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une appro
 - [ ] **Newsletter** : Implémenter la fonctionnalité d'inscription
 
 ### P2 - Améliorations futures
-- [ ] Inscription à la newsletter (footer)
+- [ ] Widget horaires des messes sur l'accueil
+- [ ] Navigation visuelle des "5 piliers" sur l'accueil
+- [ ] Filtres par catégorie pour les actualités
 - [ ] Chatbot IA (Gemini Flash suggéré)
 - [ ] Galeries photos
 - [ ] Témoignages
+
+---
+
+## URLs des Images des Églises (Février 2025)
+- Auzeville-Tolosane: `https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/ifwgzq09_Eglise-Auzeville-tolosane.webp`
+- Auzielle: `https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/5xwkblfg_Eglise-Auzielle.jpg`
+- Belberaud: `https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/hu4xvw2m_Eglise-Belberaud.jpg`
+- Castanet-Tolosan: `https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg`
+- Corronsac: `https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/x00fy67d_Eglise-Corronsac.jpg`
+- Deyme: `https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/989qwxsn_Eglise-Deyme.jpg`
 
 ---
 
