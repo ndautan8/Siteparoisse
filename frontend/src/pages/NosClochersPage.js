@@ -2,35 +2,9 @@ import { Link } from 'react-router-dom';
 import { Church, MapPin, Map } from 'lucide-react';
 import { SocialIcons } from '@/components/SocialIcons';
 import { clochersListData, clochersData } from '@/data/clochersData';
+import ClochersMap from '@/components/ClochersMap';
 
 const NosClochersPage = () => {
-  // Generate map URL with all church markers
-  const generateMapUrl = () => {
-    // Center of the parish (approximate center of all churches)
-    const centerLat = 43.51;
-    const centerLng = 1.52;
-    
-    // Build markers string for all churches
-    const markers = Object.values(clochersData).map(clocher => {
-      return `${clocher.coordinates.lat},${clocher.coordinates.lng}`;
-    }).join('|');
-    
-    // Use Google Maps embed with multiple markers via search
-    const markersList = Object.values(clochersData).map(c => 
-      `markers=color:red|label:${c.name.charAt(0)}|${c.coordinates.lat},${c.coordinates.lng}`
-    ).join('&');
-    
-    return `https://maps.google.com/maps?q=${centerLat},${centerLng}&z=11&output=embed`;
-  };
-
-  // Generate static map URL with all markers
-  const getInteractiveMapUrl = () => {
-    const locations = Object.values(clochersData).map(c => 
-      `${c.coordinates.lat},${c.coordinates.lng}`
-    ).join('/');
-    return `https://www.google.com/maps/dir/${locations}`;
-  };
-
   return (
     <div className="min-h-screen bg-paper" data-testid="nos-clochers-page">
       {/* Hero Section with Image */}
