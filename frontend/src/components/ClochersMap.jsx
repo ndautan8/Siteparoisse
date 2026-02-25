@@ -3,32 +3,21 @@ import { Link } from 'react-router-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Fix for default marker icons in React-Leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-});
-
-// Custom gold marker icon
-const goldIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
-
-// Red marker for highlight
-const redIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+// Custom cross icon using SVG for church markers
+const crossIcon = new L.DivIcon({
+  html: `
+    <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="16" cy="38" rx="8" ry="2" fill="rgba(0,0,0,0.2)"/>
+      <path d="M16 2L16 30" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+      <path d="M8 10L24 10" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+      <path d="M16 2L16 30" stroke="#DAA520" stroke-width="3" stroke-linecap="round"/>
+      <path d="M8 10L24 10" stroke="#DAA520" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  `,
+  className: 'cross-marker-icon',
+  iconSize: [32, 40],
+  iconAnchor: [16, 38],
+  popupAnchor: [0, -35]
 });
 
 const ClochersMap = ({ clochers, height = "500px" }) => {
@@ -52,7 +41,7 @@ const ClochersMap = ({ clochers, height = "500px" }) => {
         <Marker
           key={clocher.id}
           position={[clocher.coordinates.lat, clocher.coordinates.lng]}
-          icon={redIcon}
+          icon={crossIcon}
         >
           <Popup>
             <div className="text-center min-w-[180px]">
