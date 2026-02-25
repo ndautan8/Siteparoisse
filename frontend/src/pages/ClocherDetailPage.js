@@ -43,13 +43,19 @@ const ClocherDetailPage = () => {
     });
   };
 
-  // Generate Google Maps embed URL using Place ID if available
+  // Generate Google Maps embed URL with marker
   const getMapEmbedUrl = () => {
-    if (clocher.placeId) {
-      return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d${clocher.coordinates.lng}!3d${clocher.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s${clocher.placeId}!2s${encodeURIComponent(clocher.churchName)}!5e0!3m2!1sfr!2sfr!4v1`;
-    }
     const { lat, lng } = clocher.coordinates;
-    return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z${lat}%C2%B0N+${Math.abs(lng)}%C2%B0E!5e0!3m2!1sfr!2sfr!4v1`;
+    const query = encodeURIComponent(`${clocher.churchName}, ${clocher.name}`);
+    // Using the "place" mode with query shows a red marker
+    return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${query}&center=${lat},${lng}&zoom=16`;
+  };
+
+  // Alternative embed URL without API key (fallback)
+  const getMapEmbedUrlFallback = () => {
+    const { lat, lng } = clocher.coordinates;
+    const query = encodeURIComponent(`${clocher.churchName}, ${clocher.name}`);
+    return `https://maps.google.com/maps?q=${lat},${lng}&z=16&output=embed`;
   };
 
   // Generate Google Maps directions URL
