@@ -266,9 +266,6 @@ const EquipePastoralePage = () => {
     'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/hcevlmtr_philippe.webp'
   ];
 
-  const eapCastanetImages = eapData.castanet.members.map(m => m.image);
-  const eapSaintOrensImages = eapData.saintOrens.members.filter(m => m.image).map(m => m.image);
-
   const openModal = (type) => {
     setModalType(type);
     setModalOpen(true);
