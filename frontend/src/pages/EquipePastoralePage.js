@@ -104,12 +104,12 @@ const eapData = {
       {
         name: 'Carole MATTHIA',
         role: 'Membre EAP',
-        image: null // Photo à venir
+        image: 'https://customer-assets.emergentagent.com/job_church-community-16/artifacts/hgj44udx_Carole.webp'
       },
       {
         name: 'Arnaud CEYTE',
         role: 'Membre EAP',
-        image: null // Photo à venir
+        image: 'https://customer-assets.emergentagent.com/job_church-community-16/artifacts/x1mip634_Arnaud.webp'
       }
     ]
   }
