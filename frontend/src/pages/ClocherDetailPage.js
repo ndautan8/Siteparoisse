@@ -43,14 +43,20 @@ const ClocherDetailPage = () => {
     });
   };
 
-  // Generate Google Maps embed URL
+  // Generate Google Maps embed URL using Place ID if available
   const getMapEmbedUrl = () => {
+    if (clocher.placeId) {
+      return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d${clocher.coordinates.lng}!3d${clocher.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s${clocher.placeId}!2s${encodeURIComponent(clocher.churchName)}!5e0!3m2!1sfr!2sfr!4v1`;
+    }
     const { lat, lng } = clocher.coordinates;
     return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z${lat}%C2%B0N+${Math.abs(lng)}%C2%B0E!5e0!3m2!1sfr!2sfr!4v1`;
   };
 
   // Generate Google Maps directions URL
   const getDirectionsUrl = () => {
+    if (clocher.placeId) {
+      return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(clocher.churchName + ', ' + clocher.name)}&destination_place_id=${clocher.placeId}`;
+    }
     const { lat, lng } = clocher.coordinates;
     return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
   };
