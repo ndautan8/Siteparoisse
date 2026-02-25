@@ -630,7 +630,7 @@ const EquipePastoralePage = () => {
               <div className="space-y-5">
                 {diacresData.deacons.map((deacon, idx) => (
                   <div key={idx} className="flex gap-5 p-4 bg-slate-50 rounded-xl items-center">
-                    <div className="w-24 h-24 flex-shrink-0">
+                    <div className="w-32 h-32 flex-shrink-0">
                       <img 
                         src={deacon.image} 
                         alt={deacon.name}
