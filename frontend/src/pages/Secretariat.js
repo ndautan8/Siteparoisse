@@ -144,10 +144,15 @@ const Secretariat = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 mb-1">Adresse</p>
-                  <p className="text-slate-600">
+                  <a
+                    href="https://maps.google.com/?q=14bis+rue+Louis+Canitrot+31320+Castanet-Tolosan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-gold transition-colors underline decoration-dotted underline-offset-2"
+                  >
                     14bis rue Louis Canitrot<br />
                     31320 Castanet-Tolosan
-                  </p>
+                  </a>
                 </div>
               </div>
               
