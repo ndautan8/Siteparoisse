@@ -403,14 +403,14 @@ La croix est visible au sommet de l'église (XIIe siècle). Sur les bras de la c
   'saint-orens-catala': {
     id: 'saint-orens-catala',
     name: 'Saint-Orens (Catala)',
-    churchName: 'Chapelle Notre-Dame de Catala',
-    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg',
-    description: `La chapelle Notre-Dame de Catala est un lieu de dévotion mariale situé sur le territoire de Saint-Orens-de-Gameville.
+    churchName: 'Chapelle Saint-Jean-Bosco',
+    image: 'https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/1vpn27ld_Eglise-Saint-Orens-Catala.jpg',
+    description: `La chapelle Saint-Jean-Bosco est le 2ème lieu de culte catholique de la ville de Saint-Orens-de-Gameville. Elle a été construite en 1975 dans le quartier de Catala.
 
-Cette chapelle est un témoignage de la piété populaire et reste un lieu de pèlerinage local apprécié.
+Cette chapelle moderne témoigne du développement de la commune et de l'accueil des nouvelles populations dans les quartiers résidentiels.
 
-*Informations détaillées à venir via le CMS.*`,
-    address: 'Chemin de Catala, 31650 Saint-Orens-de-Gameville',
+Voir toute l'histoire de Saint-Orens-de-Gameville sur la page dédiée à son église historique.`,
+    address: 'Chapelle Saint-Jean-Bosco, Catala, 31650 Saint-Orens-de-Gameville',
     coordinates: { lat: 43.5450, lng: 1.5417 },
     massSchedule: [],
     openingHours: null
