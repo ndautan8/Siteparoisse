@@ -43,6 +43,23 @@ const pretresData = {
   ]
 };
 
+// Données des diacres
+const diacresData = {
+  intro: `Les diacres permanents sont des hommes mariés ou célibataires, ordonnés pour le service de la charité, de la Parole et de la liturgie. Ils exercent leur ministère au sein de notre communauté paroissiale.`,
+  deacons: [
+    {
+      name: 'Jean-Luc HARTMANN',
+      image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/93eecwnj_Jean-Luc.webp',
+      description: `Jean-Luc Hartmann est diacre permanent au service de notre paroisse. Il accompagne la communauté avec bienveillance et se consacre particulièrement au service des plus fragiles.`
+    },
+    {
+      name: 'Philippe RODIER',
+      image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/hcevlmtr_philippe.webp',
+      description: `Philippe Rodier est diacre permanent engagé au service de la communauté paroissiale. Son ministère s'exerce dans l'accompagnement des familles et la préparation aux sacrements.`
+    }
+  ]
+};
+
 const teamMembers = [
   {
     id: 'cure',
