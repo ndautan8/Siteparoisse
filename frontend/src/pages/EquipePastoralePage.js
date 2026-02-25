@@ -64,7 +64,7 @@ const teamMembers = [
   {
     id: 'cure',
     title: 'Le Curé',
-    name: 'Père Daniel',
+    name: 'P. Daniel BROUARD-DERVAL',
     role: 'Curé de la paroisse',
     description: 'Responsable de la communauté paroissiale',
     image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/izar22oi_pere-daniel.webp',
@@ -73,7 +73,7 @@ const teamMembers = [
   {
     id: 'pretres',
     title: 'Les Prêtres',
-    name: 'Père Donald, Père Anthony, Père Arnaud',
+    name: 'P. Donald, P. Anthony, P. Arnaud',
     role: 'Au service de la communauté',
     description: 'Accompagnement spirituel et sacrements',
     images: [
