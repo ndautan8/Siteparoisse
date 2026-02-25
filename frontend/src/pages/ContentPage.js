@@ -1059,7 +1059,7 @@ const ContentPage = ({ section }) => {
                   <Link
                     key={index}
                     to={item.linkTo}
-                    className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 h-full"
+                    className="group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 h-full"
                     data-testid={`item-card-${index}`}
                   >
                     {cardContent}
@@ -1075,7 +1075,7 @@ const ContentPage = ({ section }) => {
                       setSelectedResource(item);
                       setIsModalOpen(true);
                     }}
-                    className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left w-full cursor-pointer h-full"
+                    className="group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left w-full cursor-pointer h-full"
                     data-testid={`item-card-${index}`}
                   >
                     {cardContent}
@@ -1086,7 +1086,7 @@ const ContentPage = ({ section }) => {
               return (
                 <div
                   key={index}
-                  className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 h-full"
+                  className="group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 h-full"
                   data-testid={`item-card-${index}`}
                 >
                   {cardContent}
