@@ -25,20 +25,25 @@ Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une appro
 ## Fonctionnalités Implémentées
 
 ### Février 2025
-- [x] **Pages Clochers refondues** : Structure complète pour les 16 églises
-  - Hero avec photo spécifique de l'église
-  - Section "Prochaines messes" (préparée pour CMS)
-  - Description historique riche et formatée
-  - Carte Google Maps avec bouton "Itinéraire"
-  - Citation biblique
-- [x] **Photos des églises** : 6 photos uniques ajoutées
+- [x] **Pages Clochers complètes** : Les 16 églises avec photos, descriptions et cartes
   - Auzeville-Tolosane (Saint-Séverin)
-  - Auzielle (Saint-Pierre) 
+  - Auzielle (Saint-Pierre)
   - Belberaud (Saint-Jean-Baptiste)
   - Castanet-Tolosan (Saint-Gervais-et-Saint-Protais)
   - Corronsac (Nativité-de-la-Vierge)
   - Deyme (Sainte-Marie-Madeleine)
-- [x] **Données centralisées** : Fichier `clochersData.js` avec toutes les informations des 16 clochers
+  - Escalquens (Saint-Martin - "petit Saint-Sernin")
+  - Labège (Saint-Barthélemy)
+  - Lauzerville (Saint-Michel)
+  - Mervilla (Saint-Jean-Baptiste)
+  - Odars (Saint-Étienne - 212 reliques)
+  - Pechabou (Saint-Martin)
+  - Pompertuzat (Saint-André Saint-Cloud)
+  - Rebigue (Saint-Lizier)
+  - Saint-Orens-de-Gameville (Saint-Orens)
+  - Saint-Orens Catala (Saint-Jean-Bosco)
+- [x] **Structure des pages** : Hero, horaires messes (CMS), histoire, carte Google Maps
+- [x] **Données centralisées** : Fichier `clochersData.js`
 
 ### Décembre 2025
 - [x] Page d'accueil avec section Hero et carrousel d'actualités
