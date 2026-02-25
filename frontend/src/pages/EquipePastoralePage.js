@@ -170,6 +170,8 @@ const EquipePastoralePage = () => {
   const [modalType, setModalType] = useState(null);
   const [currentPriestIndex, setCurrentPriestIndex] = useState(0);
   const [currentDeaconIndex, setCurrentDeaconIndex] = useState(0);
+  const [currentEapCastanetIndex, setCurrentEapCastanetIndex] = useState(0);
+  const [currentEapSaintOrensIndex, setCurrentEapSaintOrensIndex] = useState(0);
 
   // Carousel for priests photos - 3 seconds
   useEffect(() => {
@@ -187,6 +189,23 @@ const EquipePastoralePage = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Carousel for EAP Castanet - 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentEapCastanetIndex((prev) => (prev + 1) % eapData.castanet.members.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Carousel for EAP Saint-Orens - 3 seconds (only members with photos)
+  useEffect(() => {
+    const membersWithPhotos = eapData.saintOrens.members.filter(m => m.image);
+    const interval = setInterval(() => {
+      setCurrentEapSaintOrensIndex((prev) => (prev + 1) % membersWithPhotos.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const priestImages = [
     'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/bwicpjkm_pere-donald.webp',
     'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/mrvxn6kf_pere-anthony.webp',
@@ -197,6 +216,9 @@ const EquipePastoralePage = () => {
     'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/93eecwnj_Jean-Luc.webp',
     'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/hcevlmtr_philippe.webp'
   ];
+
+  const eapCastanetImages = eapData.castanet.members.map(m => m.image);
+  const eapSaintOrensImages = eapData.saintOrens.members.filter(m => m.image).map(m => m.image);
 
   const openModal = (type) => {
     setModalType(type);
