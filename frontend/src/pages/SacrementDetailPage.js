@@ -65,7 +65,6 @@ const sacrementsData = {
     sections: [
       {
         title: 'Pour les enfants',
-        icon: '👧',
         paragraphs: [
           'Les enfants qui en sont à leur troisième année de catéchisme peuvent demander à recevoir le sacrement de l\'eucharistie. Cela se passe plutôt en CM2, mais peut se demander à tout âge. La demande est à faire en début d\'année.',
           'Une première rencontre concerne uniquement les parents. Au cours d\'une soirée nous présentons l\'itinéraire que vont vivre les enfants.',
@@ -81,7 +80,6 @@ const sacrementsData = {
       },
       {
         title: 'Pour les adultes',
-        icon: '🙏',
         paragraphs: [
           'Vous avez été baptisé enfant mais n\'avez jamais fait votre première communion ? Sachez qu\'il n\'y a pas d\'âge pour recevoir l\'Eucharistie et nourrir sa vie spirituelle.',
           'Cette démarche est une belle étape de foi qui se prépare sereinement. Nous vous proposons un accompagnement adapté à votre vie d\'adulte pour redécouvrir le sens de ce sacrement, approfondir la Bible et échanger sur vos questions.',
@@ -107,14 +105,12 @@ const sacrementsData = {
     sections: [
       {
         title: 'Un cheminement accompagné',
-        icon: '✨',
         paragraphs: [
           'Parce qu\'il s\'agit d\'une étape marquante de la vie chrétienne, la réception de ce sacrement demande un temps de préparation et de discernement.'
         ]
       },
       {
         title: 'Pour les jeunes',
-        icon: '🎓',
         paragraphs: [
           'Les collégiens et lycéens se préparent au sein de l\'aumônerie de l\'enseignement public ou de leur établissement.',
           'C\'est un lieu d\'échange et de partage pour grandir ensemble dans la foi.'
