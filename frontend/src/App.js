@@ -64,7 +64,7 @@ function App() {
                       <Route path="/equipe-pastorale/:memberId" element={<ContentPage section="equipe-detail" />} />
                       <Route path="/vie-economique" element={<VieEconomiquePage />} />
                       <Route path="/nos-clochers" element={<NosClochersPage />} />
-                      <Route path="/nos-clochers/:clocherId" element={<ContentPage section="clocher-detail" />} />
+                      <Route path="/nos-clochers/:clocherId" element={<ClocherDetailPage />} />
                       <Route path="/services-transverses" element={<ContentPage section="services" />} />
                       
                       {/* Pillar 2: Familles & Jeunesse - Sub-pages */}
