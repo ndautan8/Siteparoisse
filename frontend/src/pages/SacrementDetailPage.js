@@ -325,18 +325,15 @@ const SacrementDetailPage = () => {
         )}
 
         {/* Sections */}
-        <div className="space-y-6 mb-12">
+        <div className="space-y-8 mb-12">
           {sacrement.sections.map((section, index) => (
             <div 
               key={index} 
               className="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               {/* Section Header */}
-              <div className="bg-gradient-to-r from-slate-50 to-white px-6 py-4 border-b border-slate-100">
-                <div className="flex items-center space-x-3">
-                  <span className="text-2xl">{section.icon}</span>
-                  <h2 className="font-serif text-xl text-slate-deep">{section.title}</h2>
-                </div>
+              <div className="px-6 py-5 border-b border-slate-100">
+                <h2 className="font-serif text-xl text-[#d0ada6]">{section.title}</h2>
               </div>
               
               {/* Section Content */}
