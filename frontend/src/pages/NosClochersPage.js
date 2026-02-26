@@ -9,6 +9,7 @@ import { FadeIn } from '@/components/FadeIn';
 const NosClochersPage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="nos-clochers-page">
+      <SEO title="Nos 16 Clochers" description="D\u00e9couvrez les 16 \u00e9glises de la paroisse Notre Dame d'Autan - Patrimoine religieux de Castanet-Tolosan, Saint-Orens et environs." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}

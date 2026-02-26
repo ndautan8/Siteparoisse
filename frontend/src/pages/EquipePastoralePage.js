@@ -280,6 +280,7 @@ const EquipePastoralePage = () => {
 
   return (
     <div className="min-h-screen bg-paper" data-testid="equipe-pastorale-page">
+      <SEO title="\u00c9quipe Pastorale" description="L'\u00e9quipe pastorale de la paroisse Notre Dame d'Autan - Pr\u00eatres, diacres et la\u00efcs au service de la communaut\u00e9." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">

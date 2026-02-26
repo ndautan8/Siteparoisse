@@ -40,6 +40,7 @@ const Secretariat = () => {
 
   return (
     <div className="min-h-screen bg-paper" data-testid="secretariat-page">
+      <SEO title="Secr\u00e9tariat" description="Contactez le secr\u00e9tariat de la paroisse Notre Dame d'Autan - Centres paroissiaux de Castanet-Tolosan et Saint-Orens, horaires et formulaire de contact." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}

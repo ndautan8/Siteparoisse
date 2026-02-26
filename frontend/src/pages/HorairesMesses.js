@@ -28,6 +28,7 @@ const HorairesMesses = () => {
 
   return (
     <div className="min-h-screen bg-paper" data-testid="mass-times-page">
+      <SEO title="Horaires des Messes" description="Horaires des messes et c\u00e9l\u00e9brations de la paroisse Notre Dame d'Autan - Castanet-Tolosan, Saint-Orens et environs." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}

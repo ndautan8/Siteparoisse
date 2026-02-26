@@ -50,6 +50,7 @@ const sections = [
 const JeSuisNouveauPage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="je-suis-nouveau-page">
+      <SEO title="Je suis nouveau" description="Bienvenue dans la paroisse Notre Dame d'Autan - Toutes les informations pour les nouveaux arrivants et les personnes souhaitant d\u00e9couvrir la communaut\u00e9." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}

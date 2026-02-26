@@ -71,6 +71,7 @@ const sacrements = [
 const DemanderSacrementPage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="demander-sacrement-page">
+      <SEO title="Demander un Sacrement" description="Demandez un sacrement \u00e0 la paroisse Notre Dame d'Autan - Bapt\u00eame, premi\u00e8re communion, confirmation, mariage et sacrement des malades." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}
