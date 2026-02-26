@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eglise-responsive.preview.emergentagent.com/sitemap.xml
+Sitemap: https://parish-seo-boost.preview.emergentagent.com/sitemap.xml
 
 Disallow: /admin/
 Disallow: /admin/login
