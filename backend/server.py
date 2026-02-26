@@ -79,6 +79,22 @@ class MassTime(BaseModel):
     location: str
     mass_type: str
 
+class ContactMessage(BaseModel):
+    name: str
+    email: str
+    subject: str
+    message: str
+
+class ContactResponse(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str
+    name: str
+    email: str
+    subject: str
+    message: str
+    created_at: str
+    read: bool = False
+
 class FuneralCreate(BaseModel):
     deceased_name: str
     funeral_date: str  # Format: "YYYY-MM-DD"
@@ -252,6 +268,27 @@ async def delete_funeral(funeral_id: str, username: str = Depends(get_current_us
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="Funeral not found")
     return {"message": "Funeral deleted"}
+
+# CONTACT
+@api_router.post("/contact", response_model=ContactResponse)
+async def send_contact_message(msg: ContactMessage):
+    contact_obj = ContactResponse(
+        id=str(uuid.uuid4()),
+        name=msg.name,
+        email=msg.email,
+        subject=msg.subject,
+        message=msg.message,
+        created_at=datetime.now(timezone.utc).isoformat(),
+        read=False
+    )
+    doc = contact_obj.model_dump()
+    await db.contact_messages.insert_one(doc)
+    return contact_obj
+
+@api_router.get("/contact", response_model=List[ContactResponse])
+async def get_contact_messages(username: str = Depends(get_current_user)):
+    messages = await db.contact_messages.find({}, {"_id": 0}).sort("created_at", -1).to_list(100)
+    return messages
 
 app.include_router(api_router)
 
