@@ -7,6 +7,7 @@ import { FadeIn } from '@/components/FadeIn';
 const VieEconomiquePage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="vie-economique-page">
+      <SEO title="Vie \u00c9conomique" description="Gestion financi\u00e8re et mat\u00e9rielle de la paroisse Notre Dame d'Autan - Conseil des finances, denier de l'\u00c9glise, dons et legs." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}

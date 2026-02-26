@@ -60,6 +60,7 @@ const subActions = [
 const SolidaritePage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="solidarite-page">
+      <SEO title="Solidarit\u00e9 et \u00c9coute" description="Services de solidarit\u00e9 de la paroisse Notre Dame d'Autan - Service d'\u00e9coute, visite des malades, entraide, Secours Catholique." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}

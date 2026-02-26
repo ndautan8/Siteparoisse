@@ -55,6 +55,7 @@ const sections = [
 const FamillesJeunessePage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="familles-jeunesse-page">
+      <SEO title="Familles et Jeunesse" description="Activit\u00e9s pour les familles et les jeunes de la paroisse Notre Dame d'Autan - \u00c9veil \u00e0 la foi, cat\u00e9chisme, aum\u00f4nerie, mouvements de jeunesse." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}

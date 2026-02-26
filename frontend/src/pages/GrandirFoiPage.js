@@ -46,6 +46,7 @@ const sections = [
 const GrandirFoiPage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="grandir-foi-page">
+      <SEO title="Grandir dans la Foi" description="Parcours Alpha, cat\u00e9chum\u00e9nat, groupes de partage, m\u00e9ditation et ressources spirituelles de la paroisse Notre Dame d'Autan." />
       {/* Hero Section with Image */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}
