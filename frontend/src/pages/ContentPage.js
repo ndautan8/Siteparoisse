@@ -810,6 +810,7 @@ const ContentPage = ({ section }) => {
 
   return (
     <div className="min-h-screen bg-paper" data-testid={`content-page-${section}`}>
+      <SEO title={config.title} description={`${config.title} - ${config.description} | Paroisse Notre Dame d'Autan`} />
       {/* Hero Section - if heroImage exists */}
       {config.heroImage && (
         <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
@@ -865,6 +866,7 @@ const ContentPage = ({ section }) => {
         </div>
       )}
 
+      <FadeIn>
       <div id="content" className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ${section === 'funerailles' ? 'py-8' : 'py-16'}`}>
         {/* Header - only if no hero image */}
         {!config.heroImage && (
