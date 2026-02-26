@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import { Calendar, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
@@ -11,6 +11,7 @@ export const NewsSection = () => {
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
   useEffect(() => {
     fetchNews();
