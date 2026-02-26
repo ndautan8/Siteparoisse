@@ -901,10 +901,11 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
         </div>
 
         {/* ── Footer fixe ── */}
-        <div className="flex-shrink-0 rounded-b-2xl bg-slate-50 border-t border-slate-200 p-4 flex justify-end">
+        <div className="flex-shrink-0 sm:rounded-b-2xl bg-slate-50 border-t border-slate-200 p-3 sm:p-4 flex justify-end">
           <button
             onClick={onClose}
             className="px-6 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full font-medium transition-colors"
+            data-testid="modal-close-footer-button"
           >
             Fermer
           </button>
