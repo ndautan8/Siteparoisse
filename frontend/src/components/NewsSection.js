@@ -219,6 +219,90 @@ export const NewsSection = () => {
           </div>
         )}
       </div>
+
+      {/* Article Modal */}
+      {selectedArticle && (
+        <div 
+          className="fixed inset-0 z-[70] flex items-end sm:items-center justify-center sm:p-4 bg-black/40 backdrop-blur-sm"
+          onClick={() => setSelectedArticle(null)}
+          data-testid="news-modal-backdrop"
+        >
+          <div
+            className="bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl max-w-2xl w-full max-h-[85vh] sm:max-h-[90vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+            data-testid="news-modal"
+          >
+            {/* Modal Header with image */}
+            <div className="flex-shrink-0 sm:rounded-t-2xl rounded-t-2xl overflow-hidden relative">
+              {selectedArticle.image_url ? (
+                <div className="relative h-48 sm:h-56">
+                  <img
+                    src={selectedArticle.image_url}
+                    alt={selectedArticle.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    {selectedArticle.category && (
+                      <span className="inline-block bg-gold/90 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                        {selectedArticle.category}
+                      </span>
+                    )}
+                    <h2 className="font-serif text-xl sm:text-2xl text-white leading-tight">
+                      {selectedArticle.title}
+                    </h2>
+                    <div className="flex items-center space-x-2 text-xs text-white/80 mt-2">
+                      <Calendar className="w-3.5 h-3.5" />
+                      <span>{formatDate(selectedArticle.created_at)}</span>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="p-4 sm:p-6 bg-gradient-to-r from-gold/20 to-gold/10">
+                  {selectedArticle.category && (
+                    <span className="inline-block bg-gold/90 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                      {selectedArticle.category}
+                    </span>
+                  )}
+                  <h2 className="font-serif text-xl sm:text-2xl text-slate-deep leading-tight">
+                    {selectedArticle.title}
+                  </h2>
+                  <div className="flex items-center space-x-2 text-xs text-slate-500 mt-2">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>{formatDate(selectedArticle.created_at)}</span>
+                  </div>
+                </div>
+              )}
+              <button
+                onClick={() => setSelectedArticle(null)}
+                className="absolute top-3 right-3 w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center transition-colors"
+                aria-label="Fermer"
+                data-testid="news-modal-close"
+              >
+                <X className="w-5 h-5 text-white" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+              <div className="text-slate-600 leading-relaxed whitespace-pre-line">
+                {selectedArticle.content}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="flex-shrink-0 sm:rounded-b-2xl bg-slate-50 border-t border-slate-200 p-3 sm:p-4 flex justify-end">
+              <button
+                onClick={() => setSelectedArticle(null)}
+                className="px-6 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full font-medium transition-colors"
+                data-testid="news-modal-close-footer"
+              >
+                Fermer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
