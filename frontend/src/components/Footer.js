@@ -1,16 +1,24 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Mail, Phone, MapPin, Check } from 'lucide-react';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 export const Footer = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     if (!email) return;
-    setSubscribed(true);
-    setEmail('');
+    try {
+      await axios.post(`${BACKEND_URL}/api/subscribers`, { email });
+      setSubscribed(true);
+      setEmail('');
+    } catch (err) {
+      console.error('Error subscribing:', err);
+    }
   };
 
   return (
