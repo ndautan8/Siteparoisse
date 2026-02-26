@@ -1,9 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 
 export const FloatingButtons = () => {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   return (
     <div className="hidden lg:flex fixed top-24 right-8 z-40 flex-row items-center gap-4">
