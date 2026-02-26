@@ -1027,11 +1027,11 @@ const ContentPage = ({ section }) => {
               </>
             ) : (
               /* Standard layout for other sections */
-              <div className={`grid grid-cols-2 ${
+              <div className={`flex flex-wrap justify-center gap-6 sm:grid ${
                 ['liturgie', 'eveil', 'catechisme', 'aumonerie', 'ressources', 'malades'].includes(section) 
                   ? 'sm:grid-cols-2 lg:grid-cols-4' 
                   : 'sm:grid-cols-2 lg:grid-cols-3'
-              } gap-6 mb-12`}>
+              } mb-12`}>
             {config.items.map((item, index) => {
               const ItemIcon = item.icon;
               const isClickable = section === 'ressources' || section === 'alpha' || section === 'groupes' || section === 'meditation' || section === 'mouvements' || item.mejContent;
@@ -1059,7 +1059,7 @@ const ContentPage = ({ section }) => {
                   <Link
                     key={index}
                     to={item.linkTo}
-                    className="group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 h-full"
+                    className="w-[calc(50%-0.75rem)] sm:w-auto group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 h-full"
                     data-testid={`item-card-${index}`}
                   >
                     {cardContent}
@@ -1075,7 +1075,7 @@ const ContentPage = ({ section }) => {
                       setSelectedResource(item);
                       setIsModalOpen(true);
                     }}
-                    className="group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left w-full cursor-pointer h-full"
+                    className="w-[calc(50%-0.75rem)] sm:w-auto group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left cursor-pointer h-full"
                     data-testid={`item-card-${index}`}
                   >
                     {cardContent}
@@ -1086,7 +1086,7 @@ const ContentPage = ({ section }) => {
               return (
                 <div
                   key={index}
-                  className="group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 h-full"
+                  className="w-[calc(50%-0.75rem)] sm:w-auto group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 h-full"
                   data-testid={`item-card-${index}`}
                 >
                   {cardContent}
