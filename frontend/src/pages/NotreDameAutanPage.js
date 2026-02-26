@@ -208,8 +208,5 @@ const NotreDameAutanPage = () => {
           <p className="text-gold font-medium">1 Pierre 2, 5</p>
         </div>
       </div>
+      </FadeIn>
     </div>
-  );
-};
-
-export default NotreDameAutanPage;
