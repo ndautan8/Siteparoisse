@@ -24,6 +24,8 @@ export const Header = () => {
     { title: 'Vie Économique', path: '/vie-economique', keywords: 'denier don finances soutenir' },
     { title: 'Nos Clochers', path: '/nos-clochers', keywords: 'églises clochers patrimoine' },
     { title: 'Services Transverses', path: '/services-transverses', keywords: 'communication accueil' },
+    { title: 'La Lettre du Père Daniel', path: '/lettre-pere-daniel', keywords: 'lettre père daniel newsletter bulletin curé' },
+    { title: 'Servir dans la paroisse', path: '/servir', keywords: 'servir bénévole engagement service rejoindre' },
     { title: 'Familles & Jeunesse', path: '/familles-jeunesse', keywords: 'famille jeunes enfants' },
     { title: 'Éveil à la Foi', path: '/eveil-foi', keywords: 'éveil foi petits enfants 3 7 ans' },
     { title: 'Catéchisme', path: '/catechisme', keywords: 'catéchisme enfants communion CE2 CM1 CM2 6ème' },
