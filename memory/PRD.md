@@ -16,6 +16,20 @@ Site web paroissial pour Notre Dame d'Autan (Castanet-Tolosan / Saint-Orens). Ap
 - Recherche site complète
 - Responsive mobile
 
+### Gestion Admin (CRUD)
+- Actualités (news)
+- Horaires des messes
+- Funérailles
+- Événements / Agenda (Feb 2026)
+
+### Page Agenda (Feb 2026)
+- Page publique `/agenda` avec hero, filtres par catégorie, événements groupés par mois
+- Section "Prochains événements" sur la page d'accueil (4 max)
+- Catégories : Liturgie, Communauté, Jeunesse, Solidarité, Formation
+- Les événements passés sont automatiquement masqués
+- Liens dans footer, menu mobile, et recherche
+- Onglet admin pour CRUD des événements
+
 ### Améliorations Visuelles (Feb 2026)
 - Hero 40vh sur mobile (sous-pages), 80vh accueil
 - Animations fade-in au scroll (IntersectionObserver)
@@ -29,14 +43,20 @@ Site web paroissial pour Notre Dame d'Autan (Castanet-Tolosan / Saint-Orens). Ap
 
 ## Backlog Priorisé
 
-### P1
-- **Page "Agenda"** — Page centralisée des événements paroissiaux
-
 ### P2
 - Refactoring de `ContentPage.js` (composant trop volumineux)
 - Amélioration du système d'indexation de recherche
 
 ## Notes Techniques
 - Ne PAS utiliser `react-helmet-async` (cause écran blanc)
-- Hook custom `useDocumentTitle.js` utilisé pour SEO
+- Hook custom `useDocumentTitle.js` / `SEO.js` utilisé pour SEO
 - `SocialIcons.js` : positionnement responsive (top-right mobile, bottom-right desktop)
+- Admin credentials: admin / admin123
+
+## API Endpoints
+- GET/POST /api/events, PUT/DELETE /api/events/{id}
+- GET/POST /api/news, PUT/DELETE /api/news/{id}
+- GET/POST /api/mass-times, PUT/DELETE /api/mass-times/{id}
+- GET/POST /api/funerals, PUT/DELETE /api/funerals/{id}
+- POST /api/auth/login
+- GET/POST /api/contact
