@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Phone, GraduationCap } from 'lucide-react';
 import { SocialIcons } from '@/components/SocialIcons';
+import { SEO } from '@/components/SEO';
+import { FadeIn } from '@/components/FadeIn';
 import {
   Dialog,
   DialogContent,

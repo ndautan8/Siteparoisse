@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Home, User, CheckCircle, Loader2 } from 'lucide-react';
 import { SocialIcons } from '@/components/SocialIcons';
+import { SEO } from '@/components/SEO';
+import { FadeIn } from '@/components/FadeIn';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
 

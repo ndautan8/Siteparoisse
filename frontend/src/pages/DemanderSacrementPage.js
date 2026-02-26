@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Heart, Droplets, Sparkles, BookOpen, HandHeart, Cross } from 'lucide-react';
 import { SocialIcons } from '@/components/SocialIcons';
+import { SEO } from '@/components/SEO';
+import { FadeIn } from '@/components/FadeIn';
 
 const sacrements = [
   {

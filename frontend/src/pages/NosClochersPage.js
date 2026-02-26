@@ -3,6 +3,8 @@ import { Church, MapPin, Map } from 'lucide-react';
 import { SocialIcons } from '@/components/SocialIcons';
 import { clochersListData, clochersData } from '@/data/clochersData';
 import ClochersMap from '@/components/ClochersMap';
+import { SEO } from '@/components/SEO';
+import { FadeIn } from '@/components/FadeIn';
 
 const NosClochersPage = () => {
   return (

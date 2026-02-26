@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Clock, MapPin, Bell } from 'lucide-react';
 import axios from 'axios';
 import { SocialIcons } from '@/components/SocialIcons';
+import { SEO } from '@/components/SEO';
+import { FadeIn } from '@/components/FadeIn';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 

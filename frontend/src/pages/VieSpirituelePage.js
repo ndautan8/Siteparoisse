@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Heart, Droplets, Sparkles, HandHeart, Cross } from 'lucide-react';
+import { SEO } from '@/components/SEO';
+import { FadeIn } from '@/components/FadeIn';
 
 const sections = [
   {

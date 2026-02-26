@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Building2, Users, Wallet, Church, Sparkles, Music, Cross } from 'lucide-react';
 import { SocialIcons } from '@/components/SocialIcons';
+import { SEO } from '@/components/SEO';
+import { FadeIn } from '@/components/FadeIn';
 
 const sections = [
   {
