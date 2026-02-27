@@ -450,6 +450,34 @@ async def delete_letter(letter_id: str, username: str = Depends(get_current_user
         raise HTTPException(status_code=404, detail="Letter not found")
     return {"message": "Letter deleted"}
 
+# FILE UPLOAD
+UPLOAD_DIR = ROOT_DIR / "uploads"
+UPLOAD_DIR.mkdir(exist_ok=True)
+
+ALLOWED_IMAGE_TYPES = {"image/jpeg", "image/png", "image/gif", "image/webp"}
+ALLOWED_DOC_TYPES = {"application/pdf"}
+ALLOWED_TYPES = ALLOWED_IMAGE_TYPES | ALLOWED_DOC_TYPES
+MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+
+@api_router.post("/upload")
+async def upload_file(file: UploadFile = File(...), username: str = Depends(get_current_user)):
+    if file.content_type not in ALLOWED_TYPES:
+        raise HTTPException(status_code=400, detail=f"Type de fichier non autorisé: {file.content_type}")
+    
+    contents = await file.read()
+    if len(contents) > MAX_FILE_SIZE:
+        raise HTTPException(status_code=400, detail="Fichier trop volumineux (max 10 Mo)")
+    
+    ext = Path(file.filename).suffix.lower() if file.filename else ".bin"
+    filename = f"{uuid.uuid4()}{ext}"
+    filepath = UPLOAD_DIR / filename
+    
+    async with aiofiles.open(filepath, "wb") as f:
+        await f.write(contents)
+    
+    file_url = f"/api/uploads/{filename}"
+    return {"file_url": file_url, "filename": file.filename, "size": len(contents)}
+
 app.include_router(api_router)
 
 app.add_middleware(
