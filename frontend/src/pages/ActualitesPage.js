@@ -8,6 +8,14 @@ import { FadeIn } from '@/components/FadeIn';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
+const DEFAULT_CATEGORY_IMAGES = {
+  'Actualité': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/xcdoobf2_Actualit%C3%A9-d%C3%A9faut.png',
+  'Annonce': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/0ey6uzxa_Annonce-d%C3%A9faut.png',
+  'Communauté': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/q6ijalbn_Communaut%C3%A9-d%C3%A9faut.png',
+  'Événement': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/1vio65rk_Ev%C3%A8nement-d%C3%A9faut.png',
+  'Liturgie': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/ah90qnjg_Liturgie-d%C3%A9faut.png',
+};
+
 const ActualitesPage = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
