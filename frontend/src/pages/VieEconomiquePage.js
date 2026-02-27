@@ -85,8 +85,8 @@ const VieEconomiquePage = () => {
               </div>
               <h3 className="font-serif text-2xl text-slate-deep mb-3 text-center">Legs et Donations</h3>
               <p className="text-slate-600 text-center mb-6 leading-relaxed">
-                Transmettre votre patrimoine à l'Église est un acte de foi et de générosité qui permet de soutenir 
-                durablement la mission évangélisatrice et les œuvres caritatives.
+                Que ce soit par un don, un legs ou une donation, votre générosité est un acte de foi 
+                qui permet de soutenir durablement la mission évangélisatrice et les œuvres caritatives de notre paroisse.
               </p>
               <div className="text-center">
                 <Link
