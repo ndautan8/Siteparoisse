@@ -489,7 +489,14 @@ const AdminDashboard = () => {
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <h1 className="font-serif text-2xl text-slate-deep">Administration</h1>
+          <div className="flex items-center space-x-3">
+            <img
+              src="https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/34n0n91l_Notre-Dame-d-Autan.png"
+              alt="Notre Dame d'Autan"
+              className="h-10 w-auto"
+            />
+            <h1 className="font-serif text-xl sm:text-2xl text-slate-deep">Administration Notre Dame d'Autan</h1>
+          </div>
           <button
             onClick={handleLogout}
             className="flex items-center space-x-2 text-slate-600 hover:text-gold transition-colors"
