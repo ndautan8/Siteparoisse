@@ -46,6 +46,13 @@ const AdminDashboard = () => {
   const [letterForm, setLetterForm] = useState({ title: '', content: '', date: '', file_url: '' });
   const [editingLetter, setEditingLetter] = useState(null);
 
+  // Bulk selection states
+  const [selectedNews, setSelectedNews] = useState([]);
+  const [selectedMass, setSelectedMass] = useState([]);
+  const [selectedFunerals, setSelectedFunerals] = useState([]);
+  const [selectedEvents, setSelectedEvents] = useState([]);
+  const [selectedLetters, setSelectedLetters] = useState([]);
+
   // File upload states
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadingFile, setUploadingFile] = useState(false);
