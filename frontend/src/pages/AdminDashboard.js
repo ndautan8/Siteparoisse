@@ -318,15 +318,18 @@ const AdminDashboard = () => {
   const handleLetterSubmit = async (e) => {
     e.preventDefault();
     try {
+      const payload = { ...letterForm };
+      if (!payload.file_url) delete payload.file_url;
+      if (!payload.content) payload.content = '';
       if (editingLetter) {
-        await axios.put(`${BACKEND_URL}/api/letters/${editingLetter.id}`, letterForm, { headers: getAuthHeaders() });
+        await axios.put(`${BACKEND_URL}/api/letters/${editingLetter.id}`, payload, { headers: getAuthHeaders() });
         toast.success('Lettre mise à jour');
         setEditingLetter(null);
       } else {
-        await axios.post(`${BACKEND_URL}/api/letters`, letterForm, { headers: getAuthHeaders() });
+        await axios.post(`${BACKEND_URL}/api/letters`, payload, { headers: getAuthHeaders() });
         toast.success('Lettre publiée');
       }
-      setLetterForm({ title: '', content: '', date: '' });
+      setLetterForm({ title: '', content: '', date: '', file_url: '' });
       fetchData();
     } catch (error) {
       toast.error("Erreur lors de l'enregistrement");
@@ -335,7 +338,7 @@ const AdminDashboard = () => {
 
   const handleEditLetter = (item) => {
     setEditingLetter(item);
-    setLetterForm({ title: item.title, content: item.content, date: item.date });
+    setLetterForm({ title: item.title, content: item.content || '', date: item.date, file_url: item.file_url || '' });
   };
 
   const handleDeleteLetter = async (id) => {
