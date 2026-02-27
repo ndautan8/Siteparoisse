@@ -338,7 +338,8 @@ const AdminDashboard = () => {
   // EVENTS HANDLERS
   const handleEventSubmit = async (e) => {
     e.preventDefault();
-    const payload = { ...eventForm };
+    const resolvedEventCat = eventForm.category === 'Autre' && customEventCategory.trim() ? customEventCategory.trim() : eventForm.category;
+    const payload = { ...eventForm, category: resolvedEventCat };
     if (!payload.end_time) delete payload.end_time;
     try {
       if (editingEvent) {
@@ -350,6 +351,7 @@ const AdminDashboard = () => {
         toast.success('Événement créé');
       }
       setEventForm({ title: '', description: '', date: '', time: '', end_time: '', location: '', category: 'Communauté' });
+      setCustomEventCategory('');
       fetchData();
     } catch (error) {
       toast.error("Erreur lors de l'enregistrement");
