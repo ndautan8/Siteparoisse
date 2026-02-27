@@ -20,7 +20,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   // News Form State
-  const [newsForm, setNewsForm] = useState({ title: '', content: '', category: 'Actualité', image_url: '' });
+  const [newsForm, setNewsForm] = useState({ title: '', content: '', category: 'Actualité', image_url: 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/xcdoobf2_Actualit%C3%A9-d%C3%A9faut.png' });
   const [editingNews, setEditingNews] = useState(null);
   const [customCategory, setCustomCategory] = useState('');
   const [customMassType, setCustomMassType] = useState('');
