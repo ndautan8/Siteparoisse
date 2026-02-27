@@ -295,15 +295,18 @@ const AdminDashboard = () => {
   const handleSubmitFuneral = async (e) => {
     e.preventDefault();
     try {
+      const resolvedCeremony = funeralForm.ceremony_type === 'Autre' && customCeremonyType.trim() ? customCeremonyType.trim() : funeralForm.ceremony_type;
+      const payload = { ...funeralForm, ceremony_type: resolvedCeremony };
       if (editingFuneral) {
-        await axios.put(`${BACKEND_URL}/api/funerals/${editingFuneral.id}`, funeralForm, { headers: getAuthHeaders() });
+        await axios.put(`${BACKEND_URL}/api/funerals/${editingFuneral.id}`, payload, { headers: getAuthHeaders() });
         toast.success('Funérailles modifiées');
         setEditingFuneral(null);
       } else {
-        await axios.post(`${BACKEND_URL}/api/funerals`, funeralForm, { headers: getAuthHeaders() });
+        await axios.post(`${BACKEND_URL}/api/funerals`, payload, { headers: getAuthHeaders() });
         toast.success('Funérailles ajoutées');
       }
       setFuneralForm({ deceased_name: '', funeral_date: '', funeral_time: '', location: '', ceremony_type: 'Messe de funérailles' });
+      setCustomCeremonyType('');
       fetchData();
     } catch (error) {
       toast.error('Erreur lors de l\'enregistrement');
