@@ -216,7 +216,7 @@ const ServirPage = () => {
       />
 
       {/* Hero */}
-      <section className="relative h-[40vh] md:h-[45vh] flex items-center justify-center">
+      <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
             src="https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg"
