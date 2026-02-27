@@ -1058,14 +1058,12 @@ const AdminDashboard = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Lieu *</label>
-                    <input
-                      type="text"
-                      required
+                    <LocationAutocomplete
                       value={eventForm.location}
-                      onChange={(e) => setEventForm({ ...eventForm, location: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
-                      placeholder="Ex: Église de Castanet"
-                      data-testid="event-location-input"
+                      onChange={(val) => setEventForm({ ...eventForm, location: val })}
+                      placeholder="Tapez pour rechercher un lieu..."
+                      required
+                      testId="event-location-input"
                     />
                   </div>
                   <div className="md:col-span-2">
