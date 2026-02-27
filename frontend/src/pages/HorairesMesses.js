@@ -302,13 +302,37 @@ const HorairesMesses = () => {
                   <div className="flex flex-col items-start md:items-end space-y-1">
                     <div className="flex items-center space-x-2 text-slate-600">
                       <MapPin className="w-4 h-4" />
-                      <span>{mass.location}</span>
+                      <span className="font-bold">{mass.location}</span>
                     </div>
                     <span className="text-sm text-gold font-medium">{mass.mass_type}</span>
                   </div>
                 </div>
               </div>
             ))}
+
+            {/* Bouton voir au-delà de 30 jours — après la liste */}
+            {beyondCount > 0 && !showBeyond30 && (
+              <div className="text-center pt-4">
+                <button
+                  onClick={() => setShowBeyond30(true)}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gold text-gold hover:bg-gold hover:text-white font-medium transition-all duration-300"
+                >
+                  <CalendarDays className="w-4 h-4" />
+                  <span>Voir au-delà de 30 jours (+{beyondCount})</span>
+                </button>
+              </div>
+            )}
+            {showBeyond30 && (
+              <div className="text-center pt-4">
+                <button
+                  onClick={() => setShowBeyond30(false)}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-white font-medium transition-all duration-300 hover:bg-gold-dark"
+                >
+                  <CalendarDays className="w-4 h-4" />
+                  <span>Masquer au-delà de 30 jours</span>
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>
