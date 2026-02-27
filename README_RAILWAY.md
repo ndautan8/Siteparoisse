@@ -1,142 +1,165 @@
 # Déploiement sur Railway - Notre Dame d'Autan
 
-Ce guide explique comment déployer l'application sur Railway.
-
 ## Architecture
 
-L'application est composée de 3 services :
-- **Frontend** : Application React (port dynamique via `$PORT`)
-- **Backend** : API FastAPI (port dynamique via `$PORT`)
-- **Database** : MongoDB (externe ou plugin Railway)
+L'application est composée de 3 services sur Railway :
+- **Frontend** : Application React servie par `serve` (port dynamique via `$PORT`)
+- **Backend** : API FastAPI avec Uvicorn (port dynamique via `$PORT`)
+- **MongoDB** : Plugin Railway (base de données intégrée)
 
 ## Prérequis
 
-1. Un compte [Railway](https://railway.app)
-2. Une base de données MongoDB (MongoDB Atlas recommandé ou plugin Railway)
+1. Un compte [Railway](https://railway.app) (plan Hobby à 5$/mois)
+2. Votre code sur un repository GitHub
 
-## Étapes de déploiement
+## Déploiement pas à pas
 
-### 1. Créer un nouveau projet Railway
+### Étape 1 : Créer le projet Railway
 
-1. Connectez-vous à Railway
-2. Cliquez sur "New Project"
-3. Sélectionnez "Deploy from GitHub repo"
-4. Connectez votre repository GitHub
+1. Connectez-vous à [Railway](https://railway.app)
+2. Cliquez sur **"New Project"**
+3. Sélectionnez **"Deploy from GitHub repo"**
+4. Connectez et sélectionnez votre repository
 
-### 2. Configurer le service Backend
+### Étape 2 : Ajouter la base de données MongoDB
 
-1. Dans Railway, cliquez sur "Add Service" → "Empty Service"
-2. Configurez :
+1. Dans votre projet, cliquez sur **"+ New"** → **"Database"** → **"MongoDB"**
+2. Railway crée automatiquement une instance MongoDB
+3. Cliquez sur le service MongoDB → **"Variables"** → copiez `MONGO_URL`
+
+### Étape 3 : Configurer le Backend
+
+1. Cliquez sur **"+ New"** → **"GitHub Repo"** → sélectionnez votre repo
+2. Dans les **Settings** du service :
    - **Root Directory** : `/backend`
-   - **Variables d'environnement** :
-     ```
-     MONGO_URL=mongodb+srv://user:pass@cluster.mongodb.net/dbname
-     DB_NAME=notre_dame_autan
-     JWT_SECRET=votre-cle-secrete-production
-     CORS_ORIGINS=https://votre-frontend.railway.app
-     ```
+   - Railway détecte automatiquement Python et utilise `railway.toml`
+3. Dans **Variables**, ajoutez :
+   ```
+   MONGO_URL=<collez l'URL MongoDB du plugin> (ou référencez la variable du service MongoDB)
+   DB_NAME=notre_dame_autan
+   JWT_SECRET=une-cle-secrete-unique-et-longue
+   CORS_ORIGINS=https://votre-frontend.railway.app
+   ```
+4. **Astuce** : Pour `MONGO_URL`, vous pouvez utiliser une **Variable Reference** :
+   - Cliquez sur "Add Variable" → tapez `MONGO_URL`
+   - Pour la valeur, cliquez sur **"Add Reference"** → sélectionnez le service MongoDB → `MONGO_URL`
 
-3. Railway détectera automatiquement Python et utilisera le `railway.toml`
+### Étape 4 : Configurer le Frontend
 
-### 3. Configurer le service Frontend
-
-1. Ajoutez un autre service "Empty Service"
-2. Configurez :
+1. Cliquez sur **"+ New"** → **"GitHub Repo"** → même repo
+2. Dans les **Settings** du service :
    - **Root Directory** : `/frontend`
-   - **Variables d'environnement** :
-     ```
-     REACT_APP_BACKEND_URL=https://votre-backend.railway.app
-     ```
+   - Railway détecte automatiquement Node.js et utilise `railway.toml`
+3. Dans **Variables**, ajoutez :
+   ```
+   REACT_APP_BACKEND_URL=https://votre-backend.railway.app
+   ```
 
-3. Railway détectera automatiquement Node.js et utilisera le `railway.toml`
+### Étape 5 : Générer les domaines publics
 
-### 4. Générer les domaines
+Pour chaque service (frontend et backend) :
+1. Allez dans **Settings** → **Networking**
+2. Cliquez sur **"Generate Domain"**
+3. Notez les URLs générées (ex: `mon-backend.railway.app`)
 
-1. Pour chaque service, allez dans "Settings" → "Networking"
-2. Cliquez sur "Generate Domain"
-3. Notez les URLs générées
-
-### 5. Mettre à jour les variables CORS
+### Étape 6 : Mettre à jour les variables avec les vrais domaines
 
 Une fois les domaines générés :
-1. Mettez à jour `CORS_ORIGINS` du backend avec l'URL du frontend
-2. Mettez à jour `REACT_APP_BACKEND_URL` du frontend avec l'URL du backend
+1. **Backend** → mettez à jour `CORS_ORIGINS` avec l'URL du frontend
+2. **Frontend** → mettez à jour `REACT_APP_BACKEND_URL` avec l'URL du backend
 
-## Configuration MongoDB Atlas
+### Étape 7 : Redéployer
 
-Si vous utilisez MongoDB Atlas :
-
-1. Créez un compte sur [MongoDB Atlas](https://www.mongodb.com/atlas)
-2. Créez un cluster gratuit (M0)
-3. Dans "Database Access", créez un utilisateur
-4. Dans "Network Access", ajoutez `0.0.0.0/0` pour autoriser toutes les IPs
-5. Obtenez l'URI de connexion dans "Connect" → "Connect your application"
+Railway redéploie automatiquement quand vous modifiez les variables.
+Vérifiez que tout fonctionne en visitant l'URL du frontend.
 
 ## Structure des fichiers Railway
 
 ```
-/app
-├── railway.json           # Config racine (optionnelle)
+/
 ├── backend/
-│   ├── railway.toml       # Config Railway backend
-│   ├── Procfile           # Alternative Heroku-compatible
-│   ├── requirements.txt   # Dépendances Python
-│   └── server.py          # Application FastAPI
+│   ├── railway.toml       ← Config Railway (build + deploy + healthcheck)
+│   ├── .env.example       ← Variables requises (référence)
+│   ├── Procfile            ← Alternative Heroku-compatible
+│   ├── requirements.txt   ← Dépendances Python
+│   └── server.py          ← API FastAPI
+│
 └── frontend/
-    ├── railway.toml       # Config Railway frontend
-    ├── Procfile           # Alternative Heroku-compatible
-    └── package.json       # Dépendances Node.js
+    ├── railway.toml       ← Config Railway (build + deploy)
+    ├── .env.example       ← Variables requises (référence)
+    ├── Procfile            ← Alternative Heroku-compatible
+    ├── package.json       ← Dépendances Node.js
+    └── public/
+        └── serve.json     ← Routage SPA (redirige tout vers index.html)
 ```
 
-## Variables d'environnement requises
+## Variables d'environnement
 
 ### Backend
-| Variable | Description | Exemple |
-|----------|-------------|---------|
-| `MONGO_URL` | URI MongoDB | `mongodb+srv://...` |
-| `DB_NAME` | Nom de la BDD | `notre_dame_autan` |
-| `JWT_SECRET` | Clé secrète JWT | `votre-cle-secrete` |
-| `CORS_ORIGINS` | URLs autorisées | `https://frontend.railway.app` |
+| Variable | Obligatoire | Description | Exemple |
+|----------|:-----------:|-------------|---------|
+| `MONGO_URL` | ✅ | URI MongoDB (plugin Railway) | `mongodb://mongo:27017` |
+| `DB_NAME` | ✅ | Nom de la base de données | `notre_dame_autan` |
+| `JWT_SECRET` | ✅ | Clé secrète pour les tokens admin | `ma-cle-secrete-longue` |
+| `CORS_ORIGINS` | ✅ | URL(s) du frontend autorisées | `https://frontend.railway.app` |
+| `PORT` | ⚙️ | Injecté automatiquement par Railway | `8000` |
 
 ### Frontend
-| Variable | Description | Exemple |
-|----------|-------------|---------|
-| `REACT_APP_BACKEND_URL` | URL du backend | `https://backend.railway.app` |
+| Variable | Obligatoire | Description | Exemple |
+|----------|:-----------:|-------------|---------|
+| `REACT_APP_BACKEND_URL` | ✅ | URL publique du backend | `https://backend.railway.app` |
+| `PORT` | ⚙️ | Injecté automatiquement par Railway | `3000` |
 
-## Commandes de déploiement manuel
+## Health Check
 
-Si vous préférez utiliser le CLI Railway :
+Le backend expose un endpoint de health check :
+- **URL** : `/api/health`
+- **Réponse** : `{ "status": "healthy", "database": "connected", "service": "notre-dame-autan-api" }`
+- Railway l'utilise pour vérifier que le service fonctionne
+
+## Domaine personnalisé (optionnel)
+
+Pour utiliser votre propre nom de domaine (ex: `www.paroisse-nda.fr`) :
+1. Allez dans les **Settings** du service frontend → **Networking**
+2. Cliquez sur **"Custom Domain"**
+3. Ajoutez votre domaine
+4. Configurez un enregistrement **CNAME** chez votre registrar DNS qui pointe vers l'URL Railway
+
+## Coût estimé
+
+Avec le plan **Hobby** (5$/mois) :
+- Frontend + Backend + MongoDB plugin → ~5$/mois total
+- Largement suffisant pour un site paroissial
+
+## Dépannage
+
+### Le frontend affiche une page blanche
+- Vérifiez que `REACT_APP_BACKEND_URL` est correcte
+- Vérifiez les logs du frontend dans Railway
+
+### Erreur CORS (le frontend ne peut pas appeler le backend)
+- Vérifiez que `CORS_ORIGINS` contient l'URL exacte du frontend (avec `https://`)
+
+### Le backend ne démarre pas
+- Vérifiez que `MONGO_URL` est correcte
+- Consultez les logs dans Railway → service backend → **Logs**
+
+### Les pages renvoient une erreur 404
+- Vérifiez que `serve.json` est bien dans `/frontend/public/`
+- Ce fichier redirige toutes les routes vers `index.html` (nécessaire pour React Router)
+
+## Commandes CLI (alternative)
 
 ```bash
-# Installation du CLI
+# Installation du CLI Railway
 npm install -g @railway/cli
 
 # Connexion
 railway login
 
-# Initialisation du projet
-railway init
+# Lier au projet existant
+railway link
 
-# Déploiement
+# Déployer
 railway up
 ```
-
-## Dépannage
-
-### Le frontend ne se connecte pas au backend
-- Vérifiez que `REACT_APP_BACKEND_URL` est correct
-- Vérifiez que `CORS_ORIGINS` inclut l'URL du frontend
-
-### Erreur de connexion MongoDB
-- Vérifiez l'URI `MONGO_URL`
-- Assurez-vous que votre IP est autorisée dans MongoDB Atlas
-
-### Le service ne démarre pas
-- Consultez les logs dans Railway
-- Vérifiez que toutes les variables d'environnement sont définies
-
-## Support
-
-Pour toute question, consultez :
-- [Documentation Railway](https://docs.railway.app)
-- [Documentation MongoDB Atlas](https://www.mongodb.com/docs/atlas/)
