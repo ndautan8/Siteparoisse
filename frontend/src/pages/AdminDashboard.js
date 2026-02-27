@@ -473,23 +473,71 @@ const AdminDashboard = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Catégorie</label>
-                    <input
-                      type="text"
+                    <select
                       value={newsForm.category}
                       onChange={(e) => setNewsForm({ ...newsForm, category: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                      className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold bg-white"
                       data-testid="news-category-input"
-                    />
+                    >
+                      {NEWS_CATEGORIES.map((cat) => (
+                        <option key={cat} value={cat}>{cat}</option>
+                      ))}
+                    </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">URL Image (optionnel)</label>
-                    <input
-                      type="url"
-                      value={newsForm.image_url}
-                      onChange={(e) => setNewsForm({ ...newsForm, image_url: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
-                      data-testid="news-image-input"
-                    />
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Image (optionnel)</label>
+                    {newsForm.image_url ? (
+                      <div className="relative border border-slate-200 rounded-lg overflow-hidden">
+                        <img src={newsForm.image_url.startsWith('/api') ? `${BACKEND_URL}${newsForm.image_url}` : newsForm.image_url} alt="Preview" className="w-full h-32 object-cover" />
+                        <button
+                          type="button"
+                          onClick={() => setNewsForm({ ...newsForm, image_url: '' })}
+                          className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center hover:bg-red-600"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ) : (
+                      <div
+                        className={`border-2 border-dashed rounded-lg p-4 text-center cursor-pointer transition-colors ${
+                          dragOverImage ? 'border-gold bg-gold/5' : 'border-slate-200 hover:border-gold/50'
+                        }`}
+                        onDragOver={(e) => { e.preventDefault(); setDragOverImage(true); }}
+                        onDragLeave={() => setDragOverImage(false)}
+                        onDrop={(e) => {
+                          e.preventDefault();
+                          setDragOverImage(false);
+                          const file = e.dataTransfer.files[0];
+                          if (file) handleImageUpload(file);
+                        }}
+                        onClick={() => document.getElementById('news-image-file').click()}
+                      >
+                        {uploadingImage ? (
+                          <div className="flex items-center justify-center gap-2 text-gold">
+                            <div className="w-5 h-5 border-2 border-gold border-t-transparent rounded-full animate-spin"></div>
+                            <span className="text-sm">Upload en cours...</span>
+                          </div>
+                        ) : (
+                          <>
+                            <Upload className="w-6 h-6 text-slate-400 mx-auto mb-1" />
+                            <p className="text-sm text-slate-500">Glissez une image ou <span className="text-gold font-medium">parcourir</span></p>
+                            <p className="text-xs text-slate-400 mt-1">JPG, PNG, WebP — max 10 Mo</p>
+                          </>
+                        )}
+                        <input
+                          id="news-image-file"
+                          type="file"
+                          accept="image/jpeg,image/png,image/gif,image/webp"
+                          className="hidden"
+                          onChange={(e) => {
+                            const file = e.target.files[0];
+                            if (file) handleImageUpload(file);
+                            e.target.value = '';
+                          }}
+                          data-testid="news-image-input"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className="flex space-x-4">
