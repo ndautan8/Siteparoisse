@@ -22,10 +22,14 @@ const AdminDashboard = () => {
   // News Form State
   const [newsForm, setNewsForm] = useState({ title: '', content: '', category: 'Actualité', image_url: '' });
   const [editingNews, setEditingNews] = useState(null);
+  const [customCategory, setCustomCategory] = useState('');
 
   // Mass Times Form State
-  const [massForm, setMassForm] = useState({ day: '', time: '', location: '', mass_type: 'Messe' });
+  const todayStr = new Date().toISOString().split('T')[0];
+  const [massForm, setMassForm] = useState({ day: '', time: '10:00', location: '', mass_type: 'Messe', date: todayStr });
   const [editingMass, setEditingMass] = useState(null);
+  const [repeatMode, setRepeatMode] = useState('none'); // none, week, 2weeks, month
+  const [repeatUntil, setRepeatUntil] = useState('');
 
   // Funerals Form State
   const [funeralForm, setFuneralForm] = useState({ deceased_name: '', funeral_date: '', funeral_time: '', location: '', ceremony_type: 'Messe de funérailles' });
