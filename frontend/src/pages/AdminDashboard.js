@@ -882,13 +882,12 @@ const AdminDashboard = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Lieu *</label>
-                    <input
-                      type="text"
-                      required
+                    <LocationAutocomplete
                       value={funeralForm.location}
-                      onChange={(e) => setFuneralForm({ ...funeralForm, location: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
-                      placeholder="Église Saint-Orens"
+                      onChange={(val) => setFuneralForm({ ...funeralForm, location: val })}
+                      placeholder="Tapez pour rechercher une église..."
+                      required
+                      testId="funeral-location-input"
                     />
                   </div>
                   <div>
