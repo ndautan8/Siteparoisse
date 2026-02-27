@@ -545,6 +545,34 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# ============ HEALTH CHECK (Railway) ============
+
+@app.get("/api/health")
+async def health_check():
+    """Health check endpoint pour Railway"""
+    try:
+        await client.admin.command('ping')
+        db_status = "connected"
+    except Exception:
+        db_status = "disconnected"
+    return {
+        "status": "healthy",
+        "database": db_status,
+        "service": "notre-dame-autan-api"
+    }
+
+# ============ LIFECYCLE ============
+
+@app.on_event("startup")
+async def startup_event():
+    logger.info(f"🚀 Backend démarré - DB: {db_name}")
+    try:
+        await client.admin.command('ping')
+        logger.info("✅ Connexion MongoDB réussie")
+    except Exception as e:
+        logger.warning(f"⚠️ MongoDB pas encore disponible: {e}")
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+    logger.info("🔌 Connexion MongoDB fermée")
