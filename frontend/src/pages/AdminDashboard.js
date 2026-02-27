@@ -942,14 +942,33 @@ const AdminDashboard = () => {
                   <div className="md:col-span-2">
                     <label className="block text-sm font-medium text-slate-700 mb-2">Type de cérémonie</label>
                     <select
-                      value={funeralForm.ceremony_type}
-                      onChange={(e) => setFuneralForm({ ...funeralForm, ceremony_type: e.target.value })}
+                      value={CEREMONY_TYPES.includes(funeralForm.ceremony_type) ? funeralForm.ceremony_type : 'Autre'}
+                      onChange={(e) => {
+                        if (e.target.value === 'Autre') {
+                          setFuneralForm({ ...funeralForm, ceremony_type: 'Autre' });
+                          setCustomCeremonyType('');
+                        } else {
+                          setFuneralForm({ ...funeralForm, ceremony_type: e.target.value });
+                          setCustomCeremonyType('');
+                        }
+                      }}
                       className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
                     >
-                      <option value="Messe de funérailles">Messe de funérailles</option>
-                      <option value="Célébration de la Parole">Célébration de la Parole</option>
-                      <option value="Bénédiction">Bénédiction</option>
+                      {CEREMONY_TYPES.map((t) => (
+                        <option key={t} value={t}>{t}</option>
+                      ))}
+                      <option value="Autre">Autre...</option>
                     </select>
+                    {(funeralForm.ceremony_type === 'Autre' || !CEREMONY_TYPES.includes(funeralForm.ceremony_type)) && (
+                      <input
+                        type="text"
+                        value={customCeremonyType || (funeralForm.ceremony_type !== 'Autre' ? funeralForm.ceremony_type : '')}
+                        onChange={(e) => setCustomCeremonyType(e.target.value)}
+                        placeholder="Tapez le type de cérémonie..."
+                        className="w-full mt-2 px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                        required
+                      />
+                    )}
                   </div>
                 </div>
 
