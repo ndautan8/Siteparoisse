@@ -280,10 +280,23 @@ const HorairesMesses = () => {
             </button>
           </div>
         ) : (
-          <div className="space-y-4">
-            {filteredMasses.map((mass) => (
+          <div className="space-y-3">
+            {filteredMasses.map((mass, idx) => {
+              const prevDate = idx > 0 ? filteredMasses[idx - 1].date : null;
+              const showDateHeader = mass.date && mass.date !== prevDate;
+              return (
+              <div key={mass.id}>
+                {showDateHeader && (
+                  <div className={`flex items-center gap-4 ${idx > 0 ? 'mt-8' : ''} mb-3`}>
+                    <div className="bg-gold/10 border border-gold/20 rounded-xl px-5 py-2.5">
+                      <p className="font-serif text-lg text-slate-deep capitalize">
+                        {new Date(mass.date + 'T00:00:00').toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                      </p>
+                    </div>
+                    <div className="h-px flex-1 bg-slate-200"></div>
+                  </div>
+                )}
               <div
-                key={mass.id}
                 className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
                 data-testid={`mass-time-${mass.id}`}
               >
