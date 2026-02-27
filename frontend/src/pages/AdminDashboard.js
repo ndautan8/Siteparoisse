@@ -197,7 +197,7 @@ const AdminDashboard = () => {
         await axios.post(`${BACKEND_URL}/api/news`, payload, { headers: getAuthHeaders() });
         toast.success('Actualité créée');
       }
-      setNewsForm({ title: '', content: '', category: 'Actualité', image_url: '' });
+      setNewsForm({ title: '', content: '', category: 'Actualité', image_url: DEFAULT_CATEGORY_IMAGES['Actualité'] || '' });
       setCustomCategory('');
       setEditingNews(null);
       fetchData();
@@ -711,7 +711,7 @@ const AdminDashboard = () => {
                       type="button"
                       onClick={() => {
                         setEditingNews(null);
-                        setNewsForm({ title: '', content: '', category: 'Actualité', image_url: '' });
+                        setNewsForm({ title: '', content: '', category: 'Actualité', image_url: DEFAULT_CATEGORY_IMAGES['Actualité'] || '' });
                       }}
                       className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-6 py-2 rounded-lg font-medium transition-colors"
                       data-testid="news-cancel-button"
