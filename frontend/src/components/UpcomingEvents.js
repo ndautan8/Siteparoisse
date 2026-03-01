@@ -86,9 +86,8 @@ export const UpcomingEvents = () => {
                     <Clock className="w-3 h-3" />
                     {event.time}{event.end_time ? ` - ${event.end_time}` : ''}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {event.location}
+                  <span className="flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
+                    <LocationLink location={event.location} iconClassName="w-3 h-3" showIcon={true} className="text-xs" />
                   </span>
                 </div>
               </div>
