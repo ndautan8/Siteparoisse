@@ -114,7 +114,7 @@ const contentConfig = {
       { title: 'CE2', description: 'Découverte de Jésus', icon: Star },
       { title: 'CM1', description: 'Préparation à la communion', icon: Heart },
       { title: 'CM2', description: 'Approfondissement', icon: BookMarked },
-      { title: '6ème', description: 'Profession de foi', icon: Cross },
+      { title: '6ème', description: 'Profession de foi', icon: ChristianCross },
     ]
   },
   aumonerie: {
