@@ -170,10 +170,9 @@ export const NewsSection = () => {
                         </h3>
 
                         {/* Content Preview */}
-                        <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow overflow-hidden"
-                          style={{ overflowWrap: 'break-word', wordBreak: 'normal' }}
-                          dangerouslySetInnerHTML={{ __html: item.content }}
-                        />
+                        <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
+                          {stripHtml(item.content)}
+                        </p>
 
                         {/* CTA Button */}
                         <button 
