@@ -189,7 +189,8 @@ export const UpcomingEvents = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );
