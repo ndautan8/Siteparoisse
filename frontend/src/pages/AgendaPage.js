@@ -30,6 +30,7 @@ const AgendaPage = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('');
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const fetchEvents = useCallback(async () => {
     setLoading(true);
