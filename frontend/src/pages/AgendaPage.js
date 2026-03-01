@@ -213,7 +213,7 @@ const AgendaPage = () => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex-shrink-0 bg-gradient-to-r from-[#d0ada6] to-[#c49b93] p-6 rounded-t-2xl relative">
+            <div className="flex-shrink-0 bg-gradient-to-r from-[#93B5B7] to-[#7da4a6] p-6 rounded-t-2xl relative">
               <button
                 onClick={() => setSelectedEvent(null)}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
