@@ -117,8 +117,8 @@ export const UpcomingEvents = () => {
         </div>
       </div>
 
-      {/* Event Detail Modal */}
-      {selectedEvent && (
+      {/* Event Detail Modal - Portal to body to avoid stacking context issues */}
+      {selectedEvent && createPortal(
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 flex items-center justify-center px-4 pt-20 pb-4"
           onClick={() => setSelectedEvent(null)}
