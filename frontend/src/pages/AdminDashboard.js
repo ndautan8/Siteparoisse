@@ -1517,14 +1517,22 @@ const AdminDashboard = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">Description (optionnel)</label>
-                  <textarea
+                  <ReactQuill
+                    theme="snow"
                     value={letterForm.content}
-                    onChange={(e) => setLetterForm({ ...letterForm, content: e.target.value })}
-                    rows="3"
-                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                    onChange={(value) => setLetterForm({ ...letterForm, content: value })}
+                    modules={{
+                      toolbar: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline'],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        ['link'],
+                        ['clean']
+                      ]
+                    }}
                     placeholder="Brève description de la lettre..."
                     data-testid="letter-content-input"
-                  ></textarea>
+                  />
                 </div>
                 <div className="flex space-x-4 pt-2">
                   <button
