@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Building2, Users, Wallet, Church, Sparkles, Music, Cross, Mail } from 'lucide-react';
+import { Building2, Users, Wallet, Church, Sparkles, Music, Mail } from 'lucide-react';
+import ChristianCross from '../components/ChristianCross';
 import { SocialIcons } from '@/components/SocialIcons';
 import { SEO } from '@/components/SEO';
 import { FadeIn } from '@/components/FadeIn';
