@@ -216,6 +216,8 @@ const AdminDashboard = () => {
   const handleEditNews = (item) => {
     setEditingNews(item);
     setNewsForm({ title: item.title, content: item.content, category: item.category, image_url: item.image_url || '' });
+    // Scroll vers le formulaire
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleDeleteNews = async (id) => {
