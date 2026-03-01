@@ -1,11 +1,14 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Edit2, Trash2, LogOut, Newspaper, Clock, Cross, Calendar, Mail, Upload, Copy, X, FileText, Repeat } from 'lucide-react';
+import { Plus, Edit2, Trash2, LogOut, Newspaper, Clock, Calendar, Mail, Upload, Copy, X, FileText, Repeat } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
 import { format, addWeeks, addMonths, addDays } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import LocationAutocomplete from '@/components/LocationAutocomplete';
+import ChristianCross from '@/components/ChristianCross';
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
