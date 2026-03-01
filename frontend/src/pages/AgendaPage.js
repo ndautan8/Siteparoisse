@@ -193,6 +193,65 @@ const AgendaPage = () => {
           ))
         )}
       </div>
+
+      {/* Modal Détails */}
+      {selectedEvent && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          onClick={() => setSelectedEvent(null)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[80vh] overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[#d0ada6] to-[#c49b93] p-6 relative">
+              <button
+                onClick={() => setSelectedEvent(null)}
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+              >
+                <X className="w-4 h-4 text-white" />
+              </button>
+              <span className={`inline-block text-xs font-medium px-2.5 py-0.5 rounded-full mb-3 bg-white/20 text-white`}>
+                {selectedEvent.category}
+              </span>
+              <h2 className="font-serif text-2xl text-white leading-tight">
+                {selectedEvent.title}
+              </h2>
+            </div>
+
+            {/* Body */}
+            <div className="p-6 overflow-y-auto max-h-[50vh]">
+              {/* Infos */}
+              <div className="flex flex-wrap gap-4 mb-5 pb-5 border-b border-slate-100">
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <Calendar className="w-4 h-4 text-gold" />
+                  <span className="capitalize">
+                    {formatEventDate(selectedEvent.date)}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <Clock className="w-4 h-4 text-gold" />
+                  <span>{selectedEvent.time}{selectedEvent.end_time ? ` - ${selectedEvent.end_time}` : ''}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-600">
+                  <LocationLink location={selectedEvent.location} iconClassName="w-4 h-4 text-gold" showIcon={true} />
+                </div>
+              </div>
+
+              {/* Description */}
+              {selectedEvent.description ? (
+                <div
+                  className="text-slate-600 leading-relaxed prose prose-sm max-w-none break-words"
+                  dangerouslySetInnerHTML={{ __html: selectedEvent.description }}
+                />
+              ) : (
+                <p className="text-slate-400 italic text-sm">Pas de description disponible.</p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
