@@ -3,7 +3,8 @@ name: Sync to Audition Tolosane
 on:
   push:
     branches:
-      - main  # Change en 'master' si ta branche principale s'appelle master
+      - main
+  workflow_dispatch:  # Permet de lancer manuellement depuis l'onglet Actions
 
 jobs:
   git-sync:
@@ -14,10 +15,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Push to destination
+      - name: Debug info
         run: |
-          # On ajoute le dépôt de destination avec le token de sécurité
-          git remote add destination https://x-access-token:${{ secrets.SYNC_TOKEN }}@github.com/Audition-Tolosane/Sitendautan.git
-          
-          # On pousse de force pour s'assurer que les deux dépôts soient identiques
+          echo "Current branch: $(git branch --show-current)"
+          echo "Token length: ${#SYNC_TOKEN}"
+          echo "Testing connection..."
+        env:
+          SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
+
+      - name: Push to destination
+        env:
+          SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        run: |
+          git remote add destination https://x-access-token:${SYNC_TOKEN}@github.com/Audition-Tolosane/Sitendautan.git
           git push destination main --force
