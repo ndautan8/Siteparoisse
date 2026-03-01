@@ -42,7 +42,7 @@ const FuneralsAgenda = () => {
   if (funerals.length === 0) {
     return (
       <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100 text-center">
-        <Cross className="w-12 h-12 text-slate-300 mx-auto mb-4" />
+        <ChristianCross className="w-12 h-12 text-slate-300 mx-auto mb-4" />
         <p className="text-slate-500">Aucune cérémonie prévue pour le moment.</p>
       </div>
     );
