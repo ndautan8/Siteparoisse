@@ -140,7 +140,7 @@ const AgendaPage = () => {
                     <button
                       key={event.id}
                       onClick={() => setSelectedEvent(event)}
-                      className="w-full bg-white rounded-xl border border-slate-100 p-5 hover:shadow-md hover:border-gold/30 transition-all duration-300 flex gap-5 text-left cursor-pointer"
+                      className="w-full bg-white rounded-xl border border-slate-100 p-5 hover:shadow-md hover:border-gold/30 transition-all duration-300 flex gap-5 text-left cursor-pointer group"
                       data-testid={`event-card-${event.id}`}
                     >
                       {/* Date badge */}
@@ -174,6 +174,12 @@ const AgendaPage = () => {
                           <span className="flex items-center gap-1.5 text-slate-400">
                             <Calendar className="w-3.5 h-3.5" />
                             {formatEventDate(event.date)}
+                          </span>
+                        </div>
+                        <div className="flex justify-end mt-2">
+                          <span className="inline-flex items-center gap-1 text-xs font-medium text-gold group-hover:text-gold/80 transition-colors">
+                            Détails
+                            <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                           </span>
                         </div>
                       </div>
