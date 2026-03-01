@@ -255,7 +255,7 @@ export const NewsSection = () => {
           data-testid="news-modal-backdrop"
         >
           <div
-            className="bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl max-w-2xl w-full max-h-[85vh] sm:max-h-[90vh] flex flex-col"
+            className="bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] sm:max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
             data-testid="news-modal"
           >
