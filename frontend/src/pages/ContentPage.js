@@ -198,7 +198,7 @@ const contentConfig = {
     items: [
       { title: 'Chorale paroissiale', description: 'Chants et musique liturgique', icon: Mic },
       { title: 'Art Floral', description: 'Fleurir l\'église avec beauté', icon: Flower2 },
-      { title: 'Sacristains', description: 'Service discret et essentiel', icon: Cross },
+      { title: 'Sacristains', description: 'Service discret et essentiel', icon: ChristianCross },
       { title: 'Lecteurs', description: 'Proclamer la Parole de Dieu', icon: BookOpen },
     ]
   },
