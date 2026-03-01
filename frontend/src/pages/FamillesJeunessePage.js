@@ -47,7 +47,7 @@ const sections = [
     title: "Servants d'autel & Vocations",
     subtitle: 'Service liturgique',
     description: 'Se mettre au service de la liturgie et répondre à l\'appel',
-    icon: Cross,
+    icon: ChristianCross,
     image: 'https://images.unsplash.com/photo-1445367585008-b8a4c4640c5f?w=600',
     path: '/servants-vocations'
   }
