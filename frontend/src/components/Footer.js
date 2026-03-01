@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Mail, Phone, MapPin, Check } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, Check, Map } from 'lucide-react';
 import axios from 'axios';
+import ClochersMap from '@/components/ClochersMap';
+import { clochersData } from '@/data/clochersData';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
