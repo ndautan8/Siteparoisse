@@ -74,18 +74,26 @@ const AgendaPage = () => {
       />
 
       {/* Hero */}
-      <section className="relative h-[40vh] md:h-[45vh] flex items-center justify-center bg-slate-900">
-        <div className="absolute inset-0">
-          <div className="w-full h-full bg-gradient-to-br from-[#d0ada6]/30 via-slate-900 to-slate-900"></div>
+      <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://customer-assets.emergentagent.com/job_parish-site-2/artifacts/t9ksvh2k_Agenda.png"
+            alt="Agenda paroissial Notre Dame d'Autan"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
         </div>
         <div className="relative z-10 text-center px-4">
-          <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6">
-            <Calendar className="w-8 h-8 text-white" />
+          <div className="flex justify-center mb-6">
+            <div className="w-20 h-20 rounded-full bg-gold/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
+              <Calendar className="w-10 h-10 text-white" strokeWidth={1.5} />
+            </div>
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl text-white mb-4" data-testid="agenda-title">
+          <h1 className="font-serif text-4xl md:text-6xl font-medium tracking-tight text-white mb-4" data-testid="agenda-title">
             Agenda paroissial
           </h1>
-          <p className="text-white/70 text-base md:text-lg max-w-xl mx-auto">
+          <p className="text-white/90 text-base md:text-lg max-w-xl mx-auto">
             Les prochains événements de notre communauté
           </p>
         </div>
