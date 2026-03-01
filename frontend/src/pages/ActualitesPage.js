@@ -8,6 +8,13 @@ import { FadeIn } from '@/components/FadeIn';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
+const stripHtml = (html) => {
+  if (!html) return '';
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
+};
+
 const DEFAULT_CATEGORY_IMAGES = {
   'Actualité': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/xcdoobf2_Actualit%C3%A9-d%C3%A9faut.png',
   'Annonce': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/0ey6uzxa_Annonce-d%C3%A9faut.png',
