@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Users, Heart, BookOpen, Church, GraduationCap, Baby, Cross, MessagesSquare, Flower2, HandHeart, Stethoscope, Building2, Sparkles, Home, Phone } from 'lucide-react';
+import { Users, Heart, BookOpen, Church, GraduationCap, Baby, MessagesSquare, Flower2, HandHeart, Stethoscope, Building2, Sparkles, Home, Phone } from 'lucide-react';
+import ChristianCross from '../components/ChristianCross';
 
 const pillarData = {
   'notre-dame-autan': {
