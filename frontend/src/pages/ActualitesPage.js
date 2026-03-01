@@ -192,9 +192,9 @@ const ActualitesPage = () => {
             </div>
 
             <div className="flex-1 overflow-y-auto p-4 sm:p-6">
-              <div className="text-slate-600 leading-relaxed whitespace-pre-line">
-                {selectedArticle.content}
-              </div>
+              <div className="text-slate-600 leading-relaxed prose prose-sm max-w-none"
+                dangerouslySetInnerHTML={{ __html: selectedArticle.content }}
+              />
             </div>
 
             <div className="flex-shrink-0 sm:rounded-b-2xl bg-slate-50 border-t border-slate-200 p-3 sm:p-4 flex justify-end">
