@@ -227,10 +227,34 @@ metadata:
   run_ui: true
   last_test_date: "2025-01-XX"
 
+  - task: "CMS New Locations - Maison Fraternité & Centre Paroissial"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/data/locationUtils.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 2 new selectable locations in CMS: 'Maison de la Fraternité — Castanet-Tolosan' and 'Centre Paroissial — Saint-Orens'. Verified both appear in LocationAutocomplete dropdown. Created locationUtils.js with ALL_LOCATIONS and getGoogleMapsUrl()."
+  
+  - task: "Clickable Locations - Google Maps Links"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/LocationLink.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Created LocationLink component. All locations on user-facing pages (HorairesMesses, AgendaPage, UpcomingEvents, FuneralsAgenda) are now clickable links to Google Maps (opens in new tab). Verified link href and target=_blank via automated test."
+
 test_plan:
   current_focus:
-    - "Entraide Page - Layout and Tiles"
-    - "Entraide Modals - Functionality"
+    - "CMS New Locations - Maison Fraternité & Centre Paroissial"
+    - "Clickable Locations - Google Maps Links"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
