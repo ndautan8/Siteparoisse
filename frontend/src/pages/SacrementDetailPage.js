@@ -211,7 +211,7 @@ const sacrementsData = {
   'malades': {
     title: 'Le Sacrement des Malades',
     subtitle: 'Force et réconfort',
-    icon: Cross,
+    icon: ChristianCross,
     image: 'https://customer-assets.emergentagent.com/job_c9a89358-b983-4f0b-8ec4-b48d0db621c4/artifacts/3dt57dtp_Sacreement-des-malades.png',
     intro: 'Le sacrement des malades apporte réconfort, force et paix aux personnes gravement malades, âgées ou en fin de vie.',
     sections: [
