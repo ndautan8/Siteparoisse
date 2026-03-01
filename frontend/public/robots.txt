@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://parish-hub-16.preview.emergentagent.com/sitemap.xml
+Sitemap: https://parish-site-2.preview.emergentagent.com/sitemap.xml
 
 Disallow: /admin/
 Disallow: /admin/login
