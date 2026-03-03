@@ -375,8 +375,6 @@ export const Header = () => {
 
           {/* CTA Buttons Desktop + Mobile action buttons */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            {/* Dark Mode Toggle - Desktop */}
-            <DarkModeToggle className="hidden lg:flex" />
 
             {/* Desktop: Horaires des messes button in header */}
             <Link
